@@ -116,7 +116,7 @@ class UiObject
       return ''
   end
   
-  def save_value(web_params,user_id,job_id)
+  def save_value(web_params,current_command,user_id,job_id)
   
   end
    

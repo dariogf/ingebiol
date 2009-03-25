@@ -44,13 +44,13 @@ class UiFile < UiEditObject
       return value
   end
    
-  def save_value(web_params,user_id,job_id)
+  def save_value(web_params,current_command,user_id,job_id)
 
     value = web_params[field_name]
                                               
     # if it is a field
     if (!value.nil?) and (value.class != String)
-       file = DataFile.save(value,user_id,job_id,@save_as)
+       file = DataFile.save(value,current_command,user_id,job_id,@save_as)
        
     end
     

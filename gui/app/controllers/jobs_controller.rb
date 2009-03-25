@@ -96,7 +96,7 @@ class JobsController < ApplicationController
          ui_param.save_field_value(params,std_attrs)
 
          # save value
-         ui_param.save_value(params,session[:user_email],session[:current_job_id])
+         ui_param.save_value(params,session[:current_command],session[:user_email],session[:current_job_id])
       
          # retrieve command switches
          cs = ui_param.command_switch(field_value)
