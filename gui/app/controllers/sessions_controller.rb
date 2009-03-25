@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   # initialize a new session 
   #-----------------------------------------  
   def new
-                 
+    
     # reset current session
     reset_session
     
@@ -25,7 +25,10 @@ class SessionsController < ApplicationController
   
   def create
     
-    session[:current_command] = params[:id] ||= DEFAULT_COMMAND
+    
+    if (!session[:current_command]) or (session[:current_command]=='')
+      session[:current_command] = params[:id] ||= DEFAULT_COMMAND
+    end
     
     # load params of command from file
     @command = Command.new(session[:current_command])
