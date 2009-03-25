@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   # session controller does not need to be logged 
   skip_before_filter :login_required
-  
+    
   #-----------------------------------------
   # initialize a new session 
   #-----------------------------------------  
@@ -11,8 +11,14 @@ class SessionsController < ApplicationController
     # reset current session
     reset_session
     
+    # set current command
+    
+    puts "params:"+params.to_yaml
+    
+    session[:current_command] = params[:id] ||= nil
+    
     # load params of command from file
-    @command = Command.new()
+    @command = Command.new(session[:current_command])
     
   end
                          
@@ -20,7 +26,7 @@ class SessionsController < ApplicationController
   def create
     
     # load params of command from file
-    @command = Command.new()
+    @command = Command.new(session[:current_command])
                                        
     # create a user with passed params
     # params is a hash that is populated automatically by de form
@@ -51,6 +57,7 @@ class SessionsController < ApplicationController
       # save email in session info      
       session[:user_email]= user.get_email
       session[:current_stage]= @command.get_stage_names.first
+      
       
       # welcome message
       flash[:notice] = "Welcome " + user.get_email

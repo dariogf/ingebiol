@@ -146,7 +146,7 @@ module ApplicationHelper
     
     img_text += '&nbsp;&nbsp;'+ title
     
-    poller = poller_to_control ||= ''
+    poller = poller_to_control ||= 'null'
     
     link_text = link_to img_text, 'javascript:miToggle(\''+content_row_id+'\',\''+toggle_img_id+'\',0.8,'+poller+');'
  

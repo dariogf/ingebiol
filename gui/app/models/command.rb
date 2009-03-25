@@ -4,17 +4,23 @@ class Command < BaseFileModel
   # Creates a new command object that reads 
   # current config
   #-----------------------------------------
-  def initialize
+  def initialize(command_name=nil)
+    
+    #set current_command
+    current_command = command_name ||= DEFAULT_COMMAND
+    
+    # set current data path
+    @current_command_path = File.join(COMMAND_CONFIG,current_command)
+    
+    # load common data
+    @common_data = get_json_data(File.join(@current_command_path,"common.json"))
     
     # load common data                                            
-    @common_data = get_json_data(File.join(COMMAND_CONFIG,"common.json"))
-    
-    # load common data                                            
-    @final_results = get_json_data(File.join(COMMAND_CONFIG,"final_results.json"))
+    @final_results = get_json_data(File.join(@current_command_path,"final_results.json"))
     
                   
     # extract stages
-    @stage_list_files=extract_stage_list(COMMAND_CONFIG)
+    @stage_list_files=extract_stage_list(@current_command_path)
     # puts "Loading stages", @stage_list_files.to_yaml
     @stage_list_names = []
                     
@@ -25,7 +31,7 @@ class Command < BaseFileModel
     @stage_list_files.each do |stage|
                                                    
       # decode json
-      data = get_json_data(File.join(COMMAND_CONFIG,stage))
+      data = get_json_data(File.join(@current_command_path,stage))
       
       # save stage name without extension
       stage_name=File.basename(stage,File.extname(stage))
@@ -54,7 +60,7 @@ class Command < BaseFileModel
             
       res = []
                               
-      directories = Dir.glob(STAGES_PATTERN).sort
+      directories = Dir.glob(File.join(@current_command_path,STAGES_PATTERN)).sort
 
       # for each file in dir
       directories.each do |d|

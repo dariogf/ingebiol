@@ -24,4 +24,4 @@ config.action_controller.perform_caching             = true
 # config.action_mailer.raise_delivery_errors = false
 
 #Para tener un sub-uri
-config.action_controller.relative_url_root = "/rails1"
+config.action_controller.relative_url_root = "/ingebiol"

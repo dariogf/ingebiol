@@ -660,3 +660,659 @@ Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 10:55:12)
   Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
 Rendering joblists/get_joblist
 Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:00:25) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.4ms)
+Rendered jobs/_welcome_bar (0.2ms)
+Rendered jobs/_stage_form (2.2ms)
+Rendered jobs/_submit_job (2.6ms)
+Rendered jobs/_input_file_row (2.8ms)
+Rendered jobs/_joblist_row (0.5ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 78ms (View: 7 | 200 OK [http://localhost/job/new]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:00:26) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.3ms)
+Rendered jobs/_welcome_bar (0.1ms)
+Rendered jobs/_stage_form (2.0ms)
+Rendered jobs/_submit_job (2.3ms)
+Rendered jobs/_input_file_row (2.5ms)
+Rendered jobs/_joblist_row (0.5ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 39ms (View: 7 | 200 OK [http://localhost/job/new]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:00:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:00:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:00:34) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:00:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:00:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:00:56) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:01:06) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:01:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:01:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:01:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:01:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:01:56) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:02:06) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:02:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:02:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:02:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:02:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:03:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 52ms (View: 7 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:03:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:03:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:03:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:03:56) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 10ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:04:06) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:04:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:04:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:04:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:04:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:04:56) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:05:06) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:05:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:05:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:05:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:05:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:05:56) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:06:06) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:06:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:06:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:06:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:06:46) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:06:56) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:07:06) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:07:06) [GET]
+
+ActionController::RoutingError (No route matches "/command1/gui/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:07:16) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:07:26) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/joblists/get_joblist" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:07:36) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 12ms (View: 6 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:14:14) [GET]
+
+NameError (undefined local variable or method `sessions' for #<Command:0x3748d0>):
+  app/models/command.rb:9:in `initialize'
+  app/controllers/jobs_controller.rb:10:in `new'
+  app/controllers/jobs_controller.rb:10:in `new'
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:14:31) [GET]
+
+NameError (undefined local variable or method `session' for #<Command:0x193276c>):
+  app/models/command.rb:9:in `initialize'
+  app/controllers/jobs_controller.rb:10:in `new'
+  app/controllers/jobs_controller.rb:10:in `new'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:20:46) [GET]
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/jobs_controller.rb:10:in `initialize'
+  app/controllers/jobs_controller.rb:10:in `new'
+  app/controllers/jobs_controller.rb:10:in `new'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:20:58) [GET]
+
+NameError (uninitialized constant Command::DEFAULT_COMMAND):
+  app/models/command.rb:10:in `initialize'
+  app/controllers/jobs_controller.rb:10:in `new'
+  app/controllers/jobs_controller.rb:10:in `new'
+
+Rendered rescues/_trace (28.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:21:08) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (1.3ms)
+Rendered jobs/_welcome_bar (1.0ms)
+Rendered jobs/_stage_form (3.2ms)
+Rendered jobs/_submit_job (9.7ms)
+Rendered jobs/_input_file_row (12.8ms)
+Rendered jobs/_joblist_row (1.9ms)
+Rendered jobs/_results_row (0.8ms)
+Completed in 112ms (View: 45 | 200 OK [http://localhost/job/new]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:21:08) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.3ms)
+Rendered jobs/_welcome_bar (0.1ms)
+Rendered jobs/_stage_form (2.0ms)
+Rendered jobs/_submit_job (2.2ms)
+Rendered jobs/_input_file_row (2.4ms)
+Rendered jobs/_joblist_row (0.4ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 74ms (View: 6 | 200 OK [http://localhost/job/new]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:21:09) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 13ms (View: 7 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:21:09) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:21:19) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:21:19) [POST]
+  Parameters: {"authenticity_token"=>"TS7slWxnfEMj/P4QFjj8lTW44B3hN+SSS3vcISU+ztQ=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:21:26) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (42.0ms)
+Completed in 122ms (View: 53 | 200 OK [http://localhost/session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:22:44) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/cap3" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:23:20) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/cap3" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:23:31) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/cap3" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:24:07) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/cap3/show" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:24:12) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/cap3" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:25:09) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/cap3" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-25 12:26:17) [GET]
+
+ActionController::RoutingError (No route matches "/session/new/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-03-25 12:28:01) [GET]
+  Parameters: {"id"=>"1"}
+
+NameError (uninitialized constant SessionController):
+  
+
+Rendered rescues/_trace (24.9ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:28:14) [GET]
+  Parameters: {"id"=>"1"}
+
+Errno::ENOENT (No such file or directory - ../config/commands/1/common.json):
+  app/models/base_file_model.rb:7:in `initialize'
+  app/models/base_file_model.rb:7:in `open'
+  app/models/base_file_model.rb:7:in `get_json_data'
+  app/models/command.rb:16:in `initialize'
+  app/controllers/sessions_controller.rb:21:in `new'
+  app/controllers/sessions_controller.rb:21:in `new'
+
+Rendered rescues/_trace (73.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:28:20) [GET]
+  Parameters: {"id"=>"cap3"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (0.9ms)
+Completed in 31ms (View: 3 | 200 OK [http://localhost/session/new/cap3]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-03-25 12:32:03) [POST]
+  Parameters: {"sessions"=>{"email"=>"dariogf@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"WCz2LrZgAXyiQNKlOpbGbbYYhvBtLMCTcqsSclDyuvw=", "_"=>""}
+Completed in 30ms (View: 1 | 200 OK [http://localhost/session]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:32:03) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.3ms)
+Rendered jobs/_welcome_bar (0.1ms)
+Rendered jobs/_stage_form (2.2ms)
+Rendered jobs/_submit_job (2.5ms)
+Rendered jobs/_input_file_row (2.7ms)
+Rendered jobs/_joblist_row (0.6ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 34ms (View: 7 | 200 OK [http://localhost/job/new]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:32:03) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.3ms)
+Rendered jobs/_welcome_bar (0.1ms)
+Rendered jobs/_stage_form (2.1ms)
+Rendered jobs/_submit_job (2.3ms)
+Rendered jobs/_input_file_row (2.5ms)
+Rendered jobs/_joblist_row (0.5ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 74ms (View: 7 | 200 OK [http://localhost/job/new]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:32:04) [POST]
+  Parameters: {"authenticity_token"=>"WCz2LrZgAXyiQNKlOpbGbbYYhvBtLMCTcqsSclDyuvw=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:32:04) [POST]
+  Parameters: {"authenticity_token"=>"WCz2LrZgAXyiQNKlOpbGbbYYhvBtLMCTcqsSclDyuvw=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:32:13) [POST]
+  Parameters: {"authenticity_token"=>"WCz2LrZgAXyiQNKlOpbGbbYYhvBtLMCTcqsSclDyuvw=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:32:14) [POST]
+  Parameters: {"authenticity_token"=>"WCz2LrZgAXyiQNKlOpbGbbYYhvBtLMCTcqsSclDyuvw=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:33:32) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (0.9ms)
+Completed in 31ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-03-25 12:33:38) [POST]
+  Parameters: {"sessions"=>{"email"=>"dariogf@gmail.com"}, "commit"=>"Login", "authenticity_token"=>"bRQ7W1//ImSvMAjGMU7ilOGHuZXO0sWzS+DERlekQzU=", "_"=>""}
+Completed in 29ms (View: 1 | 200 OK [http://localhost/session]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:33:38) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.3ms)
+Rendered jobs/_welcome_bar (0.2ms)
+Rendered jobs/_stage_form (2.3ms)
+Rendered jobs/_submit_job (2.6ms)
+Rendered jobs/_input_file_row (2.8ms)
+Rendered jobs/_joblist_row (0.7ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 73ms (View: 7 | 200 OK [http://localhost/job/new]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2009-03-25 12:33:39) [GET]
+Rendering template within layouts/application
+Rendering jobs/new
+Rendered jobs/_program_title (0.3ms)
+Rendered jobs/_welcome_bar (0.1ms)
+Rendered jobs/_stage_form (1.9ms)
+Rendered jobs/_submit_job (2.1ms)
+Rendered jobs/_input_file_row (2.3ms)
+Rendered jobs/_joblist_row (0.4ms)
+Rendered jobs/_results_row (0.1ms)
+Completed in 34ms (View: 6 | 200 OK [http://localhost/job/new]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:33:39) [POST]
+  Parameters: {"authenticity_token"=>"bRQ7W1//ImSvMAjGMU7ilOGHuZXO0sWzS+DERlekQzU=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 8ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-03-25 12:33:39) [POST]
+  Parameters: {"authenticity_token"=>"bRQ7W1//ImSvMAjGMU7ilOGHuZXO0sWzS+DERlekQzU=", "_"=>""}
+Rendering joblists/get_joblist
+Completed in 7ms (View: 1 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:33:41) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (0.7ms)
+Completed in 31ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2009-03-25 12:33:55) [GET]
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, login_required, new, and successfull_login):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:33:58) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (0.7ms)
+Completed in 30ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-25 12:34:13) [GET]
+  Parameters: {"id"=>"cap3"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (0.7ms)
+Completed in 71ms (View: 3 | 200 OK [http://localhost/session/new/cap3]
