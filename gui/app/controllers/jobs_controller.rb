@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     # puts "ejecutando accion gui/new"
     session[:current_job_id]=nil
         
-    @command = Command.new()
+    @command = Command.new(session[:current_command])
     
     if session[:current_stage]==nil
          session[:current_stage] = @command.get_stage_names.first
@@ -20,7 +20,7 @@ class JobsController < ApplicationController
   #-----------------------------------------
   def show
     @job_id=params[:id]
-    @command = Command.new()
+    @command = Command.new(session[:current_command])
         
     # modify current job id
     session[:current_job_id]=@job_id
@@ -34,7 +34,7 @@ class JobsController < ApplicationController
     
     # Delete job
     
-    Job.delete(session[:user_email],@job_id)
+    Job.delete(session[:current_command],session[:user_email],@job_id)
     
     # render :update do |page|
     # end
@@ -51,7 +51,7 @@ class JobsController < ApplicationController
     # puts "parametros jobs:"+params.to_yaml
     
     # retrieve command configuration
-    @command = Command.new()
+    @command = Command.new(session[:current_command])
     
     # check stage is valid
     if (session[:current_stage]==nil) or (session[:current_stage] == '')
@@ -113,7 +113,7 @@ class JobsController < ApplicationController
 
       std_attrs[COMMAND_SWITCHES_TAG]=command_switches[COMMAND_SWITCHES_TAG]
       #save values
-      Job.save_standard_attributes(std_attrs,session[:user_email],session[:current_job_id])
+      Job.save_standard_attributes(std_attrs,session[:current_command],session[:user_email],session[:current_job_id])
       
       # puts "command switches "+command_switches
     
@@ -123,7 +123,7 @@ class JobsController < ApplicationController
         command_list = @command.command_list(session[:current_stage])
         use_queue_system = @command.use_queue_system(session[:current_stage])
 
-        path = File.join(DATA_PATH,session[:user_email],session[:current_job_id])
+        path = File.join(DATA_PATH,session[:current_command],session[:user_email],session[:current_job_id])
         
         Command.exec_job_command(path,command_list,command_switches,session[:current_job_id],use_queue_system)
       end
@@ -144,7 +144,7 @@ class JobsController < ApplicationController
     res = ''
     
     if session[:user_email]
-      res = Job.create_unique_folder(session[:user_email])
+      res = Job.create_unique_folder(session[:current_command],session[:user_email])
     end
     
     return res
@@ -155,7 +155,7 @@ class JobsController < ApplicationController
   # 
   #-----------------------------------------
   def reset_stage
-    @command = Command.new()
+    @command = Command.new(session[:current_command])
     
     session[:current_stage] = @command.get_stage_names.first
     

@@ -9,7 +9,7 @@ class DownloadsController < ApplicationController
               
     # print "descargando @id:" + @id
         
-    file_to_send = File.join(DATA_PATH, session[:user_email], session[:current_job_id], @id)
+    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], session[:current_job_id], @id)
     
     
     if File.exists?(file_to_send)

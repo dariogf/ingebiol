@@ -7,10 +7,10 @@ class Command < BaseFileModel
   def initialize(command_name=nil)
     
     #set current_command
-    current_command = command_name ||= DEFAULT_COMMAND
+    @current_command = command_name ||= DEFAULT_COMMAND
     
     # set current data path
-    @current_command_path = File.join(COMMAND_CONFIG,current_command)
+    @current_command_path = File.join(COMMAND_CONFIG,@current_command)
     
     # load common data
     @common_data = get_json_data(File.join(@current_command_path,"common.json"))
@@ -246,7 +246,7 @@ class Command < BaseFileModel
 
       # calculate sizes of files and existence
       if r['type']=='file'
-        file_path=File.join(DATA_PATH,user_id,job_id,r['file'])
+        file_path=File.join(DATA_PATH,@current_command,user_id,job_id,r['file'])
         
         if File.exist?(file_path)
           r['size']=File.size(file_path).to_human
@@ -257,7 +257,7 @@ class Command < BaseFileModel
       end
       
       if r['type']=='file_value'
-        file_path=File.join(DATA_PATH,user_id,job_id,r['file'])
+        file_path=File.join(DATA_PATH,@current_command,user_id,job_id,r['file'])
         
         if File.exist?(file_path)
           
@@ -280,7 +280,7 @@ class Command < BaseFileModel
       if r['type']=='command_output'
         
         
-        path = File.join(DATA_PATH,user_id,job_id)
+        path = File.join(DATA_PATH,@current_command,user_id,job_id)
         
         cmd = 'cd '+path+';'+r['command']
         

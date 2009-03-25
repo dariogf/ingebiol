@@ -4,9 +4,9 @@ class Job  < BaseFileModel
   #-----------------------------------------
   # save standard attributes to a given user_id and job_id
   #-----------------------------------------
-  def self.save_standard_attributes(attrs,user_id,job_id)
+  def self.save_standard_attributes(attrs,current_command,user_id,job_id)
     
-      job_path = File.join(DATA_PATH,user_id,job_id,STANDARD_ATTR_JSON)
+      job_path = File.join(DATA_PATH,current_command,user_id,job_id,STANDARD_ATTR_JSON)
         
         # read current attribute file
       if File.exists?(job_path)
@@ -29,12 +29,11 @@ class Job  < BaseFileModel
   #-----------------------------------------
   # 
   #-----------------------------------------
-  def self.create_unique_folder(user_id)
+  def self.create_unique_folder(current_command,user_id)
 
     
-        
     id = 0
-    user_path = File.join(DATA_PATH,user_id)
+    user_path = File.join(DATA_PATH,current_command,user_id)
                                                     
 
 
@@ -64,7 +63,7 @@ class Job  < BaseFileModel
     std['user_id']=user_id
     std['job_id']=today+id.to_s
     
-    self.save_standard_attributes(std,user_id,today+id.to_s)
+    self.save_standard_attributes(std,current_command,user_id,today+id.to_s)
     
     # puts "Created path:"+work_path
 
@@ -75,8 +74,9 @@ class Job  < BaseFileModel
   #-----------------------------------------
   # 
   #-----------------------------------------
-  def self.delete(user_id,job_id)
-    job_path = File.join(DATA_PATH,user_id,job_id)
+  def self.delete(current_command,user_id,job_id)
+
+    job_path = File.join(DATA_PATH,current_command,user_id,job_id)
 
     if File.exists?(job_path)
       FileUtils.rm_r(job_path,{:secure=>true})

@@ -4,7 +4,7 @@ class DataFile  < BaseFileModel
     
   end
     
-  def self.save(file_object,email,id,save_as)
+  def self.save(file_object,current_command,email,id,save_as)
                                        
     if save_as!=''
        name = save_as
@@ -18,7 +18,7 @@ class DataFile  < BaseFileModel
     
     # puts "orig name : ", upload[:filename].original_filename
     
-    path = File.join(DATA_PATH,email,id,name)
+    path = File.join(DATA_PATH,current_command,email,id,name)
     
     FileUtils.mkdir_p(File.dirname(path)) unless File.exists?(File.dirname(path))
     
