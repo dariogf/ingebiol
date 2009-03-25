@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     
     puts "params:"+params.to_yaml
     
-    session[:current_command] = params[:id] ||= nil
+    session[:current_command] = params[:id] ||= DEFAULT_COMMAND
     
     # load params of command from file
     @command = Command.new(session[:current_command])
@@ -24,6 +24,8 @@ class SessionsController < ApplicationController
                          
   
   def create
+    
+    session[:current_command] = params[:id] ||= DEFAULT_COMMAND
     
     # load params of command from file
     @command = Command.new(session[:current_command])
