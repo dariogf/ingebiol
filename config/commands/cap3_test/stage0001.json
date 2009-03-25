@@ -24,7 +24,7 @@ input_params: [
 	id:'job_name',
 	title:'Job name',
 	default_value: '',
-	required: true,
+	required: false,
 	size:'30',
 	tooltip:'The job is assigned a number automatically, but you can provide a custom name for it',
 	validation_regex: '',
@@ -56,7 +56,7 @@ input_params: [
 	save_as:'seq.fasta',
 	title:'Sequences (fasta)',
 	default_value: '',
-	required: true,
+	required: false,
 	tooltip:'Select a sequence file in fasta format'
  }
 ,
@@ -147,9 +147,19 @@ input_params: [
 # 	tooltip:'Un tip'
 #  }
 ],
-external_command:'ls -l > input_files.txt',
+# external_command:'ls -l > input_files.txt',
+command_list:[
+							{
+								required_files:[],
+								command:'cp seq.fasta f2'
+							}
+							,
+							{
+								required_files:['f2'],
+								command:'ls -al > out.txt'
+							}
+						 ]
+,
 # $CAP3_EXE, $fileDest, $userEmail, $runidcgi, $args, $jobName, $real_filename,"QUICKINFO"
-
-create_results_dir:['output'],
 use_queue_system:false
 }
