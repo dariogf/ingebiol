@@ -1,0 +1,66 @@
+# render joblist
+
+res_files = ''
+res_files_values = ''
+res_command = ''
+
+# for each param
+@command.get_final_results(session[:user_email],session[:current_job_id])['params'].each do |fr|
+     
+  # add files
+  
+  if fr['type']=='file'
+    # show only fixed files or files with valid size
+    if fr['fixed'] or fr['size']!='0KB'
+      res_files += '<tr>'
+      # resFiles += "<td>#{fr['type']}</td>"
+      res_files += "<td>&nbsp;</td>"
+  
+      res_files += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'}),:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
+  
+      res_files += "<td>#{fr['title']} (#{fr['size']})</td>"
+  
+      res_files += '</tr>'
+    end
+  end
+  
+             
+  if fr['type']=='file_value'
+    res_files_values += '<tr>'
+    # resFiles += "<td>#{fr['type']}</td>"
+    res_files_values += "<td>&nbsp;</td>"
+  
+    # resFiles += '<td></td>'
+  
+    res_files_values += "<td>#{fr['title']}:</td>"
+    res_files_values += "<td>#{fr['value']}</td>"
+    
+  
+    res_files_values += '</tr>'
+  end
+
+
+  if fr['type']=='command_output'
+    res_command += '<tr>'
+    # resFiles += "<td>#{fr['type']}</td>"
+    res_command += "<td>&nbsp;</td>"
+  
+    # resFiles += '<td></td>'
+  
+    res_command += "<td>#{fr['title']}:</td>"
+    res_command += "<td>#{fr['value']}</td>"
+    
+  
+    res_command += '</tr>'
+  end
+
+  
+end
+                                                                    
+
+# :controller => 'downloads', , :id => "#{fr['file']}"
+
+# page['job_results_div'].replace_html('Showing: '+@job_id)
+
+page['job_results_div'].replace_html(res_files+res_files_values+res_command)
+

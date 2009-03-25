@@ -1,0 +1,37 @@
+<% remote_form_for :sessions, :url => {:controller => 'sessions', :action => 'create'} do |f| %>
+
+<% if USE_LDAP_AUTH %>
+<p>
+	<span class="AMDescription">Your user name:</span>
+	&nbsp;&nbsp;
+	<%= f.text_field :email %>&nbsp;&nbsp;
+</p>
+
+<p>
+	<span class="AMDescription">Your password:</span>
+	&nbsp;&nbsp;
+	<%= f.password_field :password %>&nbsp;&nbsp; 
+</p>
+
+
+<% else %>
+
+<p>
+	<span class="AMDescription">Your email:</span>
+	&nbsp;&nbsp;
+	<%= f.text_field :email %>&nbsp;&nbsp;
+</p>
+
+
+<% end %>
+
+
+
+<p>
+	<span id="InvalidEmail" style="font:16px Arial, Helvetica, sans-serif; font-weight:bold; color:#F3AC2B;"></span>
+	<%= submit_tag "Login" %> 
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<% end %>

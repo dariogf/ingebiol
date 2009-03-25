@@ -1,0 +1,30 @@
+<!-- row inputfile -->
+<tr>
+	<td> <!-- celda inputfile height="190" -->
+		
+		<div id="<%= row_name %>">
+			<script type="text/javascript" charset="utf-8">
+			
+			<%= remote_function :url => {:controller => 'joblists', :action => 'get_joblist'} %>;
+			
+			</script>
+			
+			<%= periodically_call_remote(:variable=>'joblist_poller', :url => {:controller => 'joblists', :action => 'get_joblist'}) %>
+			<%#= periodically_call_remote :url => {:controller => 'joblists', :action => 'get_joblist'} %>
+			
+			<%#= link_to_remote "algo", :url => {:controller => 'joblists', :action => 'get_joblist'} %>
+			
+			
+			<table width="100%" border="0" cellspacing="5" cellpadding="5">
+				<tr><td>
+				  <div id="joblist_div">
+
+					</div>
+					
+				</td></tr>
+			</table>
+			
+		</div>
+		
+	</td> <!-- fin celda inputfile -->
+</tr> <!-- fin row inputfile -->

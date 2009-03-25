@@ -1,0 +1,24 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="50%" style="vertical-align:middle;">
+			<div id="wellcome">
+				
+			</div>
+		</td>
+		
+		<td width="50%" style="align:right; vertical-align:middle;">
+
+			<div align="right">
+			
+			<%= session[:user_email] %>&nbsp;&nbsp;&nbsp;
+			
+			<%= link_to "Logout", new_session_url %>
+			
+			<%#= link_to_remote "reset stage", :url=>{:controller => 'jobs', :action => 'reset_stage'} %>
+			
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			</div>
+		</td>
+	</tr>	
+</table>

@@ -1,0 +1,44 @@
+# File with titles and columns sizes. 
+
+#Job name is automatically added at runtime, so it doesn't need to be here.
+
+[
+{
+	title:'Job size',
+	field:'job_size',
+	width:'10%',
+	calculated:true
+#	,
+#	tooltip_field:'job_name',
+#	tooltip_calculated:false
+}
+,
+{
+	title:'File name',
+	field:'sequence_file',
+	width:'10%'
+}
+,
+{
+	title:'Status',
+	field:'job_status',
+	width:'10%',
+	calculated:true,
+	tooltip_field:'errors',
+	tooltip_calculated:true
+}
+#,
+#{
+#	title:'Errors',
+#	field:'errors',
+#	width:'10%',
+#	calculated:true
+#}
+,
+{
+	title:'Params',
+	field:'$COMMAND_SWITCHES',
+	width:'10%',
+	calculated:true
+}
+]

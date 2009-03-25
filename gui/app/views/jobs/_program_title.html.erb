@@ -1,0 +1,23 @@
+<!-- tabla de titulo -->
+<table width="100%" border="0" cellspacing="0" class="rowTitulo2">
+	<tr>
+		<!-- celda separadora izquierda -->
+		<td class="separadorV">&nbsp;</td>
+
+		<!-- celda de titulo -->
+
+		<!-- celda de titulo -->
+    <td width="80%" class="tituloGrande1"><%= @command.title %>&nbsp;&nbsp;<span id="versionText1"><%= @command.version %></span><br>
+			<span class="tituloPequeno1"><%= @command.short_description %></span>
+		</td>
+		
+		
+	  <td>
+			<%= image_tag @command.small_command_logo, {:alt => "small-command-logo"}%>
+		</td>
+
+		<td>
+			<%= image_tag @command.small_corporate_logo, {:alt => "small-corporate-logo"} %>
+		</td>
+	</tr>
+</table> <!-- fin tabla titulo -->

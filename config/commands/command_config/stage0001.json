@@ -1,0 +1,165 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key. Be careful
+# with punctuation symbols, since this is a json file and
+# needs to keep its structure.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+# You can add as many stages as you want, they are shown
+# in alphabetical order.
+#
+########################################################
+
+{
+title:'SUBMIT FIlES',
+stage_type:'submit',
+enabled: true,
+
+input_params: [
+ {
+	input_type: 'text',
+	id:'job_name',
+	title:'Job name',
+	default_value: '',
+	required: false,
+	size:'30',
+	tooltip:'The job is assigned a number automatically, but you can provide a custom name for it',
+	validation_regex: '',
+	validation_error_msg: 'Must start with a or A',
+	standard_attribute: true,
+  save_in_presets: true,
+	autocomplete_values:'autocomplete1.json'
+	# autocomplete_values:['uno','dos','tres']
+ }
+# ,
+#  {
+# 	input_type: 'checkbox',
+# 	id:'checkbox1',
+# 	title:'etiqueta',
+# 	title_pos:'right',
+# 	default_value: 'true',
+# 	required: true,
+# 	tooltip:'The job is assigned a number automatically, but if you can provide a custom name for it'
+#  }
+,
+ {
+	input_type: 'separator',
+	title:'Input files'
+ }
+,
+ {
+	input_type: 'file',
+	id:'sequence_file',
+	save_as:'seq.fasta',
+	title:'Sequences (fasta)',
+	default_value: '',
+	required: false,
+	tooltip:'Select a sequence file in fasta format'
+ }
+,
+ {
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'file',
+	id:'quality_file',
+	save_as:'seq.qual',
+	title:'Quality file',
+	default_value: '',
+	required: false,
+	tooltip:'Quality file is used by cap3 for, bla bla bla Quality file is used by cap3 for, bla bla bla Quality file is used by cap3 for, bla bla bla'
+ }
+,
+ {
+	input_type: 'file',
+	id:'constraints_file',
+	save_as:'sequences.cons',
+	title:'Constraints file',
+	default_value: '',
+	required: false,
+	tooltip:'The constraints file is used by cap3 for, bla bla bla'
+ }
+,
+ {
+	input_type: 'file',      
+	id:'clipping_file',
+	save_as:'sequences.clip',
+	title:'Clipping file',
+	default_value: '',
+	required: false,
+	tooltip:'The clipping file is used by cap3 to adjust, bla bla bla'
+ }
+,
+ {
+	input_type: 'separator'
+ }
+# ,
+#  {
+# 	input_type: 'radio',
+# 	id:'radio1',
+# 	title:'Radio 1',
+# 	default_value: 'valor1',
+# 	values: {'texto1':'valor1',
+# 					 'texto2':'valor2',
+# 					 'texto3':'valor3'}
+# 					,
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+# ,
+#  {
+# 	input_type: 'radio',
+# 	id:'radio2',
+# 	title:'Radio 2',
+# 	default_value: 'valor2',
+# 	values: {'texto de un radio':'valor1',
+# 					 'texto del radio 2':'valor2',
+# 					 'texto del radio 3':'valor3'}
+# 					,
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+# ,
+#  {
+# 	input_type: 'popup',
+# 	id:'pop1_popup',
+# 	title:'Popup 1',
+# 	default_value: 'valor3',
+# 	values: {'texto1':'valor1',
+# 					 'texto2':'valor2',
+# 					 'texto3':'valor3'}
+# 					,
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+# ,
+#  {
+# 	input_type: 'popup',
+# 	id:'pop1_popup',
+# 	title:'Popup 1',
+# 	default_value: 'valor3',
+# 	values: 'popup1_values.json',
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+],
+# external_command:'ls -l > input_files.txt',
+command_list:[
+							{
+								required_files:[],
+								command:'cp seq.fasta f2'
+							}
+							,
+							{
+								required_files:['f2'],
+								command:'ls -al > out.txt'
+							}
+						 ]
+,
+# $CAP3_EXE, $fileDest, $userEmail, $runidcgi, $args, $jobName, $real_filename,"QUICKINFO"
+use_queue_system:false
+}

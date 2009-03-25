@@ -1,0 +1,92 @@
+# Populates a table with one row for each job in @joblist
+
+res ='<table width="100%" cellspacing="0" cellpadding="2" border="0" class="jobListTable"><thead>'
+
+if !@joblist.get_titles.empty?
+                     
+  res +=  '<td width="10%">Job name</td>'
+
+ for col in @joblist.get_titles
+   # puts col.to_json
+   res +=  '<td width="'+col['width']+'">'+col['title']+'</td>'
+ end
+ 
+ res += '<td>'+ link_to_remote("Refresh", :url => {:controller => 'joblists', :action => 'get_joblist'}) +'</td>'
+ 
+ res += '</thead><tbody>'
+ 
+ row=0
+
+ if !@joblist.get_data.empty?
+
+   for job in @joblist.get_data
+     row=row+1
+     
+     className='even' if ((row % 2) == 0)
+     className='odd' if ((row % 2) != 0)
+          
+     res += '<tr class="'+className+'" id="'+job['job_id']+'">'
+     
+     # add jobname with link
+     res +=  '<td width="10%">' + link_to_remote(job['job_name_field'],:url => {:controller => 'jobs', :action=>'show',:id=>job['job_id']} ) + '</td>'
+     
+
+     # for each title
+     for col in @joblist.get_titles
+       
+       # determine if it is a input field
+       is_field=''
+       if !col['calculated']
+         is_field='_field'
+       end
+       
+       # get width
+       width = ''
+       if col['width']
+         width = 'width="' +col['width']+ '"'
+       end
+       
+       # get value
+       value = ''
+       if job[col['field']+is_field]
+          value = job[col['field']+is_field]
+       end
+       
+       #add tooltip from field if necessary
+       if col['tooltip_field']
+         tool_is_field=''
+         if !col['tooltip_calculated']
+           tool_is_field='_field'
+         end
+            
+         tooltip_text = job[col['tooltip_field']+tool_is_field]
+         if tooltip_text
+           value += '&nbsp;&nbsp;' + image_tag("help.gif",:onmouseover=>"Tip('"+tooltip_text+"')", :onmouseout=>"UnTip()")+'&nbsp;'  
+         end
+         
+         
+       end
+       
+       res +=  '<td '+width+'>' + value + '</td>'
+     end
+     
+     res +=  '<td width="1%">' + link_to_remote(image_tag("borrar.png", {:alt => "Delete file", :border => "0" }),:url => {:controller => 'jobs', :action=>'delete', :id=>job['job_id']}) + '</td>'
+
+     res += '</tr>'
+
+     # job['stop_polling']=true
+     # 
+     # stop_polling = job['stop_polling'] ||= false
+     # 
+     # if stop_polling
+     #   res += '<script>joblist_poller.stop();</script>'
+     # end
+   end
+ end
+ 
+ # puts "res:",res
+end
+
+page['joblist_div'].replace_html(res)
+
+

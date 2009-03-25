@@ -1,0 +1,38 @@
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+	<tr><td>		
+	<%= render :partial => 'program_title' %>
+	</td></tr>
+	
+	<!-- row separador -->
+	<tr class="separadorH"><td></td></tr>
+
+
+<!-- row menu 1 -->
+<tr id="wellcomeTR">
+	<!-- <td class="menuRow"> --> <!-- celda menu1 -->
+	<td>
+    <%= render :partial => 'welcome_bar' %>
+	</td> <!-- fin celda menu1 -->
+</tr> <!-- fin row menu 1 -->
+
+
+<!-- ===================== SUBMIT JOB ================== -->
+                          	
+	<%= add_row_separator %>
+	
+	<%= add_toggle_row 'SUBMIT','SUBMIT JOB','input_file_row' %>
+	
+	<%= add_row_separator %>
+	
+	<%= add_toggle_row 'JOBLIST','JOB LIST','joblist_row', 'joblist_poller' %>
+
+	<%= add_row_separator %>
+	
+	<%= add_toggle_row 'RESULTS','RESULTS','results_row' %>
+
+	<%= add_row_separator %>
+	
+</table>
+

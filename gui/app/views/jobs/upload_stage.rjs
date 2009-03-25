@@ -1,0 +1,84 @@
+
+# RJS file to update page with ajax
+
+
+# first remove previous errors, if any
+@command.input_params_for_stage(session[:current_stage]).each do |ui_params|
+  
+  if !ui_params.is_separator
+     page[ui_params.field_error_name].replace_html('')
+     
+     # page['upload_'+p['id']+'_field'].removeClassName('fieldWithErrors')
+     
+  end
+  
+end
+
+# if (@previous_errors!=nil) and (!@previous_errors.empty? )
+# 
+#       @previous_errors.keys.each do |k|
+#         page[k+'_error'].replace_html('')
+#         # page[k+'_error'].visual_effect :highlight
+# 
+#         # page['upload_'+k].removeClassName('fieldWithErrors')
+#         
+#         # page['upload_'+k].visual_effect :highlight
+#         
+#       end
+#   
+#   
+#   
+# end
+
+
+ if !@errors.empty?  # there are errors
+ 
+      @errors.keys.each do |k|
+        page[k+'_error'].replace_html(@errors[k])
+        # page[k+'_error'].visual_effect :highlight
+
+        page[k].addClassName('fieldWithErrors')
+        
+        # page['upload_'+k].visual_effect :highlight
+        
+      end
+ 
+      page['errorStatusInfo'].replace_html('There are errors in some fields')
+                                                      
+      # TODO - Ver si se puede evitar que lo muestre si ya estaba
+      
+      page['okStatusInfoDiv'].visual_effect :fade
+        # :blind_up
+      page['errorStatusInfoDiv'].visual_effect :appear
+        # :blind_down
+ 
+ else # No errors
+     
+     session[:current_stage]=@command.next_stage(session[:current_stage])
+
+     if session[:current_stage]==nil
+          session[:current_stage] = @command.get_stage_names.first
+     end
+     
+   
+     page['okStatusInfo'].replace_html('Upload done')
+
+     # page['informationDIV'].visual_effect :appear
+
+     page['errorStatusInfoDiv'].visual_effect :fade
+     page['okStatusInfoDiv'].visual_effect :appear
+      
+      page['stageFormDIV'].visual_effect :blind_up, :duration => 1
+
+      page.delay(1.1) do
+        page['stageFormDIV'].replace_html :partial => 'stage_form'
+        # page.delay(0.3) do 
+          page['stageFormDIV'].visual_effect :blind_down, :duration => 2, :queue => 'end'
+        # end
+      end
+      
+
+      # page['formFileUploadDIV'].visual_effect :blind_up
+      # page['formRunDIV'].visual_effect :blind_down
+ end
+ 

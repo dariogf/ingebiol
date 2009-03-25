@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller.action_name %></title>
+
+	<!-- style sheet -->
+  <%= stylesheet_link_tag "cssSCBI" %>
+
+  <%# stylesheet_link_tag "tooltips" %>          
+
+	<!-- AJAX framework -->
+	<%= javascript_include_tag :defaults %>
+		                                        
+	<!-- Round rectangles -->
+	<%= javascript_include_tag "other/rounded" %>
+
+	<%= javascript_include_tag "other/common" %>
+	<%# javascript_include_tag "other/tooltips" %>
+	
+
+	
+	<script type="text/javascript" charset="utf-8">
+		function miToggle(element,statusImg,t,poller_to_control) {
+			var e = $(element);
+			var img = $(statusImg);
+
+			if (e.visible()) {
+				e.visualEffect('BlindUp',{duration:t});
+				img.src = '<%= image_path("closedTriangle.png") %>'
+				if (poller_to_control){
+					poller_to_control.stop();
+				}
+
+				
+			} else {
+				e.visualEffect('BlindDown',{duration:t});
+		    img.src = '<%= image_path("openTriangle.png") %>'
+		    if (poller_to_control){
+					poller_to_control.registerCallback();
+					poller_to_control.execute();
+					
+				}
+			}
+		}
+		
+	</script>
+	
+</head>
+
+<body>
+
+	  <%= javascript_include_tag "tooltip/wz_tooltip" %>
+	
+		<!-- tabla1 -->	
+		<table class="mainTable" width="100%" border="0" cellspacing="0">
+			
+			
+			
+			<!-- row menu cabecera pagina rojo-->
+			
+			<tr>
+				<td class="menuRow"> <!-- celda pie pagina -->
+				</td> <!-- fin pie pagina -->
+			</tr> <!-- fin row cabecera pagina -->
+			
+
+			
+			<!-- row margen superior -->
+  		<%= add_row_separator %>
+
+		  <tr><td><div id="mainDIV"> <%= yield %> </div></td></tr>
+		
+			<!-- row margen inferior -->
+			<%= add_row_separator %>
+				
+			<!-- row menu pie pagina rojo-->
+			<tr>
+				<td class="menuRow"> <!-- celda pie pagina -->
+
+					<span id="contactLink">
+						<%= @command.copyright %>
+						&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						<a target="_blank" href="<%= @command.contact_url %>">Contact</a>
+						&nbsp;&nbsp;&nbsp;
+					</span>
+
+				</td> <!-- fin pie pagina -->
+			</tr> <!-- fin row pie pagina -->
+
+			<!-- row pie pagina verde -->
+			<%= add_row_separator %>
+			
+		</table> <!-- fin tabla1 -->
+		
+		<!-- preload images -->
+		
+	</body>
+	
+	
+	<!-- hace el div redondo -->
+	<script type="text/javascript">
+		Rounded('rounded', 6, 6);
+		Rounded('tabRounded', 10, 10,0,0);
+	</script>
+
+</html>
