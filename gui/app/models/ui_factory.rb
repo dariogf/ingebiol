@@ -46,13 +46,13 @@ class UiFactory
     
     res = {}
     
-    
     # get common params for stage
-    res['title']=stage_params['title']
-    res['stage_type']=stage_params['stage_type']
-    res['enabled']=stage_params['enabled']
-    res['command_list']=stage_params['command_list']
-    res['use_queue_system']=stage_params['use_queue_system']
+    res['title']=stage_params['title'] ||= 'TITLE'
+    res['stage_type']=stage_params['stage_type'] ||= 'submit'
+    res['enabled']=stage_params['enabled'] ||= true
+    res['command_list']=stage_params['command_list'] ||= []
+    res['use_queue_system']=stage_params['use_queue_system'] ||= false
+    res['user_presets']=stage_params['user_presets'] ||= false
     
     # get input params
     elems = []
