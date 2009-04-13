@@ -33,9 +33,6 @@ input_params: [
 	validation_error_msg: 'Must start with a or A',
 	standard_attribute: true,
 	save_in_presets: true
-# ,
-# autocomplete_values:'autocomplete1.json',
-# autocomplete_values:['uno','dos','tres']
 }
 ,
  {
@@ -66,10 +63,10 @@ input_params: [
 	input_type: 'file',
 	id:'xml_file454',
 	save_as:'pname_traceinfo_in.454.xml',
-	title:'Trace info 454 (xml)',
+	title:'Trace info 454 (XML)',
 	default_value: '',
 	required: false,
-	tooltip:'Select a sequence file in fasta format'
+	tooltip:'Select a trace info file in XML format'
  }
 ,
  {
@@ -80,51 +77,41 @@ input_params: [
 	input_type: 'popup',
 	id:'pop1_popup',
 	command_switch:'-job=%s',
-	title:'Opciones ensamblaje',
+	title:'Assembly methods',
 	default_value: 'valor3',
-	values: {'Esbozo_454':'denovo,genome,draft,454',
-					 'Esbozo_sanger/454':'denovo,genome,draft,sanger,454',
+	values: {'Draft_454':'denovo,genome,draft,454',
+					 'Draft_sanger/454':'denovo,genome,draft,sanger,454',
 					 'Normal_454':'denovo,genome,normal,454',
 					'Normal_sanger/454':'denovo,genome,normal,sanger,454',
-					'Seguro_454':'denovo,genome,accurate,454',
-					'Seguro_sanger/454':'denovo,genome,normal,sanger,454'}
+					'Accurate_454':'denovo,genome,accurate,454',
+					'Accurate_sanger/454':'denovo,genome,normal,sanger,454'}
 					,
 	required: true,
-	tooltip:'Un tip'
+	tooltip:'You can choose between three different quality grades (draft, normal, accurate) and mix different sequencing technologies (454 and sanger)'
  }
 ,
   {
 	input_type: 'checkbox',
 	id:'checkbox1',
 	command_switch:'-highlyrepetitive',
-	title:'ADN altamente repetitivo',
+	title:'Highly repetitive DNA',
 	title_pos:'right',
 	default_value: 'false',
 	required: false,
-	tooltip:'The job is assigned a number automatically, but if you can provide a custom name for it'
+	tooltip:'A modifier switch for genome date that is deemed to be highly repetitive. The assemblies will run slower due to mor iterative cycles to resolve nasty repeats'
  }
 ,
  {
 	input_type: 'radio',
 	id:'radio1',
 	command_switch:'%s',
-	title:'Presencia archivo xml',
+	title:'File XML present',
 	default_value: '-notraceinfo',
 	values: {'No':'-notraceinfo',
 					 'Si':'-LR:mxti=yes - FN:xtii=pname_traceinfo_in.454.xml'},
 	required: true,
-	tooltip:'Un tip'
+	tooltip:'File XML present'
  }
-# ,
-#  {
-# 	input_type: 'popup',
-# 	id:'pop1_popup',
-# 	title:'Popup 1',
-# 	default_value: 'valor3',
-# 	values: 'popup1_values.json',
-# 	required: true,
-# 	tooltip:'Un tip'
-#  }
 ],
 command_list:[
 							{
@@ -133,8 +120,6 @@ command_list:[
 							}
 						 ]
 ,
-# $CAP3_EXE, $fileDest, $userEmail, $runidcgi, $args, $jobName, $real_filename,"QUICKINFO"
-
 create_results_dir:['output'],
 use_queue_system:true
 }

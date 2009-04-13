@@ -33,9 +33,6 @@ input_params: [
 	validation_error_msg: 'Must start with a or A',
 	standard_attribute: true,
 	save_in_presets: true
-# ,
-# autocomplete_values:'autocomplete1.json',
-# autocomplete_values:['uno','dos','tres']
 }
 ,
  {
@@ -63,13 +60,13 @@ input_params: [
 }
 ,
 {
-input_type: 'file',
-id:'xml_file454',
+	input_type: 'file',
+	id:'xml_file454',
 	save_as:'xml.pname',
-	title:'Trace info 454 (xml)',
+	title:'Trace info 454 (XML)',
 	default_value: '',
 	required: true,
-	tooltip:'Select a sequence file in fasta format'
+	tooltip:'Select a trace info file in XML format'
 }
 ,
  {
@@ -80,13 +77,13 @@ id:'xml_file454',
 	input_type: 'popup',
 	id:'pop1_popup',
 	command_switch:'-unitigger=%s',
-	title:'Assembly options',
+	title:'Assembly methods',
 	default_value: 'valor3',
 	values: {'Unitigger':'utg',
 					 'Best Over Graph':'bog'}
 					,
 	required: true,
-	tooltip:'Un tip'
+	tooltip:'You can choose between two different assembly methods: utg  and bog (recommended for 454 data).'
  }
 ,
 {
@@ -95,7 +92,7 @@ id:'xml_file454',
 	command_switch:'-utgGenomeSize=%s',
 	title:'Genome Size (bp)',
 	required: true,
-	tooltip:'un tooltip',
+	tooltip:'The genome size, in bases.',
 	default_value: '1000',
 	validation_lower_limit:'1',
 	validation_upper_limit:'23000'
@@ -109,7 +106,7 @@ id:'xml_file454',
 	title_pos:'right',
 	default_value: 'false',
 	required: false,
-	tooltip:'The job is assigned a number automatically, but if you can provide a custom name for it'
+	tooltip:'Create an ACE file for the sacffolds'
  }
 ,
   {
@@ -120,30 +117,8 @@ id:'xml_file454',
 	title_pos:'right',
 	default_value: 'false',
 	required: false,
-	tooltip:'The job is assigned a number automatically, but if you can provide a custom name for it'
+	tooltip:'Create an AGP file for the sacffolds'
  }
-#,
-#{
-#	input_type: 'radio',
-#	id:'radio1',
-#	command_switch:'%s',
-#	title:'Presencia archivo xml',
-#	default_value: '-notraceinfo',
-#	values: {'No':'-notraceinfo',
-#					 'Si':'-LR:mxti=yes - FN:xtii=pname_traceinfo_in.454.xml'},
-#	required: true,
-#	tooltip:'Un tip'
-# }
-# ,
-#  {
-# 	input_type: 'popup',
-# 	id:'pop1_popup',
-# 	title:'Popup 1',
-# 	default_value: 'valor3',
-# 	values: 'popup1_values.json',
-# 	required: true,
-# 	tooltip:'Un tip'
-#  }
 ],
 command_list:[
 							{
@@ -153,12 +128,10 @@ command_list:[
 							,
 							{
 								required_files:['pname.frg'],
-								command:'/usr/Darwin-i386/bin/runCA-OBT -d=pname_salida -project=pname $COMMAND_SWITCHES pname.frg '
+								command:'runCA-OBT -d=pname_salida -project=pname $COMMAND_SWITCHES  pname.frg'
 							}
 						 ]
 ,
-# $CAP3_EXE, $fileDest, $userEmail, $runidcgi, $args, $jobName, $real_filename,"QUICKINFO"
-
 create_results_dir:['output'],
 use_queue_system:false
 }

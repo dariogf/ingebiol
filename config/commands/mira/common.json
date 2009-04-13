@@ -19,7 +19,7 @@ title:"MIRA2 WEB"
 ,
 
 # And a long one
-	long_description:"<br><p>A longer description for the command. May include html tags </p> <p> like paragraphs to separate lines </p>"
+	long_description:"<br><p>DNA sequence assembly program</p> <p> like paragraphs to separate lines </p>"
 ,
  
 # Command version

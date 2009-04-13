@@ -53,8 +53,12 @@ class UiEditObject < UiObject
     res = true
     
     value = field_value(web_params)
-
-    if @required and value == ''
+    
+    # if !value.nil?
+    #       puts "required value:"+id+'-'+value+'-'
+    # end
+    
+    if @required and (value == '' or value.nil?)
 
       if @required_error_msg != ''
         errors[field_name] = @required_error_msg
