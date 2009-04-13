@@ -13,12 +13,20 @@ class SessionsController < ApplicationController
     
     # set current command
     
-    puts "params:"+params.to_yaml
+    # puts "params:"+params.to_yaml
     
     session[:current_command] = params[:id] ||= DEFAULT_COMMAND
     
     # load params of command from file
-    @command = Command.new(session[:current_command])
+    begin
+      flash[:error] = ''
+      @command = Command.new(session[:current_command])
+    rescue ActiveSupport::JSON::ParseError
+      # raise
+      flash[:error] += "<br>Invalid json in configuration files."
+      # flash[:error] += "<br>Error in json"
+      render :action => 'errors'
+    end
     
   end
                          

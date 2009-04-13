@@ -80,10 +80,12 @@
 				<td class="menuRow"> <!-- celda pie pagina -->
 
 					<span id="contactLink">
+						<% if @command then %>
 						<%= @command.copyright %>
 						&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 						<a target="_blank" href="<%= @command.contact_url %>">Contact</a>
 						&nbsp;&nbsp;&nbsp;
+						<% end %>
 					</span>
 
 				</td> <!-- fin pie pagina -->

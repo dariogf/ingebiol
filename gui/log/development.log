@@ -13,3 +13,319 @@ Rendering template within layouts/application
 Rendering sessions/new
 Rendered sessions/_login_box (68.6ms)
 Completed in 153ms (View: 84 | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:44:30) [GET]
+  Parameters: {"id"=>"cabog"}
+
+ActiveSupport::JSON::ParseError (Invalid JSON string):
+  app/models/base_file_model.rb:15:in `get_json_data'
+  app/models/command.rb:34:in `initialize'
+  app/models/command.rb:31:in `each'
+  app/models/command.rb:31:in `initialize'
+  app/controllers/sessions_controller.rb:21:in `new'
+  app/controllers/sessions_controller.rb:21:in `new'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:50:35) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.copyright) on line #83 of app/views/layouts/application.html.erb:
+80: 				<td class="menuRow"> <!-- celda pie pagina -->
+81: 
+82: 					<span id="contactLink">
+83: 						<%= @command.copyright %>
+84: 						&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+85: 						<a target="_blank" href="<%= @command.contact_url %>">Contact</a>
+86: 						&nbsp;&nbsp;&nbsp;
+
+    app/views/layouts/application.html.erb:83
+    app/controllers/sessions_controller.rb:24:in `new'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:52:39) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 17ms (View: 7 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:53:59) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 20ms (View: 10 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:58:05) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:58:24) [GET]
+  Parameters: {"id"=>"cabog"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/sessions_controller.rb:24:in `new'
+
+Rendered rescues/_trace (27.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:58:53) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 15ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:58:58) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 58ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 12:59:08) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:02:36) [GET]
+  Parameters: {"id"=>"cabog"}
+
+NameError (undefined local variable or method `flash' for #<Command:0x1a027dc>):
+  app/models/base_file_model.rb:20:in `get_json_data'
+  app/models/command.rb:34:in `initialize'
+  app/models/command.rb:31:in `each'
+  app/models/command.rb:31:in `initialize'
+  app/controllers/sessions_controller.rb:23:in `new'
+  app/controllers/sessions_controller.rb:23:in `new'
+
+Rendered rescues/_trace (29.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:03:05) [GET]
+  Parameters: {"id"=>"cabog"}
+
+NameError (undefined local variable or method `session' for #<Command:0x11e39ac>):
+  app/models/base_file_model.rb:20:in `get_json_data'
+  app/models/command.rb:34:in `initialize'
+  app/models/command.rb:31:in `each'
+  app/models/command.rb:31:in `initialize'
+  app/controllers/sessions_controller.rb:23:in `new'
+  app/controllers/sessions_controller.rb:23:in `new'
+
+Rendered rescues/_trace (76.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:11:12) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/invalid_json
+Completed in 17ms (View: 7 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:11:54) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 17ms (View: 6 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:12:21) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:13:17) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:13:23) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:13:37) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:13:41) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 55ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:15:03) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:16:08) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:16:48) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:17:02) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 56ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:17:38) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:17:41) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:18:42) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:18:46) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 55ms (View: 45 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:18:59) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:19:24) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 16ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:19:35) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:20:06) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:20:36) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:20:59) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:21:40) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:22:13) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 12ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:22:14) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 53ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:22:26) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 15ms (View: 5 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:22:32) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/errors
+Completed in 13ms (View: 2 | 200 OK [http://localhost/session/new/cabog]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-13 13:23:16) [GET]
+  Parameters: {"id"=>"cabog"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (2.2ms)
+Completed in 83ms (View: 57 | 200 OK [http://localhost/session/new/cabog]
