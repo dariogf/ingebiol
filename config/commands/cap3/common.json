@@ -35,7 +35,7 @@ version:'v 0.9a1'
 ,
 
 # Command logo name, file must be in public/images
-	command_logo:"iconAMSin.png"
+	command_logo:"ingebiolBig.png"
 ,
 
 # Small corporate logo name, file must be in public/images
@@ -43,7 +43,7 @@ version:'v 0.9a1'
 ,
 
 # Small command logo name, file must be in public/images
-	small_command_logo:"amicon.png"
+	small_command_logo:"ingebiolSmall.png"
 ,
 
 # Copyright

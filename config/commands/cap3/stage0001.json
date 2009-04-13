@@ -147,7 +147,13 @@ input_params: [
 # 	tooltip:'Un tip'
 #  }
 ],
-external_command:'ls -l > input_files.txt',
+command_list:[
+							{
+								required_files:[],
+								command:'~mira/programs/x86_64/bin/mira -fasta -project=pname $COMMAND_SWITCHES'
+							}
+						 ]
+,
 # $CAP3_EXE, $fileDest, $userEmail, $runidcgi, $args, $jobName, $real_filename,"QUICKINFO"
 
 create_results_dir:['output'],

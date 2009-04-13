@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
     # puts "params:"+params.to_yaml
     
     session[:current_command] = params[:id] ||= DEFAULT_COMMAND
+    puts "current_command:" +session[:current_command]
     
     # load params of command from file
     begin
