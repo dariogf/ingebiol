@@ -391,7 +391,7 @@ class Command < BaseFileModel
         
         puts "execmd:"+cmd
         
-        f.puts(('  ' * ntabs) + cmd + ';')
+        f.puts(('  ' * ntabs) + cmd + '')
         
         
         if (!required_files.nil?) and (!required_files.empty?)

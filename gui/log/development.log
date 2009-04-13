@@ -2747,3 +2747,669 @@ Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:46:15)
   Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
 Rendering joblists/get_joblist
 Completed in 171ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:46:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 174ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:46:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:46:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:46:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:47:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:47:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:47:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:47:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:47:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:47:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:48:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:48:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:48:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 171ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:48:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:48:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:48:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:49:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:49:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 176ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:49:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 171ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:49:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 173ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:49:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:49:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:50:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:50:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:50:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 171ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:50:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:50:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:50:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:51:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:51:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:51:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:51:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:51:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:51:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:52:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:52:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:52:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:52:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:52:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:52:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:53:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:53:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:53:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:53:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 171ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:53:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:53:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:54:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:54:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:54:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:54:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 174ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:54:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:54:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 171ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:55:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:55:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:55:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:55:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:55:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:55:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:56:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:56:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:56:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:56:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:56:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:56:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:57:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:57:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:57:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:57:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:57:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:57:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:58:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:58:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:58:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:58:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 172ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:58:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:58:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:59:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:59:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:59:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 172ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:59:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:59:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 14:59:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 176ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:00:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:00:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:00:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:00:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:00:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:00:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:01:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:01:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:01:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:01:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 168ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:01:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 167ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:01:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:02:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:02:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:02:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:02:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:02:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 171ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:02:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:03:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:03:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 172ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:03:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:03:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:03:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 167ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:03:55) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:04:05) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:04:15) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 183ms (View: 6 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:04:25) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 169ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:04:35) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-13 15:04:45) [POST]
+  Parameters: {"authenticity_token"=>"QavHG8d0fP9RH35iWAgiLvSBuv6bOTStfn4OxVA6ICM="}
+Rendering joblists/get_joblist
+Completed in 170ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
