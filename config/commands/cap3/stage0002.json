@@ -7,6 +7,8 @@ enabled:true,
 external_command:'/export/home_users/home/soft/bioperl/programs/cap3/cap3 seq.fasta $COMMAND_SWITCHES > output.txt',
 create_results_dir:['output'],
 use_queue_system: true,
+submit_command:'/usr/bin/qsub',
+sudo_command:'';
 user_presets: true,
 
 input_params : [

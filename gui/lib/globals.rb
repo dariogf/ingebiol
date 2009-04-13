@@ -9,9 +9,6 @@ require "#{CONFIG_PATH}/global/queue_system.rb"
 require "#{CONFIG_PATH}/global/ldap.rb"
 
 
-
-# QSUB_CMD = 'mate '
-
 class Numeric
   
   def to_exact_human

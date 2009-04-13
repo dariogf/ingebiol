@@ -121,5 +121,7 @@ command_list:[
 						 ]
 ,
 create_results_dir:['output'],
-use_queue_system:true
+use_queue_system:true,
+submit_command:'/usr/pbs/bin/qsuborig -q routex86',
+sudo_command:'/usr/bin/sudo -u bioperl'
 }

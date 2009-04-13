@@ -186,6 +186,22 @@ class Command < BaseFileModel
   end
   
   #-----------------------------------------
+  # Get the queue status for a stage
+  #-----------------------------------------
+  def sudo_command(stage)
+    return get_stage_data(stage,'sudo_command')
+  end
+  
+  #-----------------------------------------
+  # Get the queue status for a stage
+  #-----------------------------------------
+  def submit_command(stage)
+    return get_stage_data(stage,'submit_command')
+  end
+  
+  
+  
+  #-----------------------------------------
   # Get enable status for a stage
   #-----------------------------------------
   def stage_enabled(stage)
@@ -305,7 +321,7 @@ class Command < BaseFileModel
   #-----------------------------------------
   # 
   #-----------------------------------------
-  def self.exec_job_command(path, command_list, command_switches, job_id, queue)
+  def self.exec_job_command(path, command_list, command_switches, job_id, queue,submit_command,sudo_command)
 
     
     cmd_file = File.join(path,job_id+'.sh')
@@ -406,8 +422,11 @@ class Command < BaseFileModel
       
       # send with queue
       if queue
+        
+        sudo_command = sudo_command ||= QSUB_SUDO
+        submit_command = submit_command ||= QSUB_CMD
         # ojo de no poner comillas y que no ponga path al fichero
-        send_cmd = 'cd "' + path + '"; '+QSUB_SUDO+' '+QSUB_CMD+' '+File.basename(cmd_file)+''
+        send_cmd = 'cd "' + path + '"; '+sudo_command+' '+submit_command+' '+File.basename(cmd_file)+''
       else
         send_cmd = 'cd "' + path + '"; '+LOCAL_SUDO+' '+LOCAL_CMD+' '+File.basename(cmd_file)+''
       end

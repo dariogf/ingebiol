@@ -122,10 +122,12 @@ class JobsController < ApplicationController
       if @command.command_list(session[:current_stage])!=nil
         command_list = @command.command_list(session[:current_stage])
         use_queue_system = @command.use_queue_system(session[:current_stage])
+        submit_command = @command.submit_command(session[:current_stage])
+        sudo_command = @command.sudo_command(session[:current_stage])
 
         path = File.join(DATA_PATH,session[:current_command],session[:user_email],session[:current_job_id])
         
-        Command.exec_job_command(path,command_list,command_switches,session[:current_job_id],use_queue_system)
+        Command.exec_job_command(path,command_list,command_switches,session[:current_job_id],use_queue_system,submit_command,sudo_command)
       end
     
     end
