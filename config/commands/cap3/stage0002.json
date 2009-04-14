@@ -7,12 +7,12 @@ enabled:true,
 create_results_dir:['output'],
 use_queue_system: true,
 submit_command:'/usr/bin/qsub',
-sudo_command:'',
+sudo_command:'/usr/bin/sudo -u bioperl',
 user_presets: true,
 command_list:[
 							{
 								required_files:[],
-								command:'/export/home_users/home/soft/bioperl/programs/cap3/cap3 seq.fasta $COMMAND_SWITCHES > output.txt'
+								command:'~cap3/programs/x86_64/cap3 seq.fasta $COMMAND_SWITCHES > output.txt'
 							}
 						 ]
 ,

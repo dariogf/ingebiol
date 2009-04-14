@@ -26,6 +26,7 @@ class UiFile < UiEditObject
     if not @required
       res += ' + '
       img = 'image_tag("borrar.png", {:alt => "Delete file", :border => "0" })'
+      #img = '"&nbsp;reset&nbsp;"'
       res += 'link_to('+img+', "javascript:wipeField(\''+field_name+'\');")'
     end
         

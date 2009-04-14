@@ -16,57 +16,8 @@ enabled: true,
 params: [
  {
 	type: 'file',
-	file:'output.txt',
-	title:'Cap3 output',
-	tooltip:''
- }
-,
- {
-	type: 'file',
-	file:'seq.fasta',
-	title:'Original sequence file',
-	tooltip:''
- }
-,
- {
-	type: 'file',
-	file:'seq.fasta.cap.ace',
-	title:'ACE file',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.contigs',
-	title:'Contigs',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.contigs.links',
-	title:'Contigs links',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.contigs.qual',
-	title:'Contigs qual',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.info',
-	title:'Info',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.singlets',
-	title:'Singlets',
+	file:'results.zip',
+	title:'Results (results + info)',
 	tooltip:''
  }
 # ,
@@ -78,13 +29,13 @@ params: [
 # 	title:'codigo1',
 # 	tooltip:''
 #  }
-,
- {
-	type: 'command_output',
-	command:'grep -E "found|done|over" seq.fasta.cap.info',
-	title:'Command result',
-	tooltip:''
- }
+#,
+# {
+#	type: 'command_output',
+#	command:'grep -E "found|done|over" seq.fasta.cap.info',
+#	title:'Command result',
+#	tooltip:''
+# }
 # ,
 #  {
 # 	type: 'command_output',

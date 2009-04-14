@@ -40,6 +40,29 @@ input_params: [
  }
 ,
  {
+        input_type: 'popup',
+        id:'pop1_popup',
+        command_switch:'-job=%s',
+        title:'Assembly method',
+        default_value: 'valor3',
+        values: {'Draft_454':'denovo,genome,draft,454',
+                                         'Draft_sanger/454':'denovo,genome,draft,sanger,454',
+                                         'Normal_454':'denovo,genome,normal,454',
+                                        'Normal_sanger/454':'denovo,genome,normal,sanger,454',
+                                        'Accurate_454':'denovo,genome,accurate,454',
+                                        'Accurate_sanger/454':'denovo,genome,normal,sanger,454'}
+                                        ,
+        required: true,
+        tooltip:'You can choose between three different quality grades (draft, normal, accurate) and mix different sequencing technologies (454 and sanger)'
+ }
+
+,
+ {
+	input_type: 'separator',
+	title:'454 input files'
+ }
+,
+ {
 	input_type: 'file',
 	id:'fasta_file454',
 	save_as:'pname_in.454.fasta',
@@ -70,24 +93,42 @@ input_params: [
  }
 ,
  {
-	input_type: 'separator'
+        input_type: 'separator',
+	title: 'SANGER input files'
  }
 ,
  {
-	input_type: 'popup',
-	id:'pop1_popup',
-	command_switch:'-job=%s',
-	title:'Assembly methods',
-	default_value: 'valor3',
-	values: {'Draft_454':'denovo,genome,draft,454',
-					 'Draft_sanger/454':'denovo,genome,draft,sanger,454',
-					 'Normal_454':'denovo,genome,normal,454',
-					'Normal_sanger/454':'denovo,genome,normal,sanger,454',
-					'Accurate_454':'denovo,genome,accurate,454',
-					'Accurate_sanger/454':'denovo,genome,normal,sanger,454'}
-					,
-	required: true,
-	tooltip:'You can choose between three different quality grades (draft, normal, accurate) and mix different sequencing technologies (454 and sanger)'
+        input_type: 'file',
+        id:'fasta_fileSanger',
+        save_as:'pname_in.sanger.fasta',
+        title:'Sequences Sanger  (fasta)',
+        default_value: '',
+        required: false,
+        tooltip:'Select a sequence file in fasta format'
+ }
+,
+ {
+        input_type: 'file',
+        id:'qual_fileSanger',
+        save_as:'pname_in.sanger.fasta.qual',
+        title:'Qualities Sanger (fasta)',
+        default_value: '',
+        required: false,
+        tooltip:'Select a sequence file in fasta format'
+ }
+,
+ {
+        input_type: 'file',
+        id:'xml_fileSanger',
+        save_as:'pname_traceinfo_in.sanger.xml',
+        title:'Trace info Sanger (XML)',
+        default_value: '',
+        required: false,
+        tooltip:'Select a trace info file in XML format'
+ }
+,
+ {
+	input_type: 'separator'
  }
 ,
   {
@@ -108,7 +149,7 @@ input_params: [
 	title:'File XML present',
 	default_value: '-notraceinfo',
 	values: {'No':'-notraceinfo',
-					 'Si':'-LR:mxti=yes - FN:xtii=pname_traceinfo_in.454.xml'},
+					 'Yes':'-LR:mxti=yes -FN:xtii=pname_traceinfo_in.454.xml'},
 	required: true,
 	tooltip:'File XML present'
  }
@@ -118,10 +159,22 @@ command_list:[
 								required_files:[],
 								command:'~mira/programs/x86_64/bin/mira -fasta -project=pname $COMMAND_SWITCHES'
 							}
+							,
+	{	
+		required_files:[pname_d_info,pname_d_results],
+		command:'zip -r results.zip pname_d_info pname_d_results'
+
+	}
+	,
+	{
+	
+		required_files:[pname_d_log],
+		command:'rm -r pname_d_log'
+	}
 						 ]
 ,
 create_results_dir:['output'],
 use_queue_system:true,
-submit_command:'/usr/pbs/bin/qsuborig -q routex86',
+submit_command:'/usr/pbs/bin/qsub -q routex86',
 sudo_command:'/usr/bin/sudo -u bioperl'
 }

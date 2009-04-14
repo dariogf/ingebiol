@@ -11,7 +11,7 @@
 {
 
 # Write here the desired title for the command
-title:"MIRA2 WEB"
+title:"MIRA2"
 ,
 
 # Provide a short description
@@ -19,7 +19,8 @@ title:"MIRA2 WEB"
 ,
 
 # And a long one
-	long_description:"<br><p>DNA sequence assembly program</p> <p> like paragraphs to separate lines </p>"
+	long_description:"<br><p>MIRA2 (Mimicking Intelligent Read Assembly) is a software capable of calculating a de novo assembly from pyrosequencing (454 data)  and Sanger reads. This program rely on the overlap-layout-consensus approach, representing each read as a node and each detected overlap as an arch between the appropriate nodes.
+In addition, MIRA2 allows a hybrid assembly mixing  the Sanger and 454 reads.</p>"
 ,
  
 # Command version
