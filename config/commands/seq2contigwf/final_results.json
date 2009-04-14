@@ -17,7 +17,14 @@ params: [
  {
 	type: 'file',
 	file:'results.zip',
-	title:'Results (9-terminator)',
+	title:'Assembly results',
+	tooltip:''
+ }
+,
+ {
+	type: 'file',
+	file:'results_validation.zip',
+	title:'Validated results ',
 	tooltip:''
  }
 # ,

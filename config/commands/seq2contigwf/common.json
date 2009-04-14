@@ -11,16 +11,16 @@
 {
 
 # Write here the desired title for the command
-title:"CELERA ASSEMBLER"
+title:"Seq2Contig Workflow"
 ,
 
 # Provide a short description
-  short_description:"A WEB INTERFACE FOR CELERA"
+  short_description:"ASSEMBLY AND VALIDATION WORKFLOW"
 ,
 
 # And a long one
-	long_description:"<br><p>Celera Assember is a software capable of calculating a de novo assembly from pyrosequencing (454 data)  and Sanger reads. This program rely on the overlap-layout-consensus approach, representing each read as a node and each detected overlap as an arch between the appropriate nodes.
-The Celera  Assember is more aggresive than other software at  repeat resolution.</p>"
+	long_description:"<br><p>Seq2ContigWF is a workflow that uses <b>AMOS</b> utilities to prepare sequences for the <b>Celera Assember</b> and then validates the resulting contigs with <b>AMOS Validate</b>.
+The Celera Assember has been chosen by its aggresivity when resolving repetitive sequences.</p>"
 ,
  
 # Command version
