@@ -7,7 +7,7 @@ if !@joblist.get_titles.empty?
   res +=  '<td width="10%">Job name</td>'
 
  for col in @joblist.get_titles
-   # puts col.to_json
+   # puts col.to_pretty_json
    res +=  '<td width="'+col['width']+'">'+col['title']+'</td>'
  end
  

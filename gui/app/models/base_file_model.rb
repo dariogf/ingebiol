@@ -12,8 +12,10 @@ class BaseFileModel
     text=text.grep(/^\s*[^#]/).to_s
     
     # decode json
-    data = ActiveSupport::JSON.decode(text)
+    # data = ActiveSupport::JSON.decode(text)
+    data = JSON.parse(text)
 
+    
     return data
   end
   #-----------------------------------------
@@ -28,7 +30,9 @@ class BaseFileModel
     text=text.grep(/^\s*[^#]/).to_s
     
     # decode json
-    data = ActiveSupport::JSON.decode(text)
+    # data = ActiveSupport::JSON.decode(text)
+    # data = ActiveSupport::JSON.decode(text)
+    data = JSON.parse(text)
 
     return data
   end

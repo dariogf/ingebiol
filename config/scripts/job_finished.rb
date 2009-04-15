@@ -22,4 +22,4 @@ res['job_finished'] = job_size
 
 
 # return results to json format
-puts res.to_json
+puts res.to_pretty_json

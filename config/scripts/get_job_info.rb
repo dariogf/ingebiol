@@ -93,7 +93,7 @@ get_size(job_folder,res)
 job_status(job_folder,res)
 
 # return results to json format
-puts res.to_json
+puts res.to_pretty_json
 
 # puts JSON.pretty_generate(res)
 

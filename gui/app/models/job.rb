@@ -20,7 +20,7 @@ class Job  < BaseFileModel
       # open file an write merged values 
 
       f = File.new(File.join(job_path),'w')
-      f.write std_attr.merge(attrs).to_json
+      f.write std_attr.merge(attrs).to_pretty_json
       f.close
       
   end    

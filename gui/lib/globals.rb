@@ -8,7 +8,31 @@ require "#{CONFIG_PATH}/global/globals.rb"
 require "#{CONFIG_PATH}/global/queue_system.rb"
 require "#{CONFIG_PATH}/global/ldap.rb"
 
+# ================= JSON encoding ==============
+class Object
+  
+  #-----------------------------------------
+  # 
+  #-----------------------------------------
+  def to_pretty_json
+    return JSON.pretty_generate(self)
+  end
+  
+end
 
+class String
+  
+   #-----------------------------------------
+   # 
+   #-----------------------------------------
+   def from_json
+     return JSON.parse(self)
+   end
+end
+
+
+
+# ================= Numeric ==============
 class Numeric
   
   def to_exact_human
