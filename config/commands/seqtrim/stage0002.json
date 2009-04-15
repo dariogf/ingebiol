@@ -4,10 +4,18 @@
 title:'RUN JOB',
 stage_type:'submit',
 enabled:true,
-external_command:'/export/home_users/home/soft/bioperl/programs/cap3/cap3 seq.fasta $COMMAND_SWITCHES > output.txt',
 create_results_dir:['output'],
-use_queue_system:true,
-
+use_queue_system: true,
+submit_command:'/usr/bin/qsub',
+sudo_command:'/usr/bin/sudo -u bioperl',
+user_presets: true,
+command_list:[
+							{
+								required_files:[],
+								command:'~cap3/programs/x86_64/cap3 seq.fasta $COMMAND_SWITCHES > output.txt'
+							}
+						 ]
+,
 input_params : [
  {
 	input_type: 'integer',
