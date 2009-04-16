@@ -29,17 +29,18 @@ class Command < BaseFileModel
     
     # populate stage_data
     @stage_list_files.each do |stage|
-                                                   
+      
       # decode json
       data = get_json_data(File.join(@current_command_path,stage))
       
-      # save stage name without extension
-      stage_name=File.basename(stage,File.extname(stage))
-      @stage_list_names.push stage_name
-      
-      
-      # save data in hash with stage name 
-      @stage_data[stage_name] = UiFactory.create_objects(data)
+      if data['enabled'] != false
+        # save stage name without extension
+        stage_name=File.basename(stage,File.extname(stage))
+        @stage_list_names.push stage_name
+        
+        # save data in hash with stage name 
+        @stage_data[stage_name] = UiFactory.create_objects(data)
+      end
       
       # puts "STAGE:"+stage_name+";\n"+@stage_data[stage_name].to_yaml
       
@@ -389,7 +390,6 @@ class Command < BaseFileModel
         #   cmd = cmd.gsub(COMMAND_SWITCHES_TAG,command_switches)
         # end
         
-        puts "execmd:"+cmd
         
         f.puts(('  ' * ntabs) + cmd + '')
         
@@ -423,15 +423,15 @@ class Command < BaseFileModel
       # send with queue
       if queue
         
-        sudo_command = sudo_command ||= QSUB_SUDO
-        submit_command = submit_command ||= QSUB_CMD
+        sd_cmd = sudo_command ||= QSUB_SUDO
+        sm_cmd = submit_command ||= QSUB_CMD
         # ojo de no poner comillas y que no ponga path al fichero
-        send_cmd = 'cd "' + path + '"; '+sudo_command+' '+submit_command+' '+File.basename(cmd_file)+''
+        send_cmd = 'cd "' + path + '"; '+sd_cmd+' '+sm_cmd+' '+File.basename(cmd_file)+''
       else
         send_cmd = 'cd "' + path + '"; '+LOCAL_SUDO+' '+LOCAL_CMD+' '+File.basename(cmd_file)+''
       end
       
-      # puts "cmd_to_send: " + send_cmd
+      puts "cmd_to_send: " + send_cmd
 
       if !system(send_cmd)
          puts "error en el system"

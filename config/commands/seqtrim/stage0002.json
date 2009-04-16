@@ -3,7 +3,7 @@
 {
 title:'RUN JOB',
 stage_type:'submit',
-enabled:true,
+enabled:false,
 create_results_dir:['output'],
 use_queue_system: true,
 submit_command:'/usr/bin/qsub',
