@@ -6,7 +6,7 @@ stage_type:'submit',
 enabled:true,
 create_results_dir:['output'],
 use_queue_system: true,
-submit_command:'/usr/bin/qsub',
+submit_command:'/usr/bin/qsub -q routex86',
 sudo_command:'/usr/bin/sudo -u bioperl',
 user_presets: true,
 command_list:[
