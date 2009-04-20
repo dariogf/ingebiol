@@ -85,18 +85,18 @@ input_params: [
 	required: true,
 	tooltip:'You can choose between two different assembly methods: utg  and bog (recommended for 454 data).'
  }
-,
-{
-	input_type: 'integer',
-	id:'a',
-	command_switch:'utgGenomeSize=%s',
-	title:'Genome Size (bp)',
-	required: true,
-	tooltip:'The genome size, in bases.',
-	default_value: '4000000',
-	validation_lower_limit:'1',
-	validation_upper_limit:''
-}
+#,
+#{
+#	input_type: 'integer',
+#	id:'a',
+#	command_switch:'utgGenomeSize=%s',
+#	title:'Genome Size (bp)',
+#	required: true,
+#	tooltip:'The genome size, in bases.',
+#	default_value: '4000000',
+#	validation_lower_limit:'1',
+#	validation_upper_limit:''
+#}
 ,
   {
 	input_type: 'checkbox',

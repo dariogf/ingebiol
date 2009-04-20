@@ -81,16 +81,7 @@ input_params: [
 	required: true,
 	tooltip:'Select a sequence file in fasta format'
  }
-,
- {
-	input_type: 'file',
-	id:'xml_file454',
-	save_as:'pname_traceinfo_in.454.xml',
-	title:'Trace info 454 (XML)',
-	default_value: '',
-	required: false,
-	tooltip:'Select a trace info file in XML format'
- }
+
 ,
  {
         input_type: 'separator',
@@ -116,16 +107,7 @@ input_params: [
         required: false,
         tooltip:'Select a sequence file in fasta format'
  }
-,
- {
-        input_type: 'file',
-        id:'xml_fileSanger',
-        save_as:'pname_traceinfo_in.sanger.xml',
-        title:'Trace info Sanger (XML)',
-        default_value: '',
-        required: false,
-        tooltip:'Select a trace info file in XML format'
- }
+
 ,
  {
 	input_type: 'separator'
@@ -151,7 +133,27 @@ input_params: [
 	values: {'No':'-notraceinfo',
 					 'Yes':'-LR:mxti=yes -FN:xtii=pname_traceinfo_in.454.xml'},
 	required: true,
-	tooltip:'File XML present'
+	tooltip:'XML file present'
+ }
+ ,
+ {
+	input_type: 'file',
+	id:'xml_file454',
+	save_as:'pname_traceinfo_in.454.xml',
+	title:'Trace info 454 (XML)',
+	default_value: '',
+	required: false,
+	tooltip:'Select a trace info file in XML format'
+ }
+ ,
+ {
+        input_type: 'file',
+        id:'xml_fileSanger',
+        save_as:'pname_traceinfo_in.sanger.xml',
+        title:'Trace info Sanger (XML)',
+        default_value: '',
+        required: false,
+        tooltip:'Select a trace info file in XML format'
  }
 ],
 command_list:[
