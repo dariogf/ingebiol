@@ -125,6 +125,10 @@ input_params: [
  }
 ,
  {
+	input_type: 'separator'
+ }
+,
+ {
 	input_type: 'radio',
 	id:'radio1',
 	command_switch:'%s',
