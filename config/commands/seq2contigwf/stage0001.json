@@ -123,12 +123,12 @@ input_params: [
 command_list:[
 							{
 								required_files:[],
-								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname'
+								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname  2>> celera_errors.txt'
 							}
 							,
 							{
 								required_files:['pname.frg'],
-								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $COMMAND_SWITCHES  pname.frg'
+								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $COMMAND_SWITCHES  pname.frg  2>> celera_errors.txt'
 							}
  ,
         {
@@ -139,12 +139,12 @@ command_list:[
  ,
         {
                 required_files:['9-terminator/pname.asm','9-terminator/pname.frg'],
-                command:' ~amos/programs/x86_64/bin/toAmos -f pname.frg -a pname.asm -o - | ~amos/programs/x86_64/bin/bank-transact -m - -b pname.bnk -c'
+                command:' ~amos/programs/x86_64/bin/toAmos -f pname.frg -a pname.asm -o - | ~amos/programs/x86_64/bin/bank-transact -m - -b pname.bnk -c 2>> celera_errors.txt'
         }
  ,
         {
                 required_files:['pname.bnk'],
-                command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk'
+                command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk 2>> celera_errors.txt'
         }
 
  ,
