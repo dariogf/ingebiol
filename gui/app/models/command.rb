@@ -172,6 +172,17 @@ class Command < BaseFileModel
     return get_data('long_description')
   end
   
+  def links
+    return get_data('links')
+  end
+  
+  def articles
+    return get_data('articles')
+  end
+  
+  def articles_title
+    return get_data('articles_title')
+  end
   #-----------------------------------------
   # Get the command to execute for a stage
   #-----------------------------------------

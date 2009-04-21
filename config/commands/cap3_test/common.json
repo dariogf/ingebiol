@@ -35,7 +35,7 @@ version:'v 0.9a1'
 ,
 
 # Command logo name, file must be in public/images
-	command_logo:"iconAMSin.png"
+	command_logo:"ingebiolBig.png"
 ,
 
 # Small corporate logo name, file must be in public/images
@@ -43,11 +43,41 @@ version:'v 0.9a1'
 ,
 
 # Small command logo name, file must be in public/images
-	small_command_logo:"amicon.png"
+	small_command_logo:"ingebiolSmall.png"
 ,
 
 # Copyright
 	copyright:"Copyright 2009 - SCBI"
+,
 
+# Links under login box
+  links:[
+    {
+      text:'Download',
+      url:'http://www.scbi.uma.es/downloads'
+    }
+    ,
+    {
+      text:'Download2',
+      url:'http://www.scbi.uma.es/downloads'
+    }
+  ]
+  ,
+  
+  # Articles shown at bottom of the page
+  articles_title:'If you find INGEBIOL useful, please cite:'
+  ,
+  articles:[
+    {
+      text:'J. Falgueras, A. J. Lara, F.R. Cantón, G. Pérez-Trabado, M.G Claros (2007) SeqTrim: a validation and trimming toof for all purpose sequence reads. In Innovations in hibrid intelligent systems, ASC 44. Coord. E. Corchado, J.M. Corchado y A. Abraham, Springer, Berlín, pp. 353-360',
+      url:'http://www.scbi.uma.es/downloads/ingebiol/art1.pdf'
+    }
+    ,
+    {
+      text:'J. Falgueras, A.J. Lara, Fernández-Pozo, N., F.R. Cantón, G. Pérez-Trabado, M.G. Claros (2009) SeqTrim: a high-throughput pipeline for preprocessing any kind of sequence reads. Int J. Comput. Intell. Bioinf. Sys Biol in press',
+      url:''
+    }
+  ]
+  
 }
 

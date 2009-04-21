@@ -69,3 +69,42 @@ div.autocomplete ul li {
   list-style-type:none;
   cursor:pointer;
 }
+
+.linksTable td{
+	align:'center'
+	horialign:right;
+  background:#5A8F88;
+  font-weight:normal;
+  font:12px Arial, Helvetica, sans-serif;
+}
+
+.linksTable td a{
+  color:#000000;
+  
+  font:10px Arial, Helvetica, sans-serif;
+}
+
+.linksTable td a:hover{
+  color:#FFFFFF;
+  
+  font:10px Arial, Helvetica, sans-serif;
+}
+
+/*
+.linksTable td:hover{ 
+  background: #9AA0A6; 
+}
+*/
+
+.articlesTable{
+	
+color:#D0F0DE;
+font-family:Arial,Helvetica,sans-serif;
+font-size:12px;
+font-size-adjust:none;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:26px;
+	
+}
