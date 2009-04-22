@@ -1,0 +1,25 @@
+
+<table class="articlesTable">
+
+<% if !@command.articles_title.empty? %>
+  <tr><td> <%= @command.articles_title %></td></tr>
+<% end %>
+
+
+<% if !@command.articles.empty? %>
+  
+  <% @command.articles.each do |art| %>
+    <tr>
+    <td>
+      &#8226;&nbsp;<%= art['text'] %>
+    
+      <% if !art['url'].empty? %>
+        <%= link_to image_tag('save.gif',:border => '0'), art['url'] %>
+      <% end %>
+    </td>
+    </tr>
+  <% end %>
+<% end %>
+
+
+</table>

@@ -1,0 +1,13 @@
+
+<table align="right" class="linksTable" cellspacing="5" cellpadding="3">
+  
+<tr>
+<% if !@command.links.empty? %>
+  <% @command.links.each do |link| %>
+    <td>
+    <%= link_to link['text'], link['url'] %>
+    </td>
+  <% end %>
+<% end %>
+</tr>
+</table>

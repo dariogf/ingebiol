@@ -14,38 +14,38 @@ command_info="
 # Prints to stdout, can be redirected to file with >
 #
 #================================================
-\n";
+\n"
 
-require 'utils/json_utils';
+require 'utils/json_utils'
 
-include JsonUtils;
+include JsonUtils
 
-PARAMS_FILE_NAME = 'sq.conf';
+PARAMS_FILE_NAME = 'sq.conf'
 
 #receive one argument or fail
 if (ARGV.length < 2) or ARGV.length > 3
-  puts command_info;
-  Process.exit(-1);
+  puts command_info
+  Process.exit(-1)
 end
 
 #get params
-template_file=ARGV[0];
+template_file=ARGV[0]
 file_name=ARGV[1]
-with_comments = ARGV[2];
+with_comments = ARGV[2]
 
 #check if file exists
 if !File.exist?(template_file)
-  puts "File #{template_file} not found.\n";
-  puts command_info;
-  Process.exit(-1);
+  puts "File #{template_file} not found.\n"
+  puts command_info
+  Process.exit(-1)
 end
 
 
 #check if file exists
 if !File.exist?(file_name)
-  puts "File #{file_name} not found.\n";
-  puts command_info;
-  Process.exit(-1);
+  puts "File #{file_name} not found.\n"
+  puts command_info
+  Process.exit(-1)
 end
 
 ######################################
@@ -82,5 +82,5 @@ template = File.open(template_file).each do |line|
 end
 
 # close file
-output_file.close;
+output_file.close
 
