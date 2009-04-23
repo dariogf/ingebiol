@@ -1,0 +1,119 @@
+{
+   "ID" : "GEM.48-D07-T3-96-F1.ab1",
+   "cleanqual" : [],
+   "filename" : "GEM.48-D07-T3-96-F1.ab1",
+   "cleansgm" : [
+      "69",
+      "705"
+   ],
+   "cleanseq" : "GCGCGCTGGAGAACGCTGAGGAGATTCCGCTACGGCACTTTCAGTGCGAAGATCAAGTGCCCAGATGGGGAAACCAGCGGACTGAACTCCAATTTATATCTCTCATCACTCGAAGGGGATAAATTCCAAGATGAAATTGACTTCGAATTCCTCGGGAAGGACAAGGGAACCGTGCAGACCAATTATTACACTGTGGGCACTGGAAACAGAGAGCAGATTCATCAGCTAGGTTTCGATTGCTCTCAGGATTTCCATGAGTATACGATCAAATGGTCTCCTGCCCGAATCGAGTGGCTGATTGATGGGAAGATGGTGAGGGTCGAAGAGGCAAGGGAGGGAGAAAGCTTCCCATCTAAACCCATGTTTCTTTATGCATCTGTATGGGATGCGAGCTACATCGATGAAGGCAGGTGGGCAGGGCCTTATTTTGGGCATCATGCTCCTTATGTTTGCAAATACAGAGACATCCACATTCCTGTTGCTGCAGATGCTGAAGAGTAGTACAGGAAGTTGGGATTGAAGTTGTGCAGCTGTCTTCCCATCATGAATAATATTAGCTTTGATCTAAGTTTTTGATCAATGCAGCTNCTAGCAGTATTAAAAATTTTGGATTATGAATAAATATTTGCTCTGATCT",
+   "colors" : [
+      {
+         "color" : "CUT1",
+         "start" : 706,
+         "end" : 750
+      },
+      {
+         "color" : "CUT1",
+         "start" : 706,
+         "end" : 750
+      },
+      {
+         "color" : "CUT1",
+         "start" : 706,
+         "end" : 750
+      }
+   ],
+   "infoprocess" : [
+      {
+         "value" : "",
+         "id" : "cloningVectorFound",
+         "found" : "yes"
+      },
+      {
+         "value" : "",
+         "id" : "cloningVectorAlert",
+         "found" : "no"
+      },
+      {
+         "segmentleft" : {
+            "start" : 0,
+            "end" : 0
+         },
+         "value" : ": pSK-, pSK+, pKS-, pKS+, pSC-A",
+         "id" : "infoVector",
+         "found" : "yes"
+      },
+      {
+         "segmentleft" : {
+            "start" : 62,
+            "end" : 750
+         },
+         "value" : "GOOD SEQ W/O CLONING VECTOR:            [  62,  750]  : pSK-, pSK+, pKS-, pKS+, pSC-A",
+         "id" : "CUT0",
+         "found" : "yes"
+      },
+      {
+         "value" : "",
+         "id" : "polyAFound",
+         "found" : "yes"
+      },
+      {
+         "value" : "",
+         "id" : "polyTFound",
+         "found" : "no"
+      },
+      {
+         "value" : "",
+         "id" : "double_pAFound",
+         "found" : "no"
+      },
+      {
+         "value" : "",
+         "id" : "double_pTFound",
+         "found" : "no"
+      },
+      {
+         "value" : "",
+         "id" : "twoInsertsFound",
+         "found" : "no"
+      },
+      {
+         "value" : "",
+         "id" : "reverseSeq",
+         "found" : "no"
+      },
+      {
+         "segmentleft" : {
+            "start" : 69,
+            "end" : 705
+         },
+         "value" : "GOOD SEQ W/O ADAPTORS, polyA, polyT:    [  69,  705]",
+         "id" : "CUT1",
+         "found" : "yes"
+      },
+      {
+         "value" : "",
+         "id" : "NFilterPassed",
+         "found" : "yes"
+      },
+      {
+         "segmentleft" : {
+            "start" : 69,
+            "end" : 705
+         },
+         "value" : "GOOD SEQ W/O too many iNdetermiNatioNs: [  69,  705]",
+         "id" : "CUT2",
+         "found" : "yes"
+      },
+      {
+         "segmentleft" : {
+            "start" : 69,
+            "end" : 705
+         },
+         "value" : "GOOD SEQ W/O BAD EXTREMES:              [  69,  705]",
+         "id" : "CUT5",
+         "found" : "yes"
+      }
+   ]
+}

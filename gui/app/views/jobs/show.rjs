@@ -53,6 +53,60 @@ res_command = ''
   
     res_command += '</tr>'
   end
+  
+  if fr['type']=='table_from_json'
+    res_command += '<tr>'
+    # resFiles += "<td>#{fr['type']}</td>"
+    res_command += '<td colspan="3">'
+    
+    res_command += '<table>'
+    
+    res_command += '<tr>'
+    
+    if !fr['columns'].nil?
+      fr['columns'].each do |title|
+    
+        res_command += '<th>'
+        res_command += title['title']
+        res_command += '</th>'
+      end
+    end
+    
+    res_command += '</tr>'
+    
+    #puts "values:"+fr['value'].to_pretty_json
+    
+    if !fr['value'].nil?
+      if !fr['value']['seqs'].nil?
+      
+        fr['value']['seqs'].each do |row|
+          res_command += '<tr>'
+          
+          fr['columns'].each do |title|
+            res_command += '<td>'
+          
+            res_command += row[title['key']].to_s
+          
+            res_command += '</td>'
+          
+          end
+          
+          
+          res_command += '</tr>'
+          
+        end
+      end
+    end
+    
+    
+    res_command += '</table>'
+    
+    res_command += "</td>"
+    
+  
+    res_command += '</tr>'
+  end
+  
 
   
 end

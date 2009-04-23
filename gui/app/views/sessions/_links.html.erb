@@ -1,8 +1,7 @@
 
 <table align="right" class="linksTable" cellspacing="5" cellpadding="3">
-  
 <tr>
-<% if !@command.links.empty? %>
+<% if !@command.links.nil? %>
   <% @command.links.each do |link| %>
     <td>
     <%= link_to link['text'], link['url'] %>

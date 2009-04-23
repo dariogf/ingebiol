@@ -83,4 +83,3 @@ end
 
 # close file
 output_file.close
-

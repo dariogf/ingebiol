@@ -85,6 +85,34 @@ params: [
 	title:'Command result',
 	tooltip:''
  }
+ ,
+ {
+  type: 'table_from_json',
+	json_file:'jobs.json',
+  columns:[
+            {title:'Name',
+            width:'',
+            key:'ID'
+            }
+            ,
+            {title:'I.L',
+            width:'',
+            key:'ilength'
+            }
+            ,
+            {title:'F.L',
+            width:'',
+            key:'flength'
+            }
+            
+            
+            
+            ]
+  ,
+  
+	title:'Sequences table',
+	tooltip:''
+ }
 # ,
 #  {
 # 	type: 'command_output',

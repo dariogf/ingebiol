@@ -1,21 +1,26 @@
 
-<table class="articlesTable">
+<table align="center" width="700" cellspacing="8px" border="0" class="articlesTable">
 
-<% if !@command.articles_title.empty? %>
-  <tr><td> <%= @command.articles_title %></td></tr>
+<% if !@command.articles_title.nil? %>
+  <tr><td style="font-style:normal;" colspan="2"> <%= @command.articles_title %></td></tr>
 <% end %>
 
 
-<% if !@command.articles.empty? %>
+<% if !@command.articles.nil? %>
   
   <% @command.articles.each do |art| %>
     <tr>
-    <td>
-      &#8226;&nbsp;<%= art['text'] %>
-    
-      <% if !art['url'].empty? %>
-        <%= link_to image_tag('save.gif',:border => '0'), art['url'] %>
+    <td width="20">
+      <% if !art['url'].nil? %>
+        <% if !art['url'].empty? %>
+          <%= link_to image_tag('save.gif',:border => '0'), art['url'] %>
+        <% end %>
       <% end %>
+    </td>
+    <td>
+      <%= art['text'] %>
+    
+      
     </td>
     </tr>
   <% end %>

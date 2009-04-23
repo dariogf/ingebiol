@@ -173,15 +173,21 @@ class Command < BaseFileModel
   end
   
   def links
-    return get_data('links')
+    res = get_data('links')
+    
+    return res
   end
   
   def articles
-    return get_data('articles')
+    res = get_data('articles')
+    
+    return res
   end
   
   def articles_title
-    return get_data('articles_title')
+    res = get_data('articles_title')
+    
+    return res
   end
   #-----------------------------------------
   # Get the command to execute for a stage
@@ -320,6 +326,21 @@ class Command < BaseFileModel
          
          r['exists']=true
       end
+      
+      if r['type']=='table_from_json'
+        
+        if !r['json_file'].nil?
+          path = File.join(DATA_PATH,@current_command,user_id,job_id,r['json_file'])
+          
+          r['value']=get_json_data(path)
+  
+          r['exists']=true  
+        end
+        
+        
+      end
+      
+      
       
       
     end

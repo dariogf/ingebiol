@@ -46,28 +46,28 @@ def job_status(folder,hash)
     if File.exists?(File.join(folder,'RUNNING'))
       status = 'RUNNING'
     else
-      error_files = Dir.glob(File.join(folder,'*.sh.e*'))
+      error_files = []
+      error_files |= Dir.glob(File.join(folder,'*.sh.e*'))
+      error_files.push(File.join(folder,'ERRORS'))
       
-      # errors?
-      if !error_files.empty?
-        errors = File.read(error_files[0]).chomp
+      errors=''
+      
+        
+        #TODO - add more files for errors
+        error_files.each do |ename|
+          if File.exists?(ename)
+            errors += File.read(ename)
+          end
+        end
+        
+        errors.gsub!(/\n/,'<br>')
+        
         if errors != ''
           status = 'ERRORS'
           hash['errors']=errors
         else
           status = 'DONE'
         end
-      else
-        status = 'DONE'
-      end
-      #hash['job_errors']=
-      
-      #out_files = Dir.glob(File.join(folder,'*.sh.o*'))
-      
-      # There are out_files and error_files (job is done)
-      #if ((!error_files.empty?) and (!out_files.empty?))
-      #  status = 'DONE'
-      #end
       
     end
       

@@ -1,0 +1,35 @@
+{
+   "name" : "pepe",
+   "seqs" : [
+      {
+         "ID" : "GEMINI-81-A08-T3-96-F1.ab1",
+         "ilength" : 750,
+         "filename" : "GEMINI-81-A08-T3-96-F1.ab1",
+         "flength" : 0,
+         "range" : {
+            "start" : 0,
+            "end" : 0
+         }
+      },
+      {
+         "ID" : "GEMINI-82-D01-T3-96-F1.ab1",
+         "ilength" : 750,
+         "filename" : "GEMINI-82-D01-T3-96-F1.ab1",
+         "flength" : 676,
+         "range" : {
+            "start" : 75,
+            "end" : 750
+         }
+      },
+      {
+         "ID" : "GEM.48-D07-T3-96-F1.ab1",
+         "ilength" : 750,
+         "filename" : "GEM.48-D07-T3-96-F1.ab1",
+         "flength" : 637,
+         "range" : {
+            "start" : 69,
+            "end" : 705
+         }
+      }
+   ]
+}
