@@ -98,19 +98,37 @@ res_command = ''
       end
     end
     
-    
     res_command += '</table>'
     
     res_command += "</td>"
     
-  
+    
     res_command += '</tr>'
   end
   
+  if fr['type']=='image'
+    res_command += '<tr>'
+    # resFiles += "<td>#{fr['type']}</td>"
+    res_command += "<td>&nbsp;</td>"
+  
+  
+    # resFiles += '<td></td>'
+    #res_command += image_tag
+  #res_command += '<img src="/downloads/download_img/lima.png"></img>'
+  
+    res_command += "<td>#{fr['title']}:</td>"
+    res_command += "<td>#{fr['value']}</td>"
+    
+    res_command += image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name']))
+    
+    res_command += '</tr>'
+  end
 
   
 end
-                                                                    
+
+# TODO - Add unique identifiers to final_results
+# TODO - Use uid to populate hash, and then a template string or file
 
 # :controller => 'downloads', , :id => "#{fr['file']}"
 

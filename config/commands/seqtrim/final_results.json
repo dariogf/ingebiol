@@ -13,8 +13,11 @@ title:'RESULTS',
 stage_type:'final_results',
 enabled: true,
 
+template:'',
+
 params: [
  {
+  id:'output_file',
 	type: 'file',
 	file:'output.txt',
 	title:'Cap3 output',
@@ -120,7 +123,14 @@ params: [
 # 	title:'Command result',
 # 	tooltip:''
 #  }
-
+,
+ {
+	type: 'image',
+	file_name:'lima.png',
+  content_type:'image/png',
+	title:'Command result',
+	tooltip:''
+ }
 ]
 
 }
