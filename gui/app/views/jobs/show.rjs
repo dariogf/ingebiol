@@ -11,14 +11,14 @@ res_command = ''
   
   if fr['type']=='file'
     # show only fixed files or files with valid size
-    if fr['fixed'] or fr['size']!='0KB'
+    if fr['fixed'] or !(fr['size']=='0KB' or fr['size'].nil? or fr['size'].empty?)
       res_files += '<tr>'
       # resFiles += "<td>#{fr['type']}</td>"
       res_files += "<td>&nbsp;</td>"
   
-      res_files += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'}),:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
+      res_files += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
   
-      res_files += "<td>#{fr['title']} (#{fr['size']})</td>"
+      res_files += "<td>(#{fr['size']})</td>"
   
       res_files += '</tr>'
     end
@@ -123,7 +123,7 @@ res_command = ''
     
     res_command += '</tr>'
   end
-
+  
   
 end
 
