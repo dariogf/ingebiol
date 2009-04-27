@@ -7634,3 +7634,81 @@ Rendering template within layouts/application
 Rendering sessions/new
 Rendered sessions/_login_box (0.8ms)
 Completed in 40ms (View: 4 | 200 OK [http://localhost/session/new/seqtrim]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:28:53) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 208ms (View: 9 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2009-04-27 12:28:57) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0=", "id"=>"20090416-1"}
+Rendering jobs/show
+Completed in 55ms (View: 21 | 200 OK [http://localhost/jobs/show/20090416-1]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:29:03) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 201ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:29:13) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 219ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2009-04-27 12:29:19) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0=", "id"=>"20090416-1"}
+Rendering jobs/show
+Completed in 54ms (View: 18 | 200 OK [http://localhost/jobs/show/20090416-1]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:29:23) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 213ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:29:33) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 155ms (View: 5 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JobsController#show (for 127.0.0.1 at 2009-04-27 12:29:33) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0=", "id"=>"20090416-1"}
+Rendering jobs/show
+Completed in 94ms (View: 19 | 200 OK [http://localhost/jobs/show/20090416-1]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:29:43) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 221ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:29:53) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 207ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:30:03) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 263ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:30:13) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 216ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:30:23) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 201ms (View: 3 | 200 OK [http://localhost/joblists/get_joblist]

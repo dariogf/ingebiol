@@ -92,7 +92,7 @@ module ApplicationHelper
           
           res += '<td>'
           
-          res += eval(ui_param.field_tag) unless ui_param.field_tag == ''
+          res += eval(ui_param.field_tag) unless ui_param.field_tag.blank?
           
           if ui_param.title_pos=='right'
             res += '&nbsp;<span ' + required_class + '>'

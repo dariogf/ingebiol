@@ -13,7 +13,7 @@ title:'RESULTS',
 stage_type:'final_results',
 enabled: true,
 
-template:'',
+template:'<table border="0"><tr><td>$ORIGINAL_FILE</td><td>$JOB_CONTENT_TABLE</td></tr><tr><td colspan="2" align="center">$IMAGE1</td></tr></table>',
 
 params: [
  {
@@ -25,6 +25,7 @@ params: [
  }
 ,
  {
+  id:'original_file',
 	type: 'file',
 	file:'seq.fasta',
 	title:'Original sequence file',
@@ -32,6 +33,7 @@ params: [
  }
 ,
  {
+  id:'ace_file',
 	type: 'file',
 	file:'seq.fasta.cap.ace',
 	title:'ACE file',
@@ -39,6 +41,7 @@ params: [
  }
 , 
  {
+  id:'contigs_file',
 	type: 'file',
 	file:'seq.fasta.cap.contigs',
 	title:'Contigs',
@@ -46,6 +49,7 @@ params: [
  }
 , 
  {
+  id:'links_file',
 	type: 'file',
 	file:'seq.fasta.cap.contigs.links',
 	title:'Contigs links',
@@ -53,6 +57,7 @@ params: [
  }
 , 
  {
+  id:'contigs_qual_file',
 	type: 'file',
 	file:'seq.fasta.cap.contigs.qual',
 	title:'Contigs qual',
@@ -60,6 +65,7 @@ params: [
  }
 , 
  {
+  id:'info_file',
 	type: 'file',
 	file:'seq.fasta.cap.info',
 	title:'Info',
@@ -67,6 +73,7 @@ params: [
  }
 , 
  {
+  id:'singlets_file',
 	type: 'file',
 	file:'seq.fasta.cap.singlets',
 	title:'Singlets',
@@ -83,6 +90,7 @@ params: [
 #  }
 ,
  {
+  id:'grep_test',
 	type: 'command_output',
 	command:'grep -E "found|done|over" seq.fasta.cap.info',
 	title:'Command result',
@@ -90,6 +98,7 @@ params: [
  }
  ,
  {
+  id:'job_content_table',
   type: 'table_from_json',
 	json_file:'jobs.json',
   columns:[
@@ -107,8 +116,16 @@ params: [
             width:'',
             key:'flength'
             }
-            
-            
+            ,
+            {title:'Start',
+            width:'',
+            key:'range.start'
+            }
+            ,
+            {title:'End',
+            width:'',
+            key:'range.end'
+            }
             
             ]
   ,
@@ -118,6 +135,7 @@ params: [
  }
 # ,
 #  {
+#   id:'image1',
 # 	type: 'command_output',
 # 	command:'head -n 20 /Volumes/Documentos/Progs/ruby/gui/README',
 # 	title:'Command result',
@@ -125,10 +143,13 @@ params: [
 #  }
 ,
  {
+  id:'image1',
 	type: 'image',
 	file_name:'lima.png',
   content_type:'image/png',
 	title:'Command result',
+  options:{height:'200',width:'250'},
+  linked:true,
 	tooltip:''
  }
 ]

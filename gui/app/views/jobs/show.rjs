@@ -1,78 +1,94 @@
 # render joblist
 
+res_elems = []
+
 res_files = ''
 res_files_values = ''
 res_command = ''
 
+final_results = @command.get_final_results(session[:user_email],session[:current_job_id])
+
 # for each param
-@command.get_final_results(session[:user_email],session[:current_job_id])['params'].each do |fr|
+final_results['params'].each do |fr|
+     
+  elem = {}
+  elem['id'] = fr['id']
+  elem['type'] = fr['type']
+  
      
   # add files
-  
   if fr['type']=='file'
     # show only fixed files or files with valid size
-    if fr['fixed'] or !(fr['size']=='0KB' or fr['size'].nil? or fr['size'].empty?)
-      res_files += '<tr>'
+    if fr['fixed'] or !(fr['size']=='0KB' or fr['size'].blank?)
+      res = '<table><tr>'
       # resFiles += "<td>#{fr['type']}</td>"
-      res_files += "<td>&nbsp;</td>"
+      res += "<td>&nbsp;</td>"
   
-      res_files += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
+      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
   
-      res_files += "<td>(#{fr['size']})</td>"
+      res += "<td>(#{fr['size']})</td>"
   
-      res_files += '</tr>'
+      res += '</tr></table>'
+      
+      res_files += res
+      
+      elem['html_value'] = res
     end
   end
   
-             
+  
   if fr['type']=='file_value'
-    res_files_values += '<tr>'
-    # resFiles += "<td>#{fr['type']}</td>"
-    res_files_values += "<td>&nbsp;</td>"
+    res = '<table><tr>'
+    # res += "<td>#{fr['type']}</td>"
+    res += "<td>&nbsp;</td>"
   
-    # resFiles += '<td></td>'
+    # res += '<td></td>'
   
-    res_files_values += "<td>#{fr['title']}:</td>"
-    res_files_values += "<td>#{fr['value']}</td>"
+    res += "<td>#{fr['title']}:</td>"
+    res += "<td>#{fr['value']}</td>"
     
-  
-    res_files_values += '</tr>'
+    res += '</tr></table>'
+    
+    res_files_values += res
+    elem['html_value'] = res
   end
 
 
   if fr['type']=='command_output'
-    res_command += '<tr>'
+    res = '<table><tr>'
     # resFiles += "<td>#{fr['type']}</td>"
-    res_command += "<td>&nbsp;</td>"
+    res += "<td>&nbsp;</td>"
   
     # resFiles += '<td></td>'
   
-    res_command += "<td>#{fr['title']}:</td>"
-    res_command += "<td>#{fr['value']}</td>"
+    res += "<td>#{fr['title']}:</td>"
+    res += "<td>#{fr['value']}</td>"
     
   
-    res_command += '</tr>'
+    res += '</tr></table>'
+    res_command += res
+    elem['html_value'] = res
   end
   
   if fr['type']=='table_from_json'
-    res_command += '<tr>'
+    res = '<table><tr>'
     # resFiles += "<td>#{fr['type']}</td>"
-    res_command += '<td colspan="3">'
+    res += '<td colspan="3">'
     
-    res_command += '<table>'
+    res += '<table>'
     
-    res_command += '<tr>'
+    res += '<tr>'
     
     if !fr['columns'].nil?
       fr['columns'].each do |title|
     
-        res_command += '<th>'
-        res_command += title['title']
-        res_command += '</th>'
+        res += '<th>'
+        res += title['title']
+        res += '</th>'
       end
     end
     
-    res_command += '</tr>'
+    res += '</tr>'
     
     #puts "values:"+fr['value'].to_pretty_json
     
@@ -80,52 +96,104 @@ res_command = ''
       if !fr['value']['seqs'].nil?
       
         fr['value']['seqs'].each do |row|
-          res_command += '<tr>'
+          
+          o =row.to_openstruct
+          
+          res += '<tr>'
           
           fr['columns'].each do |title|
-            res_command += '<td>'
+            res += '<td>'
           
-            res_command += row[title['key']].to_s
+            #res += row[title['key']].to_s
+            res += eval('o.'+title['key']).to_s
           
-            res_command += '</td>'
+            res += '</td>'
           
           end
           
           
-          res_command += '</tr>'
+          res += '</tr>'
           
         end
       end
     end
     
-    res_command += '</table>'
+    res += '</table>'
     
-    res_command += "</td>"
+    res += "</td>"
     
     
-    res_command += '</tr>'
+    res += '</tr></table>'
+    
+    res_command += res
+    elem['html_value'] = res
   end
   
   if fr['type']=='image'
-    res_command += '<tr>'
+    res = '<table><tr>'
     # resFiles += "<td>#{fr['type']}</td>"
-    res_command += "<td>&nbsp;</td>"
+    #res += "<td>&nbsp;</td>"
   
   
     # resFiles += '<td></td>'
     #res_command += image_tag
   #res_command += '<img src="/downloads/download_img/lima.png"></img>'
   
-    res_command += "<td>#{fr['title']}:</td>"
-    res_command += "<td>#{fr['value']}</td>"
     
-    res_command += image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name']))
+    #res += "<td>#{fr['value']}</td>"
     
-    res_command += '</tr>'
+    
+    
+    options = {}
+    
+    options[:border] = '0'
+    
+    if !fr['options'].blank?
+      options = options.merge!(fr['options'])
+    end
+    
+    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name']),options)
+    
+    if !['linked'].blank?
+      
+      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name']))
+    end
+    
+    res += '<td>'+img+"</td>"
+    res += '</tr>'
+    
+    res +='<tr>'
+    res += '<td align="center">'+fr['title']+'</td>'
+    res += '</tr>'
+    
+    res += '</table>'
+    
+    res_command += res
+    
+    elem['html_value'] = res
   end
   
   
+  #add element if necessary
+  if !elem['id'].blank?
+    if !elem['html_value'].blank?
+      res_elems.push(elem)
+    end
+  end
+  
 end
+
+res_html=res_files+res_files_values+res_command
+
+if !res_elems.blank? and !final_results['template'].blank?
+  res_html = final_results['template']
+  
+  res_elems.each do |e|
+    res_html.gsub!('$'+e['id'].upcase,e['html_value'])
+  end
+end
+
+# puts "res_elems:"+ res_elems.to_pretty_json
 
 # TODO - Add unique identifiers to final_results
 # TODO - Use uid to populate hash, and then a template string or file
@@ -134,5 +202,5 @@ end
 
 # page['job_results_div'].replace_html('Showing: '+@job_id)
 
-page['job_results_div'].replace_html(res_files+res_files_values+res_command)
+page['job_results_div'].replace_html(res_html)
 
