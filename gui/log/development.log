@@ -7784,3 +7784,9 @@ Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:32:23)
   Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
 Rendering joblists/get_joblist
 Completed in 205ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:32:33) [POST]
+  Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
+Rendering joblists/get_joblist
+Completed in 206ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
