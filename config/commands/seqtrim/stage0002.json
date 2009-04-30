@@ -6,7 +6,7 @@ stage_type:'submit',
 enabled:false,
 create_results_dir:['output'],
 use_queue_system: true,
-submit_command:'/usr/bin/qsub -q dario',
+submit_command:'/usr/pbs/bin/qsub -q dario',
 sudo_command:'/usr/bin/sudo -u bioperl',
 user_presets: true,
 command_list:[
