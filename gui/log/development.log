@@ -7790,3 +7790,799 @@ Processing JoblistsController#get_joblist (for 127.0.0.1 at 2009-04-27 12:32:33)
   Parameters: {"authenticity_token"=>"QisLNIIaW+Gm8KLihcuC+jJkgP0KQ95joY7D2EdwQE0="}
 Rendering joblists/get_joblist
 Completed in 206ms (View: 4 | 200 OK [http://localhost/joblists/get_joblist]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:19:53) [GET]
+
+ActionController::RoutingError (No route matches "/admins/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:19:55) [GET]
+
+ActionController::RoutingError (No route matches "/admins/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:19:57) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 13ms (View: 11 | 200 OK [http://localhost/admin/edit]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:21:17) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 10ms (View: 9 | 200 OK [http://localhost/admin/edit]
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"folderNodeFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"folderNodeOpenFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"folderNodeLastFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"folderNodeOpenLastFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"docNodeFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"docNodeLastFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"folder.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"folderOpen.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:18) [GET]
+  Parameters: {"id"=>"doc.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:36) [GET]
+  Parameters: {"id"=>"doc.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#images (for 127.0.0.1 at 2009-04-30 14:21:44) [GET]
+  Parameters: {"id"=>"treeBuilderImages/doc.gif"}
+
+ActionController::UnknownAction (No action responded to images. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:21:51) [GET]
+  Parameters: {"id"=>"doc.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-30 14:24:35) [GET]
+  Parameters: {"id"=>"seqtrim"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered sessions/_login_box (7.8ms)
+Rendered sessions/_links (1.2ms)
+Rendered sessions/_articles (2.1ms)
+Completed in 132ms (View: 70 | 200 OK [http://localhost/session/new/seqtrim]
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:24:55) [GET]
+  Parameters: {"id"=>"folderOpen.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:24:55) [GET]
+  Parameters: {"id"=>"doc.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:25:05) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 4ms (View: 3 | 200 OK [http://localhost/admin/edit]
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"folderNodeFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"folderNodeOpenFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"folderNodeLastFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"folderNodeOpenLastFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"docNodeFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"docNodeLastFirst.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"folder.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"folderOpen.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#treeBuilderImages (for 127.0.0.1 at 2009-04-30 14:25:06) [GET]
+  Parameters: {"id"=>"doc.gif"}
+
+ActionController::UnknownAction (No action responded to treeBuilderImages. Actions: edit and login_required):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:25:40) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 5ms (View: 3 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:25:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:26:43) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 8ms (View: 7 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:26:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:27:38) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 5 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:27:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:27:51) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 8ms (View: 6 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:28:37) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 8ms (View: 7 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:28:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:28:41) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 5ms (View: 3 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:28:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:28:52) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 8ms (View: 6 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:28:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:29:19) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 19ms (View: 17 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:29:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:29:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:30:01) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 6 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:30:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:30:39) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 5 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:30:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:31:30) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 8ms (View: 6 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:31:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:32:03) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 5 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:32:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:34:25) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 9ms (View: 7 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:34:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:34:37) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 5 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:34:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:52:15) [GET]
+
+TypeError (can't convert nil into String):
+  app/controllers/admin_controller.rb:6:in `join'
+  app/controllers/admin_controller.rb:6:in `edit'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:52:24) [GET]
+
+TypeError (can't convert nil into String):
+  app/controllers/admin_controller.rb:6:in `join'
+  app/controllers/admin_controller.rb:6:in `edit'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:54:00) [GET]
+
+Errno::ENOENT (No such file or directory - ../config/commands/common.json):
+  app/controllers/admin_controller.rb:8:in `read'
+  app/controllers/admin_controller.rb:8:in `edit'
+
+Rendered rescues/_trace (78.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:54:28) [GET]
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 10ms (View: 7 | 200 OK [http://localhost/admin/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:54:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-04-30 14:59:00) [GET]
+  Parameters: {"id"=>"common.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 8ms (View: 6 | 200 OK [http://localhost/admin/edit/common.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 14:59:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:22:12) [GET]
+  Parameters: {"id"=>"common.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 34ms (View: 5 | 200 OK [http://localhost/admin/edit/common.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:22:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:22:15) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 18ms (View: 4 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:22:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:29:27) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 63ms (View: 61 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:29:37) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:29:40) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:29:57) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:18) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:26) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:34) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:44) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:53) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:54) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:30:56) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:32:18) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:32:46) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:32:59) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:33:11) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 9ms (View: 7 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:33:13) [GET]
+  Parameters: {"id"=>"common.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 5ms (View: 3 | 200 OK [http://localhost/admin/edit/common.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:33:14) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 5ms (View: 3 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:35:03) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:35:55) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:37:22) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:37:47) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:37:54) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:39:33) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:39:35) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 2 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:39:42) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:41:09) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 9ms (View: 7 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:41:11) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 6ms (View: 3 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:41:13) [GET]
+  Parameters: {"id"=>"common.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 6ms (View: 3 | 200 OK [http://localhost/admin/edit/common.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:41:40) [GET]
+  Parameters: {"id"=>"common.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 9ms (View: 7 | 200 OK [http://localhost/admin/edit/common.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:41:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:42:10) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 4 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:54:51) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 4 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:54:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:56:27) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 4 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:56:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:56:30) [GET]
+  Parameters: {"id"=>"common.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 5ms (View: 3 | 200 OK [http://localhost/admin/edit/common.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:56:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 13:56:36) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 42ms (View: 39 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 13:56:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2009-05-04 15:05:56) [GET]
+  Parameters: {"id"=>"stage0001.json"}
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 7ms (View: 4 | 200 OK [http://localhost/admin/edit/stage0001.json]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-04 15:05:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/treeBuilderImages/docNodeFirst.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

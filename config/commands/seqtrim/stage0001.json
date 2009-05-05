@@ -31,9 +31,9 @@ input_params: [
 	validation_error_msg: 'Must start with a or A',
 	standard_attribute: true,
   save_in_presets: true,
-	autocomplete_values:'autocomplete1.json'
-	# autocomplete_values:['uno','dos','tres']
- }
+	#autocomplete_values:'autocomplete1.json'
+  # autocomplete_values:['uno','dos','tres']
+ }     
 # ,
 #  {
 # 	input_type: 'checkbox',

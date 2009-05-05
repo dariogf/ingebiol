@@ -1,0 +1,26 @@
+<%= javascript_include_tag "JSONeditor.js" %>
+
+<h1>Configuration editor</h1>
+
+<%= link_to "common", :controller=> :admin, :action=> :edit, :id=> "common.json" %>
+<%= link_to "stage0001.json", :controller=> :admin, :action=> :edit, :id=> "stage0001.json" %>
+
+<table>
+<tr><td style="background:#FFF;" width="50%" valign="top">
+<div id="tree"></div>
+</td>
+
+<td>&nbsp;&nbsp;</td>
+
+<td width="50%">
+<div id="jform"></div>
+</td></tr>
+</table>
+
+<div id="scripts">
+
+<script>
+	JSONeditor.start('tree','jform',<%= @json_text %>,true)
+</script>
+
+</div>
