@@ -351,6 +351,29 @@ class Command < BaseFileModel
     
   end
   
+  def self.replace_switches(cmd,command_switches)
+    res = cmd
+    
+      # puts "original CMD: #{cmd}"
+    
+      # there are switches to replace
+        if !command_switches.blank? and !cmd.blank?
+          
+           # replace command_switches in commands
+           command_switches.keys.each do |switch|
+              if !switch.blank?
+               res.gsub!(/\$#{switch.gsub(/^\$/,'')}/i,command_switches[switch])
+               #puts "replace :#{switch}: en :#{res}: por :#{command_switches[switch]}:"
+              end
+          end
+          
+           
+          
+        end
+        
+    return res
+  end
+  
   #-----------------------------------------
   # 
   #-----------------------------------------
@@ -391,56 +414,70 @@ class Command < BaseFileModel
       
       command_list.each do |command_entry|
         
-        required_files = command_entry['required_files']
+        exec_if = command_entry['exec_if'] ||= true
         
-
-        
-        if (!required_files.nil?) and (!required_files.empty?)
-          # if test -e $a/$b; then printf "exists"; fi
+        #there is a condition
+        if exec_if!=true
+          exec_if = replace_switches(exec_if,command_switches)
           
-          required_files.each do |file|            
-            f.puts(('  ' * ntabs) + "if test -e #{file}; then")
-            ntabs+=1
-          end
-
-        end
-        
-        # get command
-        cmd = command_entry['command']
-           
-        # there are switches to replace
-        if command_switches!=nil
+          #puts "exec_if:"+exec_if
           
-           # replace command_switches in commands
-           command_switches.keys.each do |switch|
-              cmd.gsub!(switch,command_switches[switch])
-           end
-          
-        end
-        
-        # if (COMMAND_SWITCHES_TAG!='') and (command_switches != nil)
-        #   cmd = cmd.gsub(COMMAND_SWITCHES_TAG,command_switches)
-        # end
-        
-        
-        f.puts(('  ' * ntabs) + cmd + '')
-        
-        
-        if (!required_files.nil?) and (!required_files.empty?)
-          # if test -e $a/$b; then printf "exists"; fi
-          required_files.reverse.each do |file|
-            
-            f.puts(('  '*(ntabs-1)) + "else")
-            f.puts(('  ' * ntabs) + 'echo "Command \"'+cmd+'\" not executed because file \"'+file+'\" doesn\'t exists" >> ERRORS.txt;')
-            f.puts(('  '*(ntabs-1)) + 'fi')
-            f.puts ''
-            
-            ntabs-=1
+          begin
+            exec_if = eval(exec_if)
+          rescue
+            exec_if = false
           end
           
-
+          
+          
         end
         
+        #if !exec_if
+        #  puts "Cmd not accepted"
+        #end
+        
+        if exec_if
+          #puts "cmd is accepted"
+          required_files = command_entry['required_files']
+          
+          if (!required_files.nil?) and (!required_files.empty?)
+            # if test -e $a/$b; then printf "exists"; fi
+            
+            required_files.each do |file|
+              f.puts(('  ' * ntabs) + "if test -e #{file}; then")
+              ntabs+=1
+            end
+  
+          end
+          
+          # get command
+          cmd = command_entry['command']
+          
+          cmd = replace_switches(cmd,command_switches)
+                  
+          # if (COMMAND_SWITCHES_TAG!='') and (command_switches != nil)
+          #   cmd = cmd.gsub(COMMAND_SWITCHES_TAG,command_switches)
+          # end
+          
+          
+          f.puts(('  ' * ntabs) + cmd + '')
+          
+          
+          if (!required_files.nil?) and (!required_files.empty?)
+            # if test -e $a/$b; then printf "exists"; fi
+            required_files.reverse.each do |file|
+              
+              f.puts(('  '*(ntabs-1)) + "else")
+              f.puts(('  ' * ntabs) + 'echo "Command \"'+cmd+'\" not executed because file \"'+file+'\" doesn\'t exists" >> ERRORS.txt;')
+              f.puts(('  '*(ntabs-1)) + 'fi')
+              f.puts ''
+              
+              ntabs-=1
+            end
+            
+  
+          end
+        end
       end
       
       

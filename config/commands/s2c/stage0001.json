@@ -1,0 +1,159 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key. Be careful
+# with punctuation symbols, since this is a json file and
+# needs to keep its structure.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+# You can add as many stages as you want, they are shown
+# in alphabetical order.
+#
+########################################################
+
+{
+title:'SUBMIT FILES',
+stage_type:'submit',
+enabled: true,
+
+#	OPCIONES PARA EL PROGRAMA DE ENSAMBLAJE CABOG
+
+input_params: [
+{
+	input_type: 'text',
+	id:'job_name',
+	title:'Job name',
+	default_value: '',
+	required: true,
+	size:'30',
+	tooltip:'The job is assigned a number automatically, but you can provide a custom name for it',
+	validation_regex: '',
+	validation_error_msg: 'Must start with a or A',
+	standard_attribute: true,
+	save_in_presets: true
+}
+,
+ {
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'file',
+	id:'fasta_file454',
+	save_as:'fasta.pname',
+	title:'Sequences 454  (fasta)',
+	default_value: '',
+	required: true,
+	tooltip:'Select a sequence file in fasta format'
+ }
+,
+{
+	input_type: 'file',
+	id:'qual_file454',
+	save_as:'qual.pname',
+	title:'Qualities 454 (fasta)',
+	default_value: '',
+	required: true,
+	tooltip:'Select a sequence file in fasta format'
+}
+,
+{
+	input_type: 'file',
+	id:'xml_file454',
+	save_as:'xml.pname',
+	title:'Trace info 454 (XML)',
+	default_value: '',
+	required: true,
+	tooltip:'Select a trace info file in XML format'
+}
+,
+ {
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'popup',
+	id:'pop1_popup',
+	command_switch:'unitigger=%s',
+	title:'Assembly methods',
+	default_value: 'valor3',
+	values: {'Unitigger':'utg',
+					 'Best Over Graph':'bog'}
+					,
+	required: true,
+	tooltip:'You can choose between two different assembly methods: utg  and bog (recommended for 454 data).'
+ }
+#,
+#{
+#	input_type: 'integer',
+#	id:'a',
+#	command_switch:'utgGenomeSize=%s',
+#	title:'Genome Size (bp)',
+#	required: true,
+#	tooltip:'The genome size, in bases.',
+#	default_value: '4000000',
+#	validation_lower_limit:'1',
+#	validation_upper_limit:''
+#}
+,
+  {
+	input_type: 'checkbox',
+	id:'checkbox1',
+	command_switch:'createACE=1',
+	title:'Create ACE',
+	title_pos:'right',
+	default_value: 'false',
+	required: false,
+	tooltip:'Create an ACE file for the sacffolds'
+ }
+,
+  {
+	input_type: 'checkbox',
+	id:'checkbox1',
+	command_switch:'createAGP=1',
+	title:'Create AGP',
+	title_pos:'right',
+	default_value: 'false',
+	required: false,
+	tooltip:'Create an AGP file for the sacffolds'
+ }
+],
+command_list:[
+							{ exec_if:'"$POP1_POPUP"=="unitigger=utg"',
+								required_files:[],
+								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname  2>> celera_errors.txt'
+							}
+							,
+							{ exec_if:'"$POP1_POPUP"=="unitigger=bog"',
+								required_files:['pname.frg'],
+								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $COMMAND_SWITCHES  pname.frg  2>> celera_errors.txt'
+							}
+ ,
+        {
+                required_files:['9-terminator'],
+                command:'zip -r results.zip 9-terminator'
+        }
+
+ ,
+        {
+                required_files:['9-terminator/pname.asm','9-terminator/pname.frg'],
+                command:' ~amos/programs/x86_64/bin/toAmos -f pname.frg -a pname.asm -o - | ~amos/programs/x86_64/bin/bank-transact -m - -b pname.bnk -c 2>> celera_errors.txt'
+        }
+ ,
+        {
+                required_files:['pname.bnk'],
+                command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk 2>> celera_errors.txt'
+        }
+
+ ,
+        {
+                required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
+                command:'zip -r results_validation.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
+        }
+]
+,
+create_results_dir:['output'],
+use_queue_system:true
+}

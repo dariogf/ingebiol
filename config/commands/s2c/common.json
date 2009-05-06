@@ -1,0 +1,54 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol.
+#
+########################################################
+
+{
+
+# Write here the desired title for the command
+title:"Seq2Contig Workflow"
+,
+
+# Provide a short description
+  short_description:"ASSEMBLY AND VALIDATION WORKFLOW"
+,
+
+# And a long one
+	long_description:"<br><p>Seq2ContigWF is a workflow that uses <b>AMOS</b> utilities to prepare sequences for the <b>Celera Assember</b> and then validates the resulting contigs with <b>AMOS Validate</b>.
+The Celera Assember has been chosen by its aggresivity when resolving repetitive sequences.</p>"
+,
+ 
+# Command version
+version:'v 0.9a1'
+,
+
+# Contact url
+	contact_url:"http://www.scbi.uma.es"
+,
+
+# Corporate logo name, file must be in public/images
+	corporate_logo:"logogrande.png"
+,
+
+# Command logo name, file must be in public/images
+	command_logo:"ingebiolBig.png"
+,
+
+# Small corporate logo name, file must be in public/images
+	small_corporate_logo:"logoscbi.png"
+,
+
+# Small command logo name, file must be in public/images
+	small_command_logo:"ingebiolSmall.png"
+,
+
+# Copyright
+	copyright:"Copyright 2009 - SCBI"
+
+}
+

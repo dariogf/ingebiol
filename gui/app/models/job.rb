@@ -79,7 +79,8 @@ class Job  < BaseFileModel
     job_path = File.join(DATA_PATH,current_command,user_id,job_id)
 
     if File.exists?(job_path)
-      FileUtils.rm_r(job_path,{:secure=>true})
+      #FileUtils.rm_r(job_path,{:secure=>true})
+      system('/bin/rm -rf '+job_path)
     end
     
   end

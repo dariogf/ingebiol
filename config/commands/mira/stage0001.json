@@ -173,11 +173,10 @@ command_list:[
 	}
 	,
 	{
-	
-		required_files:[pname_d_log],
+	  required_files:[pname_d_log],
 		command:'rm -r pname_d_log'
 	}
-						 ]
+	]
 ,
 create_results_dir:['output'],
 use_queue_system:true,
