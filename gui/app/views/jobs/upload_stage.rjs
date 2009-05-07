@@ -3,12 +3,12 @@
 
 
 # first remove previous errors, if any
-@command.input_params_for_stage(session[:current_stage]).each do |ui_params|
+@command.input_params_for_stage(session[:previous_stage]).each do |ui_params|
   
   if !ui_params.is_separator
-     page[ui_params.field_error_name].replace_html('')
-     
-     # page['upload_'+p['id']+'_field'].removeClassName('fieldWithErrors')
+    
+     #page[ui_params.field_error_name].replace_html('')
+     ### page['upload_'+p['id']+'_field'].removeClassName('fieldWithErrors')
      
   end
   
@@ -54,11 +54,11 @@ end
  
  else # No errors
      
-     session[:current_stage]=@command.next_stage(session[:current_stage])
-
-     if session[:current_stage]==nil
-          session[:current_stage] = @command.get_stage_names.first
-     end
+     #session[:current_stage]=@command.next_stage(session[:current_stage],@command_switches)
+     #
+     #if session[:current_stage]==nil
+     #     session[:current_stage] = @command.get_stage_names.first
+     #end
      
    
      page['okStatusInfo'].replace_html('Upload done')

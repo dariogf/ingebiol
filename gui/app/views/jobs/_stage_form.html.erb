@@ -2,7 +2,7 @@
 <%# form_for :upload, :url => {:controller => 'jobs', :action => 'upload_stage'}, :html => {:multipart => true, :target => :upload_target} do |f| %>
 <% form_tag(url_for(:controller => 'jobs', :action => 'upload_stage'), :multipart => true, :target => :upload_target) do %>
 <table  border="0" cellspacing="4" cellpadding="0">
-<%= add_fields_for_params(@command.input_params_for_stage(session[:current_stage])) %>
+<%= add_fields_for_params(@command.input_params_for_stage(session[:current_stage]),@command.submit_button_title(session[:current_stage])) %>
 
 </table>
 

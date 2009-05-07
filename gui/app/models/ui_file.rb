@@ -57,5 +57,11 @@ class UiFile < UiEditObject
     
   end
   
+  def command_switch(field_value)
+    res = field_value ||= ''
+    #res = (@command_switch % field_value) if field_value and @command_switch
+    return res
+  end
+  
   
 end

@@ -226,6 +226,24 @@ class Command < BaseFileModel
     return get_stage_data(stage,'enabled')
   end
   
+  
+  
+  #-----------------------------------------
+  # Get title of submit button for a stage
+  #-----------------------------------------
+  def submit_button_title(stage)
+    return get_stage_data(stage,'submit_button_title')
+  end
+  
+  
+  #-----------------------------------------
+  # Get flow for next stage calculation
+  #-----------------------------------------
+  def next_stage_flow(stage)
+    return get_stage_data(stage,'next_stage_flow')
+  end
+  
+  
   #-----------------------------------------
   # get input params for a stage
   #-----------------------------------------
@@ -237,7 +255,7 @@ class Command < BaseFileModel
   # Returns the name of the next stage, 
   # or nil if not
   #-----------------------------------------
-  def next_stage(stage)
+  def next_stage(stage,command_switches,next_stage_flow)
 
     current_index= get_stage_names.index(stage)
     
@@ -245,6 +263,48 @@ class Command < BaseFileModel
       current_index = current_index+1
       res = get_stage_names[current_index]
     end until ((res.nil?) or (stage_enabled(res)==true))
+      
+
+    #if there is a condition for next_stage
+    
+    if !next_stage_flow.blank?
+      
+      #evaluate condition
+      next_stage_flow.keys.each do |nstage|
+        puts nstage
+        cond_text = next_stage_flow[nstage] ||= ''
+                      
+        #there is a condition
+        if cond_text!=''
+          cond_text = Command.replace_switches(cond_text,command_switches)
+          
+          #puts "exec_if:"+exec_if
+          
+          begin
+            cond = eval(cond_text)
+          rescue
+            cond = false
+          end
+          
+          if cond
+            res = nstage
+            
+            break
+          end
+          
+        end
+        
+      end
+      
+      #find new_stage
+      #res = stage
+    end
+    
+    if res.blank?
+      res=get_stage_names.first
+    end
+    
+    puts "selected next stage:#{res}"
     
     return res
     

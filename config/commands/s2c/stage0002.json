@@ -1,0 +1,200 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key. Be careful
+# with punctuation symbols, since this is a json file and
+# needs to keep its structure.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+# You can add as many stages as you want, they are shown
+# in alphabetical order.
+#
+########################################################
+
+{
+title:'SUBMIT FILES',
+stage_type:'submit',
+enabled: true,
+submit_button_title: 'Run',
+
+#	OPCIONES PARA EL PROGRAMA DE ENSAMBLAJE CABOG
+
+input_params: [
+
+ {
+	title:'seqtrim',
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'file',
+	id:'fasta_file_sq',
+	save_as:'seqs',
+	title:'Sequences (select type below)',
+	default_value: '',
+	required: true,
+	tooltip:'Select a sequence file in fasta format'
+ }
+,
+{
+	input_type: 'file',
+	id:'qual_file_sq',
+	save_as:'seqs.fasta.qual',
+	title:'Qualities (fasta)',
+	default_value: '',
+	required: false,
+	tooltip:'Select a sequence file in fasta format'
+}
+,
+ {
+	input_type: 'popup',
+	id:'input_type_popup_sq',
+	command_switch:'%s',
+	title:'Input type',
+	default_value: 'valor3',
+	values: {'fasta':'-f seqs',
+					 'fasta + qual':'-f seqs -q seqs.fasta.qual',
+					 'sff':'-f seqs.fasta -q seqs.fasta.qual',
+					 'zip':'-c seqs.zip'
+					 }
+					,
+	required: true,
+	tooltip:'You can choose different input formats.'
+ }
+,
+ {
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'integer',
+	id:'min_length',
+	command_switch:'--seqMinLength=%s',
+	title:'Minimun desired length',
+	required: false,
+	tooltip:'un tooltip',
+	default_value: '100',
+	validation_lower_limit:'0',
+	validation_upper_limit:''
+ }
+
+#,
+#{
+#	input_type: 'integer',
+#	id:'a',
+#	command_switch:'utgGenomeSize=%s',
+#	title:'Genome Size (bp)',
+#	required: true,
+#	tooltip:'The genome size, in bases.',
+#	default_value: '4000000',
+#	validation_lower_limit:'1',
+#	validation_upper_limit:''
+#}
+,
+ {
+	title:'Assembly',
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'popup',
+	id:'pop1_popup_sq',
+	command_switch:'unitigger=%s',
+	title:'Assembly methods',
+	default_value: 'valor3',
+	values: {'Unitigger':'utg',
+					 'Best Over Graph':'bog'}
+					,
+	required: true,
+	tooltip:'You can choose between two different assembly methods: utg  and bog (recommended for 454 data).'
+ }
+,
+  {
+	input_type: 'checkbox',
+	id:'checkbox1_sq',
+	command_switch:'createACE=1',
+	title:'Create ACE',
+	title_pos:'right',
+	default_value: 'false',
+	required: false,
+	tooltip:'Create an ACE file for the sacffolds'
+ }
+,
+  {
+	input_type: 'checkbox',
+	id:'checkbox2_sq',
+	command_switch:'createAGP=1',
+	title:'Create AGP',
+	title_pos:'right',
+	default_value: 'false',
+	required: false,
+	tooltip:'Create an AGP file for the sacffolds'
+ }
+],
+command_list:[
+							# extraer SFF solo si es SFF
+							{ exec_if:'"$input_type_popup_sq"=="-f seqs.fasta -q seqs.fasta.qual"',
+								required_files:['seqs'],
+								command:'~mira/programs/x86_64/bin/sff_extract -o seqs seqs'
+							}
+							,
+							# renombrar fichero si es zip
+							{ exec_if:'"$input_type_popup_sq"=="-c seqs.zip"',
+								required_files:['seqs'],
+								command:'mv seqs seqs.zip'
+							}
+							,
+							# ejecutar seqtrim
+							{ 
+								required_files:[],
+								command:'~bioperl/seqtrim/seqtrim.pl --is_cDNA=0 $min_length $input_type_popup_sq -o fasta.pname'
+							}
+							,
+							# renombrar ficheros a pname
+							{ 
+								required_files:['fasta.pname.qual'],
+								command:'mv fasta.pname.qual qual.pname'
+							}
+							,
+							{
+								required_files:['fasta.pname'],
+								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname 2>> celera_errors.txt'
+							}
+							,
+							{ exec_if:'"$POP1_POPUP_SQ"=="unitigger=bog"',
+								required_files:['pname.frg'],
+								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $COMMAND_SWITCHES  pname.frg  2>> celera_errors.txt'
+							}
+ ,
+        {
+                required_files:['9-terminator'],
+                command:'zip -r results.zip 9-terminator'
+        }
+
+ ,
+        {
+                required_files:['9-terminator/pname.asm','9-terminator/pname.frg'],
+                command:' ~amos/programs/x86_64/bin/toAmos -f pname.frg -a pname.asm -o - | ~amos/programs/x86_64/bin/bank-transact -m - -b pname.bnk -c 2>> celera_errors.txt'
+        }
+ ,
+        {
+                required_files:['pname.bnk'],
+                command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk 2>> celera_errors.txt'
+        }
+
+ ,
+        {
+                required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
+                command:'zip -r results_validation.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
+        }
+]
+,
+next_stage_flow:{
+	'stage0001':'true'
+	}
+,
+create_results_dir:['output'],
+use_queue_system:true
+}

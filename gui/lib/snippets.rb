@@ -1,6 +1,6 @@
 <% form_for :upload, :url => {:controller => 'jobs', :action => 'upload_stage'}, :html => {:multipart => true, :target => :upload_target} do |f| %>
                                              
-<%= add_fields_for_params(f,@command.input_params_for_stage(session[:current_stage])) %>
+<%= add_fields_for_params(f,@command.input_params_for_stage(session[:current_stage],,@command.submit_button_title(session[:current_stage))) %>
 
 <%= add_form_submit_row %>
 

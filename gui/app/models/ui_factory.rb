@@ -50,7 +50,9 @@ class UiFactory
     res['title']=stage_params['title'] ||= 'TITLE'
     res['stage_type']=stage_params['stage_type'] ||= 'submit'
     res['enabled']=stage_params['enabled'] ||= true
+    res['submit_button_title']=stage_params['submit_button_title'] ||= 'Send'
     res['command_list']=stage_params['command_list'] ||= []
+    res['next_stage_flow']=stage_params['next_stage_flow'] ||= {}
     res['use_queue_system']=stage_params['use_queue_system'] ||= false
     res['user_presets']=stage_params['user_presets'] ||= false
     res['sudo_command']=stage_params['sudo_command'] ||= QSUB_SUDO

@@ -46,18 +46,20 @@ class JobsController < ApplicationController
   def upload_stage
     # puts "parametros, filename:", params[:upload][:filename].to_s
     
-    command_switches = ''
+    @command_switches = ''
     
     # puts "parametros jobs:"+params.to_yaml
     
     # retrieve command configuration
     @command = Command.new(session[:current_command])
     
+    
     # check stage is valid
-    if (session[:current_stage]==nil) or (session[:current_stage] == '')
+    if (session[:current_stage].blank?)
          # create new job directory
          session[:current_stage] = @command.get_stage_names.first
     end
+    
        
     # at first, errors is an empty hash
     @errors = {}
@@ -83,8 +85,8 @@ class JobsController < ApplicationController
     
 
       std_attrs = {}
-      command_switches={}
-      command_switches[COMMAND_SWITCHES_TAG]=''
+      @command_switches={}
+      @command_switches[COMMAND_SWITCHES_TAG]=''
       
       # retrieve parameters values
       @command.input_params_for_stage(session[:current_stage]).each do |ui_param|
@@ -101,17 +103,17 @@ class JobsController < ApplicationController
          # retrieve command switches
          cs = ui_param.command_switch(field_value)
          
-         command_switches[ui_param.field_switch] = cs
+         @command_switches[ui_param.field_switch] = cs
          
          if cs != ''
-           command_switches[COMMAND_SWITCHES_TAG] += (' ' + cs) 
+           @command_switches[COMMAND_SWITCHES_TAG] += (' ' + cs) 
          end         
          
       end
       
-      puts command_switches.to_yaml
+      puts @command_switches.to_yaml
 
-      std_attrs[COMMAND_SWITCHES_TAG]=command_switches[COMMAND_SWITCHES_TAG]
+      std_attrs[COMMAND_SWITCHES_TAG]=@command_switches[COMMAND_SWITCHES_TAG]
       #save values
       Job.save_standard_attributes(std_attrs,session[:current_command],session[:user_email],session[:current_job_id])
       
@@ -130,7 +132,19 @@ class JobsController < ApplicationController
         
         path = File.join(DATA_PATH,session[:current_command],session[:user_email],session[:current_job_id])
         
-        Command.exec_job_command(path,command_list,command_switches,session[:current_job_id],use_queue_system,submit_command,sudo_command)
+        Command.exec_job_command(path,command_list,@command_switches,session[:current_job_id],use_queue_system,submit_command,sudo_command)
+      end
+    
+      old_stage=session[:current_stage]
+      
+      session[:current_stage]=@command.next_stage(session[:current_stage],@command_switches,@command.next_stage_flow(session[:current_stage]))
+
+      #if session[:current_stage]==nil
+      #    session[:current_stage] = @command.get_stage_names.first
+      #end
+      #
+      if old_stage!= session[:current_stage]
+        session[:previous_stage]=old_stage
       end
     
     end

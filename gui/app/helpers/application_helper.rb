@@ -24,7 +24,7 @@ module ApplicationHelper
   #-----------------------------------------
   # add fields defined by params to the form
   #-----------------------------------------
-  def add_fields_for_params(command_params)
+  def add_fields_for_params(command_params,submit_button_title)
             
     res =''  
     
@@ -126,7 +126,7 @@ module ApplicationHelper
 
         
       end 
-      res += add_form_submit_row(using_required_fields)      
+      res += add_form_submit_row(using_required_fields,submit_button_title)      
     end    
     
     return res
@@ -167,14 +167,16 @@ module ApplicationHelper
   #-----------------------------------------
   # 
   #-----------------------------------------
-  def add_form_submit_row(with_required)
+  def add_form_submit_row(with_required,submit_button_title)
     res = '<tr>
         <td>&nbsp;&nbsp;</td>
 			  <td>'
-			  
+    
+    bname = submit_button_title ||= "Send"
+		
 		res += '<font color="#8B2627">* Required field</font>' if with_required
 		res += '&nbsp</td>
-				<td style="text-align:right">'+ submit_tag("Send") + '</td>
+				<td style="text-align:right">'+ submit_tag(bname) + '</td>
 		       </tr>'
 		       
 		return res
