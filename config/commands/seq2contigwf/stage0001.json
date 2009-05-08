@@ -75,7 +75,7 @@ input_params: [
 ,
  {
 	input_type: 'popup',
-	id:'pop1_popup',
+	id:'method_cabog',
 	command_switch:'unitigger=%s',
 	title:'Assembly methods',
 	default_value: 'valor3',
@@ -100,7 +100,7 @@ input_params: [
 ,
   {
 	input_type: 'checkbox',
-	id:'checkbox1',
+	id:'ace_cabog',
 	command_switch:'createACE=1',
 	title:'Create ACE',
 	title_pos:'right',
@@ -111,7 +111,7 @@ input_params: [
 ,
   {
 	input_type: 'checkbox',
-	id:'checkbox1',
+	id:'agp_cabog',
 	command_switch:'createAGP=1',
 	title:'Create AGP',
 	title_pos:'right',
@@ -128,7 +128,7 @@ command_list:[
 							,
 							{
 								required_files:['pname.frg'],
-								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $COMMAND_SWITCHES  pname.frg  2>> celera_errors.txt'
+								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_cabog $ace_cabog $agp_cabog pname.frg  2>> celera_errors.txt'
 							}
  ,
         {
