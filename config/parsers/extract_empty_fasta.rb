@@ -16,7 +16,7 @@ command_info="
 #================================================
 \n";
 
-require File.dirname(__FILE__) + '/utils/fasta_utils";
+require File.dirname(__FILE__) + '/utils/fasta_utils';
 
 
 #receive one argument or fail
