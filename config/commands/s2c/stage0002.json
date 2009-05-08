@@ -100,7 +100,7 @@ input_params: [
 ,
  {
 	input_type: 'popup',
-	id:'pop1_popup_sq',
+	id:'method_sq',
 	command_switch:'unitigger=%s',
 	title:'Assembly methods',
 	default_value: 'valor3',
@@ -113,7 +113,7 @@ input_params: [
 ,
   {
 	input_type: 'checkbox',
-	id:'checkbox1_sq',
+	id:'ace_sq_cb',
 	command_switch:'createACE=1',
 	title:'Create ACE',
 	title_pos:'right',
@@ -124,7 +124,7 @@ input_params: [
 ,
   {
 	input_type: 'checkbox',
-	id:'checkbox2_sq',
+	id:'agp_sq_cb',
 	command_switch:'createAGP=1',
 	title:'Create AGP',
 	title_pos:'right',
@@ -163,16 +163,17 @@ command_list:[
 								required_files:['fasta.pname'],
 								command:'bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
 							}
-							
 							,
+							# convert file to frg
 							{
-								required_files:['fasta.pname'],
+								required_files:['fasta.pname','qual.pname','xml.pname'],
 								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname 2>> celera_errors.txt'
 							}
 							,
+							# run cabog with frg file, only if unittiger
 							{ exec_if:'"$POP1_POPUP_SQ"=="unitigger=bog"',
 								required_files:['pname.frg'],
-								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $COMMAND_SWITCHES  pname.frg  2>> celera_errors.txt'
+								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_sq $agp_sq_cb $ace_sq_cb pname.frg  2>> celera_errors.txt'
 							}
  ,
         {

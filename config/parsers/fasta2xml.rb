@@ -19,7 +19,6 @@ command_info="
 #require "utils/fasta_utils"
 require File.dirname(__FILE__) + "/utils/fasta_utils"
 
-
 #receive one argument or fail
 if ARGV.count != 1
   puts command_info;

@@ -16,7 +16,7 @@ command_info="
 #================================================
 \n"
 
-require 'utils/json_utils'
+require File.dirname(__FILE__) + '/utils/json_utils'
 
 include JsonUtils
 
