@@ -158,6 +158,13 @@ command_list:[
 								command:'mv fasta.pname.qual qual.pname'
 							}
 							,
+							# extraer XML del fasta
+							{ 
+								required_files:['fasta.pname'],
+								command:'bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
+							}
+							
+							,
 							{
 								required_files:['fasta.pname'],
 								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname 2>> celera_errors.txt'

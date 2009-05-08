@@ -37,8 +37,19 @@
 ,
 {
 	title:'Params',
-	field:'$COMMAND_SWITCHES',
+	field:'',
 	width:'10%',
-	calculated:true
+	calculated:true,
+	tooltip_field:'$COMMAND_SWITCHES',
+	tooltip_calculated:true
 }
+#,
+#{
+#	title:'Params',
+#	field:'$COMMAND_SWITCHES',
+#	width:'10%',
+#	calculated:true
+#}
+
 ]
+
