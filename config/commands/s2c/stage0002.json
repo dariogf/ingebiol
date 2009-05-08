@@ -161,7 +161,7 @@ command_list:[
 							# extraer XML del fasta
 							{ 
 								required_files:['fasta.pname'],
-								command:'bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
+								command:'~bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
 							}
 							,
 							# convert file to frg
