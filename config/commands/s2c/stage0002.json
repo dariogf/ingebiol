@@ -164,6 +164,14 @@ command_list:[
 								command:'mv fasta.pname fasta_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb fasta_all.pname > fasta.pname'
 							}
 							,
+							# quitar vacias del qual
+							{ 
+								required_files:['qual.pname'],
+								command:'mv qual.pname qual_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb qual_all.pname > qual.pname'
+							}
+							
+							 
+							,
 							# extraer XML del fasta
 							{ 
 								required_files:['fasta.pname'],
