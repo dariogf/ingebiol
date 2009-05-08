@@ -170,8 +170,8 @@ command_list:[
 								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname 2>> celera_errors.txt'
 							}
 							,
-							# run cabog with frg file, only if unittiger
-							{ exec_if:'"$POP1_POPUP_SQ"=="unitigger=bog"',
+							# run cabog with frg file, 
+							{ 
 								required_files:['pname.frg'],
 								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_sq $agp_sq_cb $ace_sq_cb pname.frg  2>> celera_errors.txt'
 							}
