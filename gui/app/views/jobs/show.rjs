@@ -10,7 +10,7 @@ final_results = @command.get_final_results(session[:user_email],session[:current
 
 # for each param
 final_results['params'].each do |fr|
-     
+  
   elem = {}
   elem['id'] = fr['id']
   elem['type'] = fr['type']

@@ -11,6 +11,7 @@ class JobsController < ApplicationController
     
     if session[:current_stage]==nil
          session[:current_stage] = @command.get_stage_names.first
+         
     end
     
   end
@@ -21,7 +22,8 @@ class JobsController < ApplicationController
   def show
     @job_id=params[:id]
     @command = Command.new(session[:current_command])
-        
+    
+    
     # modify current job id
     session[:current_job_id]=@job_id
   end

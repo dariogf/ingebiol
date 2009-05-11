@@ -12,6 +12,7 @@
 title:'RESULTS', 
 stage_type:'final_results',
 enabled: true,
+template:'',
 
 params: [
  {
