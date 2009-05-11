@@ -132,6 +132,35 @@ input_params: [
 	required: false,
 	tooltip:'Create an AGP file for the sacffolds'
  }
+ ,
+  {
+	title:'Annotation',
+	input_type: 'separator'
+ }
+,
+  {
+	input_type: 'checkbox',
+	id:'annotate_sq_cb',
+	command_switch:'-annotate',
+	title:'Annotate (Swissprot + TrEMBL)',
+	title_pos:'right',
+	default_value: 'true',
+	required: false,
+	tooltip:'Make annotation using blast with Swissprot and TrEMBL databases'
+ }
+ ,
+ {
+	input_type: 'float',
+	id:'blast_filter_sq',
+	command_switch:'-e %s',
+	title:'Consider only alignments with expect below',
+	required: false,
+	tooltip:'',
+	default_value: '1e-10',
+	validation_lower_limit:'',
+	validation_upper_limit:''
+ }
+
 ],
 command_list:[
 							# extraer SFF solo si es SFF
@@ -169,13 +198,17 @@ command_list:[
 								required_files:['qual.pname'],
 								command:'mv qual.pname qual_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb qual_all.pname > qual.pname'
 							}
-							
-							 
 							,
 							# extraer XML del fasta
 							{ 
 								required_files:['fasta.pname'],
 								command:'~bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
+							}
+							,
+							#crear zip con resultados del seqtrim
+							{
+								required_files:['fasta.pname','qual.pname','xml.pname'],
+								command:'zip seqtrim_result.zip fasta.pname qual.pname xml.pname'
 							}
 							,
 							# convert file to frg
@@ -192,7 +225,7 @@ command_list:[
  ,
         {
                 required_files:['9-terminator'],
-                command:'zip -r results.zip 9-terminator'
+                command:'zip -r assembly_result.zip 9-terminator'
         }
 
  ,
@@ -209,14 +242,31 @@ command_list:[
  ,
         {
                 required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
-                command:'zip -r results_validation.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
+                command:'zip -r validation_result.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
         }
+	,
+        {
+					exec_if:'"$annotate_sq_cb"=="-annotate"',
+          required_files:['pname.fasta'],
+          command:'blastall -p blastx -d ~blast/db/prot.fasta -i pname.fasta -o result.blast'
+        }
+				,
+				{
+					exec_if:'"$annotate_sq_cb"=="-annotate"',
+          required_files:['result.blast'],
+          command:'blast2gff.pl $ result.blast'
+        }
+				,
+				{
+					exec_if:'"$annotate_sq_cb"=="-annotate"',
+          required_files:['result.ps'],
+          command:'ps2pdf result.ps annotation_graph.pdf'
+				}
 ]
 ,
 next_stage_flow:{
 	'stage0001':'true'
 	}
 ,
-create_results_dir:['output'],
 use_queue_system:true
 }

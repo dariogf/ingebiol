@@ -202,5 +202,9 @@ end
 
 # page['job_results_div'].replace_html('Showing: '+@job_id)
 
+if res_html.blank?
+  res_html = '<br>No results available'
+end
+
 page['job_results_div'].replace_html(res_html)
 

@@ -74,14 +74,16 @@ class UiFloat < UiEditObject
      field_value = web_params[field_name]
 
      if super
-       # check if it is an integer
-       if (field_value.match(/^-?\d+\.?\d*$/).to_s=='')
+       # check if it is a float
+       if (field_value.match(/^-?\d+[\.e]?\-?\d*$/).to_s=='')
          errors[field_name] = 'Please, provide a valid number'
 
        else #is a number
 
          # check limits
          n = field_value.to_f
+         
+         #puts 'float:'+n.to_s
 
          if @validation_lower_limit and @validation_lower_limit!=''
             if n<@validation_lower_limit.to_f

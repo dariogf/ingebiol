@@ -15,19 +15,42 @@ enabled: true,
 template:'',
 
 params: [
+  
  {
 	type: 'file',
-	file:'results.zip',
+	file:'seqtrim_result.zip',
+	title:'Seqtrim result',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
+	file:'assembly_result.zip',
 	title:'Assembly results',
 	tooltip:''
  }
-,
+ ,
  {
 	type: 'file',
-	file:'results_validation.zip',
-	title:'Validated results ',
+	file:'validation_result.zip',
+	title:'Validated results',
 	tooltip:''
  }
+ ,
+ {
+	type: 'file',
+	file:'result.blast',
+	title:'Blast results ',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
+	file:'annotation_graph.pdf',
+	title:'Annotation graph',
+	tooltip:''
+ }
+ 
 # ,
 #  {
 # 	type: 'file_value',
