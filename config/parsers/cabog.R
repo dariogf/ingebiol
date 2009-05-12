@@ -5,7 +5,7 @@
 # para saber dónde están los datos
 #setwd("/Users/Noe/Desktop/")
 
-args=(commandArgs(true))
+args=(commandArgs(TRUE))
 
 library(graphics)
 
