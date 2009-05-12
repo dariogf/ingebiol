@@ -254,7 +254,7 @@ command_list:[
 				{
 					exec_if:'"$annotate_sq_cb"=="-annotate"',
           required_files:['result.blast'],
-          command:'blast2gff.pl $ result.blast'
+          command:'blast2gff.pl result.blast'
         }
 				,
 				{
