@@ -40,6 +40,8 @@ class UiObject
     @save_in_presets = command_param['required_error_msg'] ||= false
     @autocomplete_values = command_param['autocomplete_values'] ||= nil
     
+    @visible_if = command_param['visible_if'] ||= ''
+    
 
     
     # It is a string, so it may be a file with content

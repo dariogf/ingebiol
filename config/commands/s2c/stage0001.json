@@ -46,8 +46,8 @@ input_params: [
 	command_switch:'%s',
 	title:'Select workflow type',
 	default_value: 'seqtrim',
-	values: {'Seqtrim + assembly':'seqtrim',
-					 'Only assembly':'assembly'},
+	values: {'Seqtrim + assembly + annotation':'seqtrim',
+					 'Assembly + annotation':'assembly'},
 	required: true,
 	tooltip:'Select the type of workflow you want to use'
  }
