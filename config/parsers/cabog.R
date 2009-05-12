@@ -5,10 +5,15 @@
 # para saber dónde están los datos
 #setwd("/Users/Noe/Desktop/")
 
+args=(commandArgs(true))
+
 library(graphics)
 
+print args[1]
+
+
 # para cargar la tabla del fichero pig_t.txt en el objeto datos
-datos <- read.table("hybrid.qc", header = FALSE, sep = "", dec =".", skip = 19, strip.white = TRUE)
+datos <- read.table(args[1], header = FALSE, sep = "", dec =".", skip = 19, strip.white = TRUE)
 colnames(datos) <- cbind("d", "< 3kbp", "< 10kbp", "< 1Mbp", "< inf")
 
 colx <- as.numeric(datos[,1])
