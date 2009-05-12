@@ -54,7 +54,7 @@ input_params: [
 	command_switch:'%s',
 	title:'Input type',
 	default_value: 'valor3',
-	values: {'fasta':'-f seqs',
+	values: {
 					 'fasta + qual':'-f seqs -q seqs.fasta.qual',
 					 'sff':'-f seqs.fasta -q seqs.fasta.qual',
 					 'zip':'-c seqs.zip'
