@@ -50,6 +50,17 @@ params: [
 	title:'Annotation graph',
 	tooltip:''
  }
+ ,
+ {
+  id:'image1',
+	type: 'image',
+	file_name:'cabog_plot.png',
+  content_type:'image/png',
+	title:'Cabog plot graphic',
+  options:{height:'200',width:'250'},
+  linked:true,
+	tooltip:''
+ }
  
 # ,
 #  {

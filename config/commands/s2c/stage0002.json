@@ -263,6 +263,12 @@ command_list:[
           required_files:['result.ps'],
           command:'ps2pdf result.ps annotation_graph.pdf'
 				}
+				,
+				#cabog_plot.png
+				{
+          required_files:['pname.qc'],
+          command:'~erre/programs/x86_64/bin/R CMD BATCH "--args pname.qc" ~bioperl/rails/ingebiol/config/parsers/cabog.R'
+				}
 ]
 ,
 next_stage_flow:{
