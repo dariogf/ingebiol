@@ -9,7 +9,7 @@ args=(commandArgs(true))
 
 library(graphics)
 
-print args[1]
+print(args[1])
 
 
 # para cargar la tabla del fichero pig_t.txt en el objeto datos
