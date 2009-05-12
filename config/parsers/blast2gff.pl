@@ -2,6 +2,7 @@
 
 # blast2gff.pl
 # Antonio Jesus Lara Aparicio <ajlara@scbi.uma.es>
+# Modified by Dario
 
 # POD documentation
 
@@ -194,14 +195,14 @@ while (my $result = $searchio_in->next_result()) {
   if ($splited) {
     close $gff_out;
 
-    system("gff2ps -a $filename > $filename.ps 2>> $gff_file.log")
+    system("~bioperl/rails/ingebiol/config/parsers/gff2ps -a $filename > $filename.ps 2>> $gff_file.log")
       or die "ERROR: gff2ps";
   }
 }
 if (!$splited) {
   close $gff_out;
 
-  system("gff2ps -a $gff_file > $gff_file.ps 2>> $gff_file.log")
+  system("~bioperl/rails/ingebiol/config/parsers/gff2ps -a $gff_file > $gff_file.ps 2>> $gff_file.log")
     or die "ERROR: gff2ps";
 }
 
