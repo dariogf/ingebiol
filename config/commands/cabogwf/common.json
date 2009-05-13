@@ -11,7 +11,7 @@
 {
 
 # Write here the desired title for the command
-title:"Seq2Contig Workflow"
+title:"Cabog Workflow"
 ,
 
 # Provide a short description
@@ -19,7 +19,7 @@ title:"Seq2Contig Workflow"
 ,
 
 # And a long one
-	long_description:"<br><p>Seq2ContigWF is a workflow that uses <b>AMOS</b> utilities to prepare sequences for the <b>Celera Assember</b> and then validates the resulting contigs with <b>AMOS Validate</b>.
+	long_description:"<br><p>CabogWF is a workflow that uses <b>AMOS</b> utilities to prepare sequences for the <b>Celera Assember</b> and then validates the resulting contigs with <b>AMOS Validate</b>.
 The Celera Assember has been chosen by its aggresivity when resolving repetitive sequences.</p>"
 ,
  

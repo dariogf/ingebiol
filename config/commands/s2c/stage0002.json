@@ -164,111 +164,110 @@ input_params: [
 
 ],
 command_list:[
-							# extraer SFF solo si es SFF
-							{ exec_if:'"$input_type_popup_sq"=="-f seqs.fasta -q seqs.fasta.qual"',
-								required_files:['seqs'],
-								command:'~mira/programs/x86_64/bin/sff_extract -o seqs seqs'
-							}
-							,
-							# renombrar fichero si es zip
-							{ exec_if:'"$input_type_popup_sq"=="-c seqs.zip"',
-								required_files:['seqs'],
-								command:'mv seqs seqs.zip'
-							}
-							,
-							# ejecutar seqtrim
-							{ 
-								required_files:[],
-								command:'~bioperl/seqtrim/seqtrim.pl --is_cDNA=0 $min_length $input_type_popup_sq -o fasta.pname'
-							}
-							,
-							# renombrar ficheros a pname
-							{ 
-								required_files:['fasta.pname.qual'],
-								command:'mv fasta.pname.qual qual.pname'
-							}
-							,
-							# quitar vacias del fasta
-							{ 
-								required_files:['fasta.pname'],
-								command:'mv fasta.pname fasta_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb fasta_all.pname > fasta.pname'
-							}
-							,
-							# quitar vacias del qual
-							{ 
-								required_files:['qual.pname'],
-								command:'mv qual.pname qual_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb qual_all.pname > qual.pname'
-							}
-							,
-							# extraer XML del fasta
-							{ 
-								required_files:['fasta.pname'],
-								command:'~bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
-							}
-							,
-							#crear zip con resultados del seqtrim
-							{
-								required_files:['fasta.pname','qual.pname','xml.pname'],
-								command:'zip seqtrim_result.zip fasta.pname qual.pname xml.pname'
-							}
-							,
-							# convert file to frg
-							{
-								required_files:['fasta.pname','qual.pname','xml.pname'],
-								command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname 2>> celera_errors.txt'
-							}
-							,
-							# run cabog with frg file, 
-							{ 
-								required_files:['pname.frg'],
-								command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_sq $agp_sq_cb $ace_sq_cb pname.frg  2>> celera_errors.txt'
-							}
- ,
-        {
-                required_files:['9-terminator'],
-                command:'zip -r assembly_result.zip 9-terminator'
-        }
-
- ,
-        {
-                required_files:['9-terminator/pname.asm','9-terminator/pname.frg'],
-                command:' ~amos/programs/x86_64/bin/toAmos -f pname.frg -a pname.asm -o - | ~amos/programs/x86_64/bin/bank-transact -m - -b pname.bnk -c 2>> celera_errors.txt'
-        }
- ,
-        {
-                required_files:['pname.bnk'],
-                command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk 2>> celera_errors.txt'
-        }
-
- ,
-        {
-                required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
-                command:'zip -r validation_result.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
-        }
-	,
-        {
-					exec_if:'"$annotate_sq_cb"=="-annotate"',
-          required_files:['pname.fasta'],
-          command:'blastall -p blastx -d ~blast/db/prot.fasta -i pname.fasta -o result.blast'
-        }
-				,
-				{
-					exec_if:'"$annotate_sq_cb"=="-annotate"',
-          required_files:['result.blast'],
-          command:'~bioperl/rails/ingebiol/config/parsers/blast2gff.pl result.blast'
-        }
-				,
-				{
-					exec_if:'"$annotate_sq_cb"=="-annotate"',
-          required_files:['result.ps'],
-          command:'ps2pdf result.ps annotation_graph.pdf'
-				}
-				,
-				#cabog_plot.png
-				{
-          required_files:['pname.qc'],
-          command:'~erre/programs/x86_64/bin/R CMD BATCH "--args pname.qc" ~bioperl/rails/ingebiol/config/parsers/cabog.R'
-				}
+		# extraer SFF solo si es SFF
+		{ exec_if:'"$input_type_popup_sq"=="-f seqs.fasta -q seqs.fasta.qual"',
+			required_files:['seqs'],
+			command:'~mira/programs/x86_64/bin/sff_extract -o seqs seqs'
+		}
+		,
+		# renombrar fichero si es zip
+		{ exec_if:'"$input_type_popup_sq"=="-c seqs.zip"',
+			required_files:['seqs'],
+			command:'mv seqs seqs.zip'
+		}
+		,
+		# ejecutar seqtrim
+		{ 
+			required_files:[],
+			command:'~bioperl/seqtrim/seqtrim.pl --is_cDNA=0 $min_length $input_type_popup_sq -o fasta.pname'
+		}
+		,
+		# renombrar ficheros a pname
+		{ 
+			required_files:['fasta.pname.qual'],
+			command:'mv fasta.pname.qual qual.pname'
+		}
+		,
+		# quitar vacias del fasta
+		{ 
+			required_files:['fasta.pname'],
+			command:'mv fasta.pname fasta_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb fasta_all.pname > fasta.pname'
+		}
+		,
+		# quitar vacias del qual
+		{ 
+			required_files:['qual.pname'],
+			command:'mv qual.pname qual_all.pname; ~bioperl/rails/ingebiol/config/parsers/remove_empty_fasta.rb qual_all.pname > qual.pname'
+		}
+		,
+		# extraer XML del fasta
+		{ 
+			required_files:['fasta.pname'],
+			command:'~bioperl/rails/ingebiol/config/parsers/fasta2xml.rb fasta.pname > xml.pname'
+		}
+		,
+		#crear zip con resultados del seqtrim
+		{
+			required_files:['fasta.pname','qual.pname','xml.pname'],
+			command:'zip seqtrim_result.zip fasta.pname qual.pname xml.pname'
+		}
+		,
+		# convert file to frg
+		{
+			required_files:['fasta.pname','qual.pname','xml.pname'],
+			command:'~amos/programs/x86_64/bin/tarchive2ca -o pname fasta.pname 2>> celera_errors.txt'
+		}
+		,
+		# run cabog with frg file, 
+		{ 
+			required_files:['pname.frg'],
+			command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_sq $agp_sq_cb $ace_sq_cb pname.frg  2>> celera_errors.txt'
+		}
+		,
+		{
+						required_files:['9-terminator'],
+						command:'zip -r assembly_result.zip 9-terminator'
+		}
+		
+		,
+		{
+						required_files:['9-terminator/pname.asm','9-terminator/pname.frg'],
+						command:' ~amos/programs/x86_64/bin/toAmos -f pname.frg -a pname.asm -o - | ~amos/programs/x86_64/bin/bank-transact -m - -b pname.bnk -c 2>> celera_errors.txt'
+		}
+		,
+		{
+						required_files:['pname.bnk'],
+						command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk 2>> celera_errors.txt'
+		}
+		,
+		{
+						required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
+						command:'zip -r validation_result.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
+		}
+		,
+		{
+			exec_if:'"$annotate_sq_cb"=="-annotate"',
+			required_files:['pname.fasta'],
+			command:'blastall -p blastx -d ~blast/db/prot.fasta -i pname.fasta -o result.blast'
+		}
+		,
+		{
+			exec_if:'"$annotate_sq_cb"=="-annotate"',
+			required_files:['result.blast'],
+			command:'~bioperl/rails/ingebiol/config/parsers/blast2gff.pl result.blast'
+		}
+		,
+		{
+			exec_if:'"$annotate_sq_cb"=="-annotate"',
+			required_files:['result.ps'],
+			command:'ps2pdf result.ps annotation_graph.pdf'
+		}
+		,
+		#cabog_plot.png
+		{
+			required_files:['pname.qc'],
+			command:'~erre/programs/x86_64/bin/R CMD BATCH "--args pname.qc" ~bioperl/rails/ingebiol/config/parsers/cabog.R'
+		}
 ]
 ,
 next_stage_flow:{
