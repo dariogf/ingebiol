@@ -163,7 +163,7 @@ input_params: [
 command_list:[
 							{
 								required_files:[],
-								command:'~mira/programs/x86_64/bin/mira -fasta -project=pname $COMMAND_SWITCHES'
+								command:'~mira/programs/x86_64/bin/mira -fasta -project=pname $pop1_popup $checkbox1 $radio1 $xml_file454 $xml_fileSanger'
 							}
 							,
 	{	
