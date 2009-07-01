@@ -11,7 +11,7 @@
 {
 
 # Write here the desired title for the command
-title:"S2C"
+title:"Seq2Contig workflow"
 ,
 
 # Provide a short description
