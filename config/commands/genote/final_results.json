@@ -1,0 +1,49 @@
+########################################################
+# Final results of command
+# ------------------------------------------------------
+# You only can modify the values of each key.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+########################################################
+
+{
+title:'RESULTS', 
+stage_type:'final_results',
+enabled: true,
+
+params: [
+ {
+	type: 'file',
+	file:'results.zip',
+	title:'Results (9-terminator)',
+	tooltip:''
+ }
+# ,
+#  {
+# 	type: 'file_value',
+# 	file:'out.txt',
+# 	regex:'.f(asta)',
+# 	regex_result:'$1',
+# 	title:'codigo1',
+# 	tooltip:''
+#  }
+#,
+# {
+#	type: 'command_output',
+#	command:'grep -E "found|done|over" seq.fasta.cap.info',
+#	title:'Command result',
+#	tooltip:''
+# }
+# ,
+#  {
+# 	type: 'command_output',
+# 	command:'head -n 20 /Volumes/Documentos/Progs/ruby/gui/README',
+# 	title:'Command result',
+# 	tooltip:''
+#  }
+
+]
+
+}

@@ -1,0 +1,111 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key. Be careful
+# with punctuation symbols, since this is a json file and
+# needs to keep its structure.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+# You can add as many stages as you want, they are shown
+# in alphabetical order.
+#
+########################################################
+
+{
+title:'SUBMIT FILES',
+stage_type:'submit',
+enabled: true,
+
+#	OPCIONES PARA EL PROGRAMA DE ENSAMBLAJE CABOG
+
+input_params: [
+{
+	input_type: 'text',
+	id:'job_name',
+	title:'Job name',
+	default_value: '',
+	required: true,
+	size:'30',
+	tooltip:'The job is assigned a number automatically, but you can provide a custom name for it',
+	validation_regex: '',
+	validation_error_msg: '',
+	standard_attribute: true,
+	save_in_presets: true
+}
+,
+ {
+	input_type: 'separator'
+ }
+,
+ {
+	input_type: 'file',
+	id:'input_file',
+	save_as:'input_file.fasta',
+	title:'Sequences 454  (fasta)',
+	default_value: '',
+	required: true,
+	tooltip:'Select a sequence file in fasta format'
+ }
+,
+{
+	input_type: 'integer',
+	id:'min_ident',
+	command_switch:'%s',
+	title:'Minimum identity (%)',
+	required: true,
+	tooltip:'The minimum identity required to..., in percentage.',
+	default_value: '45',
+	validation_lower_limit:'45',
+	validation_upper_limit:'100'
+}
+,
+{
+	input_type: 'integer',
+	id:'min_hit_length',
+	command_switch:'%s',
+	title:'Minimum hit length (nt)',
+	required: true,
+	tooltip:'The minimum hit length required to..., in nucleotides.',
+	default_value: '75',
+	validation_lower_limit:'20',
+	validation_upper_limit:''
+}
+],
+command_list:[
+							{
+								required_files:[],
+								command:'~wublast/programs/x86_64/bin/blastx ~bioperl/programs/genote/db/sp_db input_file.fasta -sort_by_totalscore -hspmax=0 -E=1e-10  -mformat=3 -cpus 1 -o wublast_results.txt'
+							}
+							,
+							{
+								required_files:['input_file.fasta','wublast_results.txt','~bioperl/programs/genote/db/sp_annotation'],
+								command:'~bioperl/programs/genote/genote.rb $min_ident $min_hit_length'
+							}
+         ,
+        {
+                required_files:['gff_regions.gff'],
+                command:'~bioperl/programs/genote/gff2ps -a -c gff_regions.gff > gff_regions.ps'
+        }
+         ,
+        {
+                required_files:['gff_regions.ps'],
+                command:'ps2pdf gff_regions'
+        }
+			 ]
+,
+create_results_dir:['output'],
+use_queue_system:true,
+queue_params:[
+	'#PBS -l select=ncpus=1',
+  '#PBS -l select=mem=2000mb',
+'#PBS -l walltime=10:00:00']
+
+},
+n_cpus:1,
+mb_ram:'2000mb',
+time:'2:00:00'
+
+
+}
