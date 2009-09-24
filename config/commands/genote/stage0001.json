@@ -18,7 +18,7 @@ title:'SUBMIT FILES',
 stage_type:'submit',
 enabled: true,
 
-#	OPCIONES PARA EL PROGRAMA DE ENSAMBLAJE CABOG
+#	OPCIONES
 
 input_params: [
 {
@@ -43,7 +43,7 @@ input_params: [
 	input_type: 'file',
 	id:'input_file',
 	save_as:'input_file.fasta',
-	title:'Sequences 454  (fasta)',
+	title:'Sequences  (fasta)',
 	default_value: '',
 	required: true,
 	tooltip:'Select a sequence file in fasta format'
@@ -76,36 +76,32 @@ input_params: [
 command_list:[
 							{
 								required_files:[],
-								command:'~wublast/programs/x86_64/bin/blastx ~bioperl/programs/genote/db/sp_db input_file.fasta -sort_by_totalscore -hspmax=0 -E=1e-10  -mformat=3 -cpus 1 -o wublast_results.txt'
+								command:'~wublast/programs/x86_64/blastx ~bioperl/programs/genote/db/sp_db input_file.fasta -sort_by_totalscore -hspmax=0 -E=1e-10  -mformat=3 -cpus 4 -o wublast_results.txt'
 							}
 							,
 							{
-								required_files:['input_file.fasta','wublast_results.txt','~bioperl/programs/genote/db/sp_annotation'],
+								required_files:['input_file.fasta','wublast_results.txt','~bioperl/programs/genote/db/sp_anotaciones.txt'],
 								command:'~bioperl/programs/genote/genote.rb $min_ident $min_hit_length'
 							}
          ,
         {
                 required_files:['gff_regions.gff'],
-                command:'~bioperl/programs/genote/gff2ps -a -c gff_regions.gff > gff_regions.ps'
+                command:'~bioperl/programs/genote/gff2ps -a -c -v -C ~bioperl/programs/genote/gff2psrc gff_regions.gff > gff_regions.ps 2>gff2ps_errors.txt'
         }
          ,
         {
                 required_files:['gff_regions.ps'],
-                command:'ps2pdf gff_regions'
+                command:'ps2pdf gff_regions.ps'
         }
 			 ]
 ,
 create_results_dir:['output'],
 use_queue_system:true,
-queue_params:[
-	'#PBS -l select=ncpus=1',
-  '#PBS -l select=mem=2000mb',
-'#PBS -l walltime=10:00:00']
-
-},
-n_cpus:1,
-mb_ram:'2000mb',
-time:'2:00:00'
-
-
+submit_file_header:[
+	'#PBS -q routex86',
+	'#PBS -l select=ncpus=4',
+  '#PBS -l select=mem=4000mb',
+  '#PBS -l walltime=10:00:00']
+  
 }
+

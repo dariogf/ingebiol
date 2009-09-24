@@ -119,7 +119,7 @@ input_params: [
 	title_pos:'right',
 	default_value: 'false',
 	required: false,
-	tooltip:'Create an ACE file for the sacffolds'
+	tooltip:'Create an ACE file for the scaffolds'
  }
 ,
   {

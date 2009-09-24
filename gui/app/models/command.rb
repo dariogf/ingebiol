@@ -202,7 +202,14 @@ class Command < BaseFileModel
   def use_queue_system(stage)
     return get_stage_data(stage,'use_queue_system')
   end
-  
+
+  #-----------------------------------------
+  # Get the queue status for a stage
+  #-----------------------------------------
+  def submit_file_header(stage)
+    return get_stage_data(stage,'submit_file_header')
+  end
+
   #-----------------------------------------
   # Get the queue status for a stage
   #-----------------------------------------
@@ -437,9 +444,8 @@ class Command < BaseFileModel
   #-----------------------------------------
   # 
   #-----------------------------------------
-  def self.exec_job_command(path, command_list, command_switches, job_id, queue,submit_command,sudo_command)
-
-    
+  def self.exec_job_command(path, command_list, command_switches, job_id, queue,submit_command,sudo_command,submit_file_header)
+   
     cmd_file = File.join(path,job_id+'.sh')
     
     # create exec file
@@ -447,13 +453,22 @@ class Command < BaseFileModel
    
       f.puts '#!/bin/bash'
       
-      # numero de cpus que empleara el calculo:
-      f.puts '#PBS -l select=ncpus=1'
-
-      # memoria que empleara el calculo:
-      f.puts '#PBS -l select=mem=2000mb'
-      # si se sabe cuanto va a tardar aproximadamente se debe indicar (10 horas en este caso) :
-      f.puts '#PBS -l walltime=10:00:00'
+      if (!submit_file_header.nil?) and (!submit_file_header.empty?)
+      
+      	submit_file_header.each do |line|
+      	  	f.puts line
+      	end
+      
+      else
+      
+				  # numero de cpus que empleara el calculo:
+				  f.puts '#PBS -l select=ncpus=1'
+				  # memoria que empleara el calculo:
+				  f.puts '#PBS -l select=mem=2000mb'
+				  # si se sabe cuanto va a tardar aproximadamente se debe indicar (10 horas en este caso) :
+				  f.puts '#PBS -l walltime=10:00:00'
+      
+      end
 
       # para que vaya al directorio actual:
       if queue

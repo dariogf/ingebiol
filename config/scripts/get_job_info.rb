@@ -6,6 +6,7 @@
                 
 require 'json'
 
+
 job_folder = $*[0]
 
 # ======== SUPPORT FUNCTIONS =========
@@ -61,6 +62,9 @@ def job_status(folder,hash)
         end
         
         errors.gsub!(/\n/,'<br>')
+        errors.gsub!(/'/,'`')
+
+        
         
         if errors != ''
           status = 'ERRORS'

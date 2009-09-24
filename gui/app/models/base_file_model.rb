@@ -10,7 +10,7 @@ class BaseFileModel
     
     # wipe text
     #text=text.grep(/^\s*[^#]/).to_s
-    text=text.gsub(/#.*$/,'').gsub(/^\n$/,'')
+    text=text.gsub(/^\s*#.*$/,'').gsub(/^\n$/,'')
     
     # decode json
     data = ActiveSupport::JSON.decode(text)
@@ -29,7 +29,7 @@ class BaseFileModel
     
     # wipe text
     #text=text.grep(/^\s*[^#]/).to_s
-    text=text.gsub(/#.*$/,'').gsub(/^\n$/,'')
+    text=text.gsub(/^\s*#.*$/,'').gsub(/^\n$/,'')
 
     # decode json
     # data = ActiveSupport::JSON.decode(text)

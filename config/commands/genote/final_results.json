@@ -16,10 +16,51 @@ enabled: true,
 params: [
  {
 	type: 'file',
-	file:'results.zip',
-	title:'Results (9-terminator)',
+	file:'gff_regions.gff',
+	title:'Regions (GFF)',
 	tooltip:''
  }
+,
+ {
+	type: 'file',
+	file:'gff_regions.pdf',
+	title:'Regions (PDF)',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
+	file:'Result_annotated.txt',
+	title:'Annotated results',
+	tooltip:''
+ }
+
+,
+ {
+	type: 'file',
+	file:'gff_complete.gff',
+	title:'Complete (GFF)',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
+	file:'putative_consecutive_query.txt',
+	title:'Putative consecutive query',
+	tooltip:''
+ }
+# ,
+# {
+#  id:'image1',
+#	type: 'image',
+#	file_name:'gff_regions.pdf',
+# content_type:'image/pdf',
+#	title:'GFF view',
+#  options:{height:'200',width:'250'},
+#  linked:true,
+#	tooltip:''
+# }
+# 
 # ,
 #  {
 # 	type: 'file_value',

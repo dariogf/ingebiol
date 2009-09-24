@@ -11,7 +11,6 @@ class JobsController < ApplicationController
     
     if session[:current_stage]==nil
          session[:current_stage] = @command.get_stage_names.first
-         
     end
     
   end
@@ -128,13 +127,14 @@ class JobsController < ApplicationController
         use_queue_system = @command.use_queue_system(session[:current_stage])
         submit_command = @command.submit_command(session[:current_stage])
         sudo_command = @command.sudo_command(session[:current_stage])
+        submit_file_header = @command.submit_file_header(session[:current_stage])
         
         #puts "sudo_command:" + sudo_command
         #puts "submit_command:" + submit_command
         
         path = File.join(DATA_PATH,session[:current_command],session[:user_email],session[:current_job_id])
         
-        Command.exec_job_command(path,command_list,@command_switches,session[:current_job_id],use_queue_system,submit_command,sudo_command)
+        Command.exec_job_command(path,command_list,@command_switches,session[:current_job_id],use_queue_system,submit_command,sudo_command,submit_file_header)
       end
     
       old_stage=session[:current_stage]

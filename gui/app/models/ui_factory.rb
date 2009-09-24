@@ -57,6 +57,7 @@ class UiFactory
     res['user_presets']=stage_params['user_presets'] ||= false
     res['sudo_command']=stage_params['sudo_command'] ||= QSUB_SUDO
     res['submit_command']=stage_params['submit_command'] ||= QSUB_CMD
+    res['submit_file_header']=stage_params['submit_file_header'] ||= nil
     
     
     # get input params

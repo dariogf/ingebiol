@@ -1,5 +1,11 @@
 class DownloadsController < ApplicationController
   
+def self.make_zip_io(file)
+  dir = File.basename(file)
+  cmd = "bash -c cd #{dir}; zip -r - #{file}"
+  IO.popen(cmd)
+end
+
   
   #-----------------------------------------
   # download a file
@@ -13,8 +19,17 @@ class DownloadsController < ApplicationController
     
     
     if File.exists?(file_to_send)
+    
+      if !File.directory?(file_to_send)
       # send_file('/Volumes/Documentos/Progs/ruby/gui/public/images/iconAMSin.png')
-      send_file(file_to_send)
+	      send_file(file_to_send)
+	    else
+	         puts "download folder----------"
+	    		 # comprimir al vuelo y mandar
+					  io = self.class.make_zip_io(file_to_send)
+  					send_data(io.read, :filename => File.basename(file_to_send)+'.zip', :type => 'application/zip')
+	      
+      end
       #,:filename => 'pepe'
     else
       # print "File doesn't exists"
@@ -31,6 +46,9 @@ class DownloadsController < ApplicationController
     
     
   end
+  
+ 
+ 
   
   #-----------------------------------------
   # download a file

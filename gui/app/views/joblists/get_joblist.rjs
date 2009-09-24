@@ -61,9 +61,8 @@ if !@joblist.get_titles.empty?
             
          tooltip_text = job[col['tooltip_field']+tool_is_field]
          if tooltip_text
-           value += '&nbsp;&nbsp;' + image_tag("help.gif",:onmouseover=>"Tip('"+tooltip_text+"')", :onmouseout=>"UnTip()")+'&nbsp;'  
+           value += '&nbsp;&nbsp;' + image_tag("help.gif",:onmouseover=>"Tip('"+h(tooltip_text)+"')", :onmouseout=>"UnTip()")+'&nbsp;'  
          end
-         
          
        end
        

@@ -20,7 +20,7 @@ res['col1']=''
 
 puts JSON.pretty_generate(res)
 
-
+# TODO - modificar para que se puedan añadir más joblist_titles en el orden adecuado
 
 
 

@@ -35,7 +35,7 @@ version:'v 0.9a1'
 ,
 
 # Command logo name, file must be in public/images
-	command_logo:"ingebiolBig.png"
+	command_logo:"genote_normal.png"
 ,
 
 # Small corporate logo name, file must be in public/images

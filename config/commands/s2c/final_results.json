@@ -15,7 +15,6 @@ enabled: true,
 template:'',
 
 params: [
-  
  {
 	type: 'file',
 	file:'seqtrim_result.zip',
