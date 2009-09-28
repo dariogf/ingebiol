@@ -47,6 +47,45 @@ end
     
   end
   
+  #-----------------------------------------
+  # download a complete job
+  #-----------------------------------------
+  def download_job
+    @job_id = params[:id]
+
+              
+    # print "descargando @id:" + @id
+        
+    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], @job_id)
+        
+    if File.exists?(file_to_send)
+    
+      if !File.directory?(file_to_send)
+      # send_file('/Volumes/Documentos/Progs/ruby/gui/public/images/iconAMSin.png')
+	      send_file(file_to_send)
+	    else
+	    		 # comprimir al vuelo y mandar
+					  io = self.class.make_zip_io(file_to_send)
+  					send_data(io.read, :filename => File.basename(file_to_send)+'.zip', :type => 'application/zip')
+	      
+      end
+      #,:filename => 'pepe'
+    else
+      # print "File doesn't exists"
+      #       
+      #       render :update do |page|
+      #          page[@id+'_div'].replace_html('Does not exists')
+      #       end
+      #       
+    end
+    
+    
+    
+    # render :nothing => true
+    
+    
+  end
+  
  
  
   
@@ -65,10 +104,8 @@ end
       #send_data(file_to_send,{:type=>'img/png'})
       send_file file_to_send, :type => 'image/png', :disposition => 'inline'
     else
-    end
-    
-    
-    
+      send_data(nil,{:type=>'img/png'})
+    end    
   end
   
 end

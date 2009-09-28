@@ -8,7 +8,7 @@ class Joblist < BaseFileModel
   def initialize(data_path,script_path,titles_path)
     
     # @data_dir = "public/data/"
-                                                  
+    
     # retrieve titles
     @titles = []
     

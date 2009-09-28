@@ -5,8 +5,13 @@ res ='<table width="100%" cellspacing="0" cellpadding="2" border="0" class="jobL
 if !@joblist.get_titles.empty?
                      
   res +=  '<td width="10%">Job name</td>'
+  res +=  '<td width="10%">Job size</td>'
+  
 
- for col in @joblist.get_titles
+  
+  job_titles=@joblist.get_titles.reject{|x| ['job_size','job_name'].include?(x['field'])}
+
+ for col in job_titles
    # puts col.to_pretty_json
    res +=  '<td width="'+col['width']+'">'+col['title']+'</td>'
  end
@@ -30,9 +35,11 @@ if !@joblist.get_titles.empty?
      # add jobname with link
      res +=  '<td width="10%">' + link_to_remote(job['job_name_field'],:url => {:controller => 'jobs', :action=>'show',:id=>job['job_id']} ) + '</td>'
      
+     # add jobsize with link
+     res +=  '<td width="10%">' + link_to(job['job_size'],:controller => 'downloads', :action=>'download_job',:id=>job['job_id'] ) + '</td>'
 
      # for each title
-     for col in @joblist.get_titles
+     for col in job_titles
        
        # determine if it is a input field
        is_field=''

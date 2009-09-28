@@ -140,7 +140,7 @@ command_list:[
  ,
         {
                 required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
-                command:'zip -r results_validation.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
+                command:'zip -r validation_result.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
         }
 ]
 ,

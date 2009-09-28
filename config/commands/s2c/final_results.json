@@ -24,6 +24,13 @@ params: [
  ,
  {
 	type: 'file',
+	file:'results.zip',
+	title:'9-Terminator',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
 	file:'assembly_result.zip',
 	title:'Assembly results',
 	tooltip:''

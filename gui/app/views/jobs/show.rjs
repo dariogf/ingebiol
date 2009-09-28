@@ -131,32 +131,22 @@ final_results['params'].each do |fr|
   
   if fr['type']=='image'
     res = '<table><tr>'
-    # resFiles += "<td>#{fr['type']}</td>"
-    #res += "<td>&nbsp;</td>"
-  
-  
-    # resFiles += '<td></td>'
-    #res_command += image_tag
-  #res_command += '<img src="/downloads/download_img/lima.png"></img>'
-  
-    
-    #res += "<td>#{fr['value']}</td>"
-    
-    
     
     options = {}
     
     options[:border] = '0'
+    options[:alt] = ''
+
     
     if !fr['options'].blank?
       options = options.merge!(fr['options'])
     end
     
-    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name']),options)
+    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:dummytag=>session[:current_job_id]),options)
     
     if !['linked'].blank?
       
-      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name']))
+      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:dummytag=>session[:current_job_id]))
     end
     
     res += '<td>'+img+"</td>"
