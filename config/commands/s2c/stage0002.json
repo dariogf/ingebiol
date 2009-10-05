@@ -22,7 +22,6 @@ submit_button_title: 'Run',
 #	OPCIONES PARA EL PROGRAMA DE ENSAMBLAJE CABOG
 
 input_params: [
-
  {
 	title:'seqtrim',
 	input_type: 'separator'
@@ -75,23 +74,36 @@ input_params: [
 	title:'Minimun desired length',
 	required: false,
 	tooltip:'un tooltip',
-	default_value: '100',
+	default_value: '40',
 	validation_lower_limit:'0',
 	validation_upper_limit:''
  }
-
-#,
-#{
-#	input_type: 'integer',
-#	id:'a',
-#	command_switch:'utgGenomeSize=%s',
-#	title:'Genome Size (bp)',
-#	required: true,
-#	tooltip:'The genome size, in bases.',
-#	default_value: '4000000',
-#	validation_lower_limit:'1',
-#	validation_upper_limit:''
-#}
+,
+{
+	input_type: 'text',
+	id:'left_adaptor',
+	title:'Left adaptor',
+	default_value: 'acgagtgcgt',
+	command_switch:'--adaptorSeqLeft=%s',
+	required: false,
+	size:'30',
+	tooltip:'',
+	validation_regex: '[ACTGactg]*',
+	validation_error_msg: 'You must provide a valid nucleotide sequence (ACTG)'
+}
+,
+{
+	input_type: 'text',
+	id:'right_adaptor',
+	title:'Right adaptor',
+	default_value: '',
+	command_switch:'--adaptorSeqRight=%s',
+	required: false,
+	size:'30',
+	tooltip:'',
+	validation_regex: '',
+	validation_error_msg: 'You must provide a valid nucleotide sequence (ACTG)'
+}
 ,
  {
 	title:'Assembly',
@@ -110,28 +122,28 @@ input_params: [
 	required: true,
 	tooltip:'You can choose between two different assembly methods: utg  and bog (recommended for 454 data).'
  }
-,
-  {
-	input_type: 'checkbox',
-	id:'ace_sq_cb',
-	command_switch:'createACE=1',
-	title:'Create ACE',
-	title_pos:'right',
-	default_value: 'false',
-	required: false,
-	tooltip:'Create an ACE file for the scaffolds'
- }
-,
-  {
-	input_type: 'checkbox',
-	id:'agp_sq_cb',
-	command_switch:'createAGP=1',
-	title:'Create AGP',
-	title_pos:'right',
-	default_value: 'false',
-	required: false,
-	tooltip:'Create an AGP file for the sacffolds'
- }
+#,
+#  {
+#	input_type: 'checkbox',
+#	id:'ace_sq_cb',
+#	command_switch:'createACE=1',
+#	title:'Create ACE',
+#	title_pos:'right',
+#	default_value: 'false',
+#	required: false,
+#	tooltip:'Create an ACE file for the scaffolds'
+# }
+#,
+#  {
+#	input_type: 'checkbox',
+#	id:'agp_sq_cb',
+#	command_switch:'createAGP=1',
+#	title:'Create AGP',
+#	title_pos:'right',
+#	default_value: 'false',
+#	required: false,
+#	tooltip:'Create an AGP file for the sacffolds'
+# }
  ,
   {
 	title:'Annotation',
@@ -142,28 +154,39 @@ input_params: [
 	input_type: 'checkbox',
 	id:'annotate_sq_cb',
 	command_switch:'-annotate',
-	title:'Annotate (Swissprot + TrEMBL)',
+	title:'Annotate (Swissprot)',
 	title_pos:'right',
 	default_value: 'true',
 	required: false,
 	tooltip:'Make annotation using blast with Swissprot and TrEMBL databases'
  }
  ,
- {
-	input_type: 'float',
-	id:'blast_filter_sq',
-	command_switch:'-e %s',
-	title:'Consider only alignments with expect below',
-	required: false,
-	tooltip:'',
-	default_value: '1e-10',
-	validation_lower_limit:'',
-	validation_upper_limit:'',
-	visible_if:'"$annotate_sq_cb"=="-annotate"'
- }
-
+{
+	input_type: 'integer',
+	id:'min_ident_genote',
+	command_switch:'%s',
+	title:'Minimum identity (%)',
+	required: true,
+	tooltip:'The minimum identity required to..., in percentage.',
+	default_value: '45',
+	validation_lower_limit:'45',
+	validation_upper_limit:'100'
+}
+,
+{
+	input_type: 'integer',
+	id:'min_hit_length_genote',
+	command_switch:'%s',
+	title:'Minimum hit length (nt)',
+	required: true,
+	tooltip:'The minimum hit length required to..., in nucleotides.',
+	default_value: '75',
+	validation_lower_limit:'20',
+	validation_upper_limit:''
+}
 ],
 command_list:[
+		######## SEQTRIM  ###########
 		# extraer SFF solo si es SFF
 		{ exec_if:'"$input_type_popup_sq"=="-f seqs.fasta -q seqs.fasta.qual"',
 			required_files:['seqs'],
@@ -179,9 +202,10 @@ command_list:[
 		# ejecutar seqtrim
 		{ 
 			required_files:[],
-			command:'~bioperl/seqtrim/seqtrim.pl --is_cDNA=0 $min_length $input_type_popup_sq -o fasta.pname'
+			command:'~bioperl/seqtrim/seqtrim.pl --is_cDNA=0 $min_length $input_type_popup_sq $left_adaptor $right_adaptor -o fasta.pname'
 		}
 		,
+		######## CABOG ###########
 		# renombrar ficheros a pname
 		{ 
 			required_files:['fasta.pname.qual'],
@@ -221,14 +245,9 @@ command_list:[
 		# run cabog with frg file, 
 		{ 
 			required_files:['pname.frg'],
-			command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_sq $agp_sq_cb $ace_sq_cb pname.frg  2>> celera_errors.txt'
+			command:'~cabog/programs/x86_64/bin/runCA-OBT.pl -d . -p pname $method_sq createACE=1 pname.frg  2>> celera_errors.txt'
 		}
-		,
-		{
-						required_files:['9-terminator'],
-						command:'zip -r assembly_result.zip 9-terminator'
-		}
-		
+		######## AMOS-VALIDATE RESULTS ###########
 		,
 		{
 						required_files:['9-terminator/pname.asm','9-terminator/pname.frg'],
@@ -240,29 +259,48 @@ command_list:[
 						command:'~amos/programs/x86_64/bin/amosvalidate pname.bnk 2>> celera_errors.txt'
 		}
 		,
+				######## SINGLETONS MERGE ###########
 		{
-						required_files:['pname.bnk','pname.fasta','pname.ce.feat','pname.snps','pname.snp.feat','pname.depth.feat','pname.singletons','pname.bnk','pname.singletons.seq'],
-						command:'zip -r validation_result.zip pname.bnk pname.fasta pname.ce.feat pname.snps pname.snp.feat pname.depth.feat pname.singletons pname.bnk pname.singletons.seq'
+						required_files:['fasta.pname','qual.pname','9-terminator/pname.singleton.fasta','pname.singletons'],
+						command:'~bioperl/rails/ingebiol/config/parsers/singulones_cabog.rb'
 		}
 		,
 		{
-			exec_if:'"$annotate_sq_cb"=="-annotate"',
-			required_files:['pname.fasta'],
-			command:'blastall -p blastx -d ~blast/db/prot.fasta -i pname.fasta -o result.blast'
+						required_files:['pname.fasta'],
+						command:'mv pname.fasta all_contig_validated.fasta'
 		}
 		,
 		{
-			exec_if:'"$annotate_sq_cb"=="-annotate"',
-			required_files:['result.blast'],
-			command:'~bioperl/rails/ingebiol/config/parsers/blast2gff.pl result.blast'
+						required_files:['all_contig_validated.fasta','all_singletons.fasta','all_singletons.qual'],
+						command:'zip -r validation_result.zip all_contig_validated.fasta all_singletons.fasta all_singletons.qual'
 		}
 		,
-		{
-			exec_if:'"$annotate_sq_cb"=="-annotate"',
-			required_files:['result.ps'],
-			command:'ps2pdf result.ps annotation_graph.pdf'
-		}
-		,
+		#### GENOTE ####
+	 			{
+  	 						exec_if:'"$annotate_sq_cb"=="-annotate"',
+								required_files:['all_contig_validated.fasta'],
+								command:'~wublast/programs/x86_64/blastx ~bioperl/programs/genote/db/sp_db all_contig_validated.fasta -sort_by_totalscore -hspmax=0 -E=1e-10  -mformat=3 -cpus 4 -o wublast_results.txt'
+				}
+				,
+				{
+  							exec_if:'"$annotate_sq_cb"=="-annotate"',
+								required_files:['all_contig_validated.fasta','wublast_results.txt','~bioperl/programs/genote/db/sp_anotaciones.txt'],
+								command:'~bioperl/programs/genote/genote.rb all_contig_validated.fasta $min_ident_genote $min_hit_length_genote'
+				}
+         ,
+        {
+          			exec_if:'"$annotate_sq_cb"=="-annotate"',
+                required_files:['gff_regions.gff'],
+                command:'~bioperl/programs/genote/gff2ps -a -c -v -C ~bioperl/programs/genote/gff2psrc gff_regions.gff > gff_regions.ps 2>gff2ps_errors.txt'
+        }
+         ,
+        {
+          			exec_if:'"$annotate_sq_cb"=="-annotate"',
+                required_files:['gff_regions.ps'],
+                command:'ps2pdf gff_regions.ps'
+        }
+        ,
+		####  FIN GENOTE ####		
 		#cabog_plot.png
 		{
 			required_files:['pname.qc'],
@@ -274,5 +312,10 @@ next_stage_flow:{
 	'stage0001':'true'
 	}
 ,
-use_queue_system:true
+use_queue_system:true,
+submit_file_header:[
+	'#PBS -q routex86',
+	'#PBS -l select=ncpus=4',
+  '#PBS -l select=mem=4000mb',
+  '#PBS -l walltime=10:00:00']
 }

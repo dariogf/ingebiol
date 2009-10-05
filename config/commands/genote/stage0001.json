@@ -81,7 +81,7 @@ command_list:[
 							,
 							{
 								required_files:['input_file.fasta','wublast_results.txt','~bioperl/programs/genote/db/sp_anotaciones.txt'],
-								command:'~bioperl/programs/genote/genote.rb $min_ident $min_hit_length'
+								command:'~bioperl/programs/genote/genote.rb input_file.fasta $min_ident $min_hit_length'
 							}
          ,
         {

@@ -45,6 +45,13 @@ params: [
  ,
  {
 	type: 'file',
+	file:'gff_complete.pdf',
+	title:'Complete (PDF)',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
 	file:'putative_consecutive_query.txt',
 	title:'Putative consecutive query',
 	tooltip:''
