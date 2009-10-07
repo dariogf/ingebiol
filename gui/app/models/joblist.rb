@@ -63,21 +63,28 @@ class Joblist < BaseFileModel
           # get standard attributes if file exists
           std_attr = {}
           if File.exists?(File.join(data_path,d,STANDARD_ATTR_JSON))
-            std_attr=get_json_data(File.join(data_path,d,STANDARD_ATTR_JSON))
+            std_file=get_json_data(File.join(data_path,d,STANDARD_ATTR_JSON))
+            
+            if !std_file.nil?
+	            std_attr=std_file
+            end
+            
+            #puts "STDATTR:"+std_attr.to_yaml
           end
-                              
+	
+          
           # id is always current directory
           std_attr['job_id']=d
           
           # there is a script for job info
           if File.exists?(script_path)
-                                            
+
             # populate data with it
             command = script_path + ' ' + File.join(data_path,d)
             job_text=`#{command}`
-            
+
             if job_text!=''
-            
+
               obj = ActiveSupport::JSON.decode(job_text)
               
               if !obj.empty?
@@ -88,14 +95,18 @@ class Joblist < BaseFileModel
                  res.push(obj)
               end
             end
+
           else
             # if there is not a script, then push std_attr
+
             res.push(std_attr)
           end
           
         end
       end
-      
+
+
+
       # close dir
       directory.close
       

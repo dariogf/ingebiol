@@ -53,7 +53,7 @@ input_params: [
 	id:'input_type_popup_sq',
 	command_switch:'%s',
 	title:'Input type',
-	default_value: 'valor3',
+	default_value: '-f seqs -q seqs.fasta.qual',
 	values: {
 					 'fasta + qual':'-f seqs -q seqs.fasta.qual',
 					 'sff':'-f seqs.fasta -q seqs.fasta.qual',

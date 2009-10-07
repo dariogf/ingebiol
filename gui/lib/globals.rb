@@ -1,6 +1,6 @@
 #BASE_PATH = '/Volumes/Documentos/Progs/ruby/gui'
 #BASE_PATH = '/export/home_users/home/soft/bioperl/rails/gui'
-BASE_PATH = './'
+
 
 CONFIG_PATH = '../config'
 
@@ -15,7 +15,9 @@ class Object
   # 
   #-----------------------------------------
   def to_pretty_json
-    return JSON.pretty_generate(self)
+  
+    return self.to_json
+    #return JSON.pretty_generate(self)
   end
   
 end

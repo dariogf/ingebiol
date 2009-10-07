@@ -112,7 +112,7 @@ class JobsController < ApplicationController
          
       end
       
-      puts @command_switches.to_yaml
+      #puts @command_switches.to_yaml
 
       std_attrs[COMMAND_SWITCHES_TAG]=@command_switches[COMMAND_SWITCHES_TAG]
       #save values
@@ -180,5 +180,8 @@ class JobsController < ApplicationController
     
     session[:current_stage] = @command.get_stage_names.first
     
+  end
+  
+  def visible_if
   end
 end

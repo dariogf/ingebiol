@@ -10,6 +10,8 @@ class UiObject
   attr :standard_attribute
 # attr :command_switch
   attr :size 
+  
+  attr :visible_if
 
 
   attr :required_error_msg

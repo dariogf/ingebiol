@@ -1,0 +1,59 @@
+
+def fix_params_names(params,visibility_conditions)
+
+	res={}
+	params.each do |param_name,value|
+	
+		if !visibility_conditions[param_name].blank? 
+	  	switch=visibility_conditions[param_name]['field_switch']
+			res[switch]=value
+		end
+	
+	end
+
+	return res
+	
+end
+
+
+#res=''
+visibility_conditions = params[:visibility_conditions].from_json
+param_values = fix_params_names(params,visibility_conditions)
+
+#puts "new params:"+param_values.to_yaml
+
+
+
+
+visibility_conditions.each do |field_name,cond|
+	
+	visible_if = cond['visible_if']
+	
+	if !visible_if.blank?
+
+		cond_text = Command.replace_switches(visible_if,param_values)
+
+	#	res += "==>>"+cond_text.to_s
+		
+  #  puts "cond_texto:#{cond_text}"
+				
+		begin
+       if_result = eval(cond_text)
+    rescue
+       if_result = false
+    end
+    
+  #  puts "if_result:#{if_result}"
+
+	  if if_result
+				page[cond['field_name']+'_row'].appear
+		else
+			page[cond['field_name']+'_row'].hide
+		end
+		
+	end
+end
+
+#page['informationDIV'].update(params.to_yaml+'<br>'+res)
+#page['informationDIV'].visual_effect :appear
+

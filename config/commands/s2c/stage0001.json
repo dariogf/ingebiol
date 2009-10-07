@@ -34,6 +34,7 @@ input_params: [
 	validation_error_msg: 'You must provide a name',
 	standard_attribute: true,
 	save_in_presets: true
+	#,visible_if:'"$workflow_type_radio"=="seqtrim"'
 }
 ,
  {

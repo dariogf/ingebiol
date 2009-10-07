@@ -27,3 +27,5 @@ config.action_controller.perform_caching             = true
 
 #Para tener un sub-uri
 config.action_controller.relative_url_root = "/ingebiol"
+
+BASE_PATH = './'

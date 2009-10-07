@@ -12,8 +12,11 @@ class BaseFileModel
     #text=text.grep(/^\s*[^#]/).to_s
     text=text.gsub(/^\s*#.*$/,'').gsub(/^\n$/,'')
     
+    data=nil
     # decode json
-    data = ActiveSupport::JSON.decode(text)
+    if !text.blank?
+	    data = ActiveSupport::JSON.decode(text)
+	  end
     #data = JSON.parse(text)
 
     
@@ -33,7 +36,11 @@ class BaseFileModel
 
     # decode json
     # data = ActiveSupport::JSON.decode(text)
-    data = ActiveSupport::JSON.decode(text)
+    data=nil
+    # decode json
+    if !text.blank?
+	    data = ActiveSupport::JSON.decode(text)
+	  end
     #data = JSON.parse(text)
 
     return data

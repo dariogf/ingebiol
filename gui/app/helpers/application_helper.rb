@@ -28,6 +28,9 @@ module ApplicationHelper
             
     res =''  
     
+    visibility_conditions = {}
+    add_observer = false
+              
     using_required_fields = false
     
     if !command_params.blank?
@@ -65,7 +68,7 @@ module ApplicationHelper
           end
 
         else # it is not a separator
-          res +='<tr class="fields_row">'
+          res +='<tr class="fields_row" id="'+ui_param.field_name+'_row">'
           # add tooltip
           tooltip_text = ui_param.tooltip_tag
     
@@ -120,6 +123,16 @@ module ApplicationHelper
             res += '<td>&nbsp;</td>'
           end
           
+          #add to visibility observer
+          #
+	          visibility_conditions[ui_param.field_name]=({'field_name'=>ui_param.field_name,
+																									          'field_switch'=>ui_param.field_switch,
+	          																								'visible_if'=>ui_param.visible_if})
+	          																								
+	        if !ui_param.visible_if.blank?
+	        	add_observer = true
+          end
+          
           res +='</tr>'      
         end
 
@@ -127,7 +140,16 @@ module ApplicationHelper
         
       end 
       res += add_form_submit_row(using_required_fields,submit_button_title)      
-    end    
+    end
+
+    if add_observer
+		  observer=observe_form("current_form",	:frequency => 1,	:url => {:action=>'visible_if', :visibility_conditions => visibility_conditions.to_json},:with =>"Form.serialize($('current_form'))")
+		  
+		  #puts "Observer:"+observer+'FUN:'+fun
+		  res += observer
+		   fun=remote_function(:url => {:action=>'visible_if', :visibility_conditions => visibility_conditions.to_json},:with =>"Form.serialize($('current_form'))")
+		 res += '<script> function run_observer_script(){'+fun+'}</script>'
+    end
     
     return res
 
