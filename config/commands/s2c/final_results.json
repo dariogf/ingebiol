@@ -9,7 +9,7 @@
 ########################################################
 
 {
-title:'RESULTS', 
+title:'SELECTED RESULTS', 
 stage_type:'final_results',
 enabled: true,
 template:'',
@@ -18,35 +18,28 @@ params: [
  {
 	type: 'file',
 	file:'seqtrim_result.zip',
-	title:'Seqtrim result',
-	tooltip:''
- }
- ,
- {
-	type: 'file',
-	file:'assembly_result.zip',
-	title:'Assembly results',
+	title:'Preprocessing results <a href="http://www.scbi.uma.es/seqtrim" target="_blank">(Seqtrim)</a>',
 	tooltip:''
  }
  ,
  {
 	type: 'file',
 	file:'validation_result.zip',
-	title:'Validated results',
+	title:'Assembly validated results <a href="http://www.scbi.uma.es/ingebiol/session/new/cabogwf" target="_blank">(Cabog)</a>',
 	tooltip:''
  }
  ,
  {
 	type: 'file',
-	file:'result.blast',
-	title:'Blast results ',
+	file:'annotation_result.zip',
+	title:'Annotation results <a href="http://www.scbi.uma.es/ingebiol/session/new/genote" target="_blank">(GENote)</a>',
 	tooltip:''
  }
  ,
  {
 	type: 'file',
-	file:'annotation_graph.pdf',
-	title:'Annotation graph',
+	file:'gff_regions.pdf',
+	title:'Annotation results (PDF) ',
 	tooltip:''
  }
  ,

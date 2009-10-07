@@ -32,6 +32,7 @@ class UiObject
     @standard_attribute=false
     @is_separator = false 
     @command_switch = ''
+    @blank_command_switch = ''
     @size = '0'
     @title_pos='left'
     

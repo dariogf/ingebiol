@@ -1,4 +1,4 @@
-#!usr/bin/env ruby
+#!/usr/bin/env ruby
 
 # Rocio & Noe
 # 30 Sept 2009

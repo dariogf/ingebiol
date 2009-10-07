@@ -118,7 +118,7 @@ class UiEditObject < UiObject
    
   def command_switch(field_value)
     res = ''
-    res = (@command_switch % field_value) if field_value and @command_switch
+    res = (@command_switch % field_value) if !field_value.blank? and @command_switch
     return res
   end
  
