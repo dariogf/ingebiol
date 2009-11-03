@@ -16,15 +16,22 @@ enabled: true,
 params: [
  {
 	type: 'file',
-	file:'gff_regions.gff',
-	title:'Regions (GFF)',
+	file:'summarized.gff',
+	title:'Summarized regions (GFF)',
 	tooltip:''
  }
 ,
  {
 	type: 'file',
-	file:'gff_regions.pdf',
-	title:'Regions (PDF)',
+	file:'summarized.pdf',
+	title:'Summarized regions (PDF)',
+	tooltip:''
+ }
+ ,
+ {
+	type: 'file',
+	file:'extra_summarized.pdf',
+	title:'Extra summarized regions (PDF)',
 	tooltip:''
  }
  ,
@@ -34,26 +41,25 @@ params: [
 	title:'Annotated results',
 	tooltip:''
  }
-
 ,
  {
 	type: 'file',
-	file:'gff_complete.gff',
+	file:'complete.gff',
 	title:'Complete (GFF)',
 	tooltip:''
  }
  ,
  {
 	type: 'file',
-	file:'gff_complete.pdf',
+	file:'complete.pdf',
 	title:'Complete (PDF)',
 	tooltip:''
  }
  ,
  {
 	type: 'file',
-	file:'putative_consecutive_query.txt',
-	title:'Putative consecutive query',
+	file:'putative_consecutive_contigs.txt',
+	title:'Putative consecutive contigs',
 	tooltip:''
  }
 # ,

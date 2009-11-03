@@ -51,6 +51,10 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
+  
+  
+  #TODO  - Sesiones de un mismo usuario en varios flujos.
+  
   config.action_controller.session = {
     :session_key => '_gui_session',
     :secret      => 'ba37232e514cdf2aecda62d3b5fe6488d70d8601dccb23768c0f61f1859ebec3a44ca6be7c92058a5af0aa00a7f74de66767c0908999bf72ca9114aad7eb8999'

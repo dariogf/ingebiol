@@ -85,13 +85,22 @@ command_list:[
 							}
          ,
         {
-                required_files:['gff_regions.gff'],
-                command:'~bioperl/programs/genote/gff2ps -a -c -v -C ~bioperl/programs/genote/gff2psrc gff_regions.gff > gff_regions.ps 2>gff2ps_errors.txt'
+                required_files:['summarized.gff'],
+                command:'~bioperl/programs/genote/gff2ps -a -c -v -C ~bioperl/programs/genote/gff2psrc summarized.gff > summarized.ps 2>gff2ps_errors.txt'
         }
          ,
         {
-                required_files:['gff_regions.ps'],
-                command:'ps2pdf gff_regions.ps'
+                required_files:['summarized.ps'],
+                command:'ps2pdf summarized.ps'
+        },
+        {
+                required_files:['extra_summarized.gff'],
+                command:'~bioperl/programs/genote/gff2ps -a -c -v -C ~bioperl/programs/genote/gff2psrc extra_summarized.gff > extra_summarized.ps 2>gff2ps_errors.txt'
+        }
+         ,
+        {
+                required_files:['extra_summarized.ps'],
+                command:'ps2pdf extra_summarized.ps'
         }
 			 ]
 ,
