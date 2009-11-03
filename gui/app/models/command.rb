@@ -482,6 +482,7 @@ class Command < BaseFileModel
 
       #this file exists while it is running
       f.puts 'touch '+RUNNING_FILE
+      f.puts 'touch '+QUEUED_FILE
       
       
       # put commands
@@ -555,7 +556,6 @@ class Command < BaseFileModel
         end
       end
       
-      
       # programa a ejecutar, con sus argumentos:
       # f.puts cmd
       
@@ -571,17 +571,22 @@ class Command < BaseFileModel
         sm_cmd = submit_command ||= QSUB_CMD
         # ojo de no poner comillas y que no ponga path al fichero
         send_cmd = 'cd "' + path + '"; '+sd_cmd+' '+sm_cmd+' '+File.basename(cmd_file)+''
+        touch_queued_cmd=sd_cmd+' touch "'+File.join(path,QUEUED_FILE)+'"'
       else
         send_cmd = 'cd "' + path + '"; '+LOCAL_SUDO+' '+LOCAL_CMD+' '+File.basename(cmd_file)+''
+        touch_queued_cmd=LOCAL_SUDO+' touch "'+File.join(path,QUEUED_FILE)+'"'
       end
       
       puts "cmd_to_send: " + send_cmd
-
+      
+      if !system(touch_queued_cmd)
+         puts "error en el touch QUEUED cmd"
+      end
+      
       if !system(send_cmd)
          puts "error en el system"
       end
-      
-            
+                  
     end
     
   end

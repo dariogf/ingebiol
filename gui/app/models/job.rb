@@ -58,12 +58,14 @@ class Job  < BaseFileModel
     FileUtils.mkdir_p(work_path) unless File.exists?(work_path)
     
     # save standard attributes
-                       
+                           
     std = {}
     std['user_id']=user_id
     std['job_id']=today+id.to_s
     
     self.save_standard_attributes(std,current_command,user_id,today+id.to_s)
+    
+    
     
     # puts "Created path:"+work_path
 

@@ -1,4 +1,5 @@
 RUNNING_FILE = 'RUNNING'
+QUEUED_FILE = 'QUEUED'
 
 QSUB_CMD = '/usr/pbs/bin/qsub -q routex86'
 QSUB_SUDO = '/usr/bin/sudo -u bioperl'
