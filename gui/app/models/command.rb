@@ -482,7 +482,7 @@ class Command < BaseFileModel
 
       #this file exists while it is running
       f.puts 'touch '+RUNNING_FILE
-      f.puts 'touch '+QUEUED_FILE
+      f.puts 'rm '+QUEUED_FILE
       
       
       # put commands
