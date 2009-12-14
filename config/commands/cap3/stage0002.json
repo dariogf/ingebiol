@@ -145,7 +145,7 @@ input_params : [
 	required: true,
 	tooltip:'un tooltip',
 	default_value: '40',
-	validation_lower_limit:'21',
+	validation_lower_limit:'16',
 	validation_upper_limit:''
  }
 ,
