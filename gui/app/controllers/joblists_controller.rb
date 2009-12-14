@@ -11,7 +11,7 @@ class JoblistsController < ApplicationController
     script_path = File.join(USER_SCRIPTS_PATH,GET_JOBINFO_SCRIPT)
     titles_path = File.join(USER_SCRIPTS_PATH,JOBLIST_TITLES_JSON)
     
-    puts "Data PATH:" + data_path
+    # puts "Data PATH:" + data_path
     
     # Populate joblist
     @joblist = Joblist.new(data_path,script_path,titles_path)

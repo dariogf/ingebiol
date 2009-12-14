@@ -78,6 +78,7 @@ class Joblist < BaseFileModel
           
           # there is a script for job info
           if File.exists?(script_path)
+		puts "populate joblist data"
 
             # populate data with it
             command = script_path + ' ' + File.join(data_path,d)
