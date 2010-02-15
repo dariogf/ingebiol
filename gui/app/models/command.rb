@@ -1,5 +1,8 @@
 class Command < BaseFileModel
     
+    
+    attr_reader :current_command
+    
   #-----------------------------------------
   # Creates a new command object that reads 
   # current config
@@ -48,6 +51,13 @@ class Command < BaseFileModel
     
     # puts self.to_yaml
     
+  end
+  
+  def list_programs
+	  #	return Dir.open(COMMAND_CONFIG).collect.reject{|e| ['.','..'].include?(e)}
+  	
+  	return Dir.glob(File.join(COMMAND_CONFIG,'*')).map{|d| File.basename(d)}
+  
   end
   
   #-----------------------------------------

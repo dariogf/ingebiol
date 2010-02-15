@@ -46,19 +46,27 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
   
-  
   map.resource :session
+  map.resources :commands, :has_many => [:jobs]
   
-  map.resource :test1
+  map.upload_stage 'commands/:command_id/jobs/upload_stage', :controller => 'jobs', :action => 'upload_stage'
+
+#  map.job_list 'commands/:command_id/jobs/job_list', :controller => 'jobs', :action => 'index'
+
   
-  map.resource :job
+  #map.resource :test1
   
-  map.resource :joblist
+  #map.resource :jobs
+  
+  #map.resource :joblist
   
   map.resource :download
   
-    
+  #map.resources :commands, :has_many => [ :comments, :sales ], :has_one => :seller
+  
+   #  map.connect ':command/:work/:controller/:action/:id', :requirements => { :id => /.*/, :command => /.*/, :work => /.*/ }
+   # bueno:
   map.connect ':controller/:action/:id', :requirements => { :id => /.*/}
-   # map.connect ':controller/:action/:id.:format'
+ #  map.connect ':controller/:action/:id.:format'
   
 end

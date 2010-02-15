@@ -12,11 +12,16 @@ end
   # download a file
   #-----------------------------------------
   def download
-    @id = params[:id]
+	   
+    puts "PARAMS:"+params.to_json
+    
+    @command_id = params[:command_id]
+    @file_id = params[:id]
+    @job_id = params[:job_id]
               
     # print "descargando @id:" + @id
         
-    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], session[:current_job_id], @id)
+    file_to_send = File.join(DATA_PATH, @command_id, @user, @job_id, @file_id)
     
     
     if File.exists?(file_to_send)
@@ -51,12 +56,19 @@ end
   # download a complete job
   #-----------------------------------------
   def download_job
-    @job_id = params[:id]
+    @command_id = params[:command_id]
+    @file_id = params[:id]
+    @job_id = params[:job_id]
+              
+    # print "descargando @id:" + @id
+        
+    file_to_send = File.join(DATA_PATH, @command_id, @user, @job_id)
+    
 
               
     # print "descargando @id:" + @id
         
-    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], @job_id)
+#    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], @job_id)
         
     if File.exists?(file_to_send)
     
@@ -78,9 +90,7 @@ end
       #       end
       #       
     end
-    
-    
-    
+        
     # render :nothing => true
     
     
@@ -93,18 +103,29 @@ end
   # download a file
   #-----------------------------------------
   def download_img
-    @id = params[:id]
-              
+    @command_id = params[:command_id]
+    @file_id = params[:id]
+    @job_id = params[:job_id]
+    @user = session[:user_email]
+    
+    puts @command_id + ', '+  @user+ ', '+  @job_id+ ', '+  @file_id
     # print "descargando @id:" + @id
         
-    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], session[:current_job_id], @id)
+    file_to_send = File.join(DATA_PATH, @command_id, @user, @job_id, @file_id)
+
+	  puts "file: "   + file_to_send
+
+    # print "descargando @id:" + @id
+        
+    #file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], session[:current_job_id], @id)
     
     
     if File.exists?(file_to_send)
+      #puts "enviar"
       #send_data(file_to_send,{:type=>'img/png'})
       send_file file_to_send, :type => 'image/png', :disposition => 'inline'
     else
-      send_data(nil,{:type=>'img/png'})
+      #send_data(nil,{:type=>'img/png'})
     end    
   end
   

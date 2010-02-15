@@ -15,33 +15,36 @@ class SessionsController < ApplicationController
     
     # puts "params:"+params.to_yaml
     
-    session[:current_command] = params[:id] ||= DEFAULT_COMMAND
-    puts "current_command:" +session[:current_command]
+    #session[:current_command] = params[:id] ||= DEFAULT_COMMAND
+    
+    #puts "current_command:" +session[:current_command]
     
     # load params of command from file
     begin
       flash[:error] = ''
-      @command = Command.new(session[:current_command])
-    rescue ActiveSupport::JSON::ParseError
+      @command = Command.new(params[:id] ||= DEFAULT_COMMAND)
+    rescue Exception => e  #ActiveSupport::JSON::ParserError
+    
       # raise
-      flash[:error] += "<br>Invalid json in configuration files."
+      flash[:error] += "<br>Invalid json in configuration files.<br><br>"+ e.message 
       # flash[:error] += "<br>Error in json"
       render :action => 'errors'
     end
     
   end
-                         
+
   
   def create
-    
-    
-    if (!session[:current_command]) or (session[:current_command]=='')
-      session[:current_command] = params[:id] ||= DEFAULT_COMMAND
-    end
+        
+#    if (!session[:current_command]) or (session[:current_command]=='')
+  #    session[:current_command] = params[:id] ||= DEFAULT_COMMAND
+    #end
     
     # load params of command from file
-    @command = Command.new(session[:current_command])
+    #@command = Command.new(session[:current_command])
                                        
+    @command = Command.new(params[:id] ||= DEFAULT_COMMAND)
+    
     # create a user with passed params
     # params is a hash that is populated automatically by de form
     user = User.new(params['sessions'])
@@ -78,7 +81,7 @@ class SessionsController < ApplicationController
       
       # with ajax redirect to new page
       render :update do |page|
-         page.redirect_to new_job_url
+         page.redirect_to new_command_job_url(@command.current_command)
       end
     
     else

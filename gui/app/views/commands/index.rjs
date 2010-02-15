@@ -1,0 +1,8 @@
+res = '<ul>'
+@programs.each do |p|
+	res += '<li>'+ p +'</li>'
+end
+
+res += '</ul>'
+
+page['programs_div'].replace_html(res)

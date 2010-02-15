@@ -5,11 +5,14 @@
 		<div id="<%= row_name %>">
 			<script type="text/javascript" charset="utf-8">
 			
-			<%= remote_function :url => {:controller => 'joblists', :action => 'get_joblist'} %>;
+			<%= remote_function :url =>command_jobs_url(@command.current_command), :method => :get %>;
 			
 			</script>
 			
-			<%= periodically_call_remote(:variable=>'joblist_poller', :url => {:controller => 'joblists', :action => 'get_joblist'}) %>
+			<%= periodically_call_remote(:variable=>'joblist_poller', :url => command_jobs_url(@command.current_command), :method => :get) %>
+			<%#= periodically_call_remote(:variable=>'joblist_poller', :url => {:controller => 'jobs', :command_id =>@command.current_command,:action=>'joblist'}) %>
+			<%#= periodically_call_remote(:variable=>'joblist_poller', :url => job_list_url(@command.current_command)) %>
+
 			<%#= periodically_call_remote :url => {:controller => 'joblists', :action => 'get_joblist'} %>
 			
 			<%#= link_to_remote "algo", :url => {:controller => 'joblists', :action => 'get_joblist'} %>

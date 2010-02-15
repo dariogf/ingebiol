@@ -1,13 +1,37 @@
 class JobsController < ApplicationController
+
+ before_filter :get_parent
+
+  def get_parent
+    @command = Command.new(params[:command_id])
+    @user = session[:user_email]
+    #@command = params[:command_id]
+    #puts "command" + @command.to_json
+  end
+
+  # show a joblist
+	def index
+	  #puts "llegando"
+	    # get paths
+    data_path = File.join(DATA_PATH,@command.current_command,@user)
+    script_path = File.join(USER_SCRIPTS_PATH,GET_JOBINFO_SCRIPT)
+    titles_path = File.join(USER_SCRIPTS_PATH,JOBLIST_TITLES_JSON)
+    
+    puts "Data PATH:" + data_path
+    
+    # Populate joblist
+    @joblist = Joblist.new(data_path,script_path,titles_path)
+    
+	end
   
   #-----------------------------------------
-  # 
+  # Display view to send a new command
   #-----------------------------------------  
   def new
+
     # puts "ejecutando accion gui/new"
     session[:current_job_id]=nil
-        
-    @command = Command.new(session[:current_command])
+    #@command = Command.new(session[:current_command])
     
     if session[:current_stage]==nil
          session[:current_stage] = @command.get_stage_names.first
@@ -20,9 +44,8 @@ class JobsController < ApplicationController
   #-----------------------------------------
   def show
     @job_id=params[:id]
-    @command = Command.new(session[:current_command])
-    
-    
+    #@command = Command.new(session[:current_command])
+        
     # modify current job id
     session[:current_job_id]=@job_id
   end
@@ -35,7 +58,7 @@ class JobsController < ApplicationController
     
     # Delete job
     
-    Job.delete(session[:current_command],session[:user_email],@job_id)
+    Job.delete(@command.current_command,@user,@job_id)
     
     # render :update do |page|
     # end
@@ -52,7 +75,7 @@ class JobsController < ApplicationController
     # puts "parametros jobs:"+params.to_yaml
     
     # retrieve command configuration
-    @command = Command.new(session[:current_command])
+    #@command = Command.new(session[:current_command])
     
     
     # check stage is valid
@@ -69,7 +92,7 @@ class JobsController < ApplicationController
     @command.input_params_for_stage(session[:current_stage]).each do |ui_param|
       ui_param.validate(params,@errors)
     end
-        
+     
     # @errors = check_validation_errors(@command.input_params_for_stage(session[:current_stage]))
                     
     # no errors, upload and retrieve params
@@ -99,7 +122,7 @@ class JobsController < ApplicationController
          ui_param.save_field_value(params,std_attrs)
 
          # save value
-         ui_param.save_value(params,session[:current_command],session[:user_email],session[:current_job_id])
+         ui_param.save_value(params,@command.current_command,@user,session[:current_job_id])
       
          # retrieve command switches
          cs = ui_param.command_switch(field_value)
@@ -116,7 +139,7 @@ class JobsController < ApplicationController
 
       std_attrs[COMMAND_SWITCHES_TAG]=@command_switches[COMMAND_SWITCHES_TAG]
       #save values
-      Job.save_standard_attributes(std_attrs,session[:current_command],session[:user_email],session[:current_job_id])
+      Job.save_standard_attributes(std_attrs,@command.current_command,@user,session[:current_job_id])
       
       # puts "command switches "+command_switches
     
@@ -132,7 +155,7 @@ class JobsController < ApplicationController
         #puts "sudo_command:" + sudo_command
         #puts "submit_command:" + submit_command
         
-        path = File.join(DATA_PATH,session[:current_command],session[:user_email],session[:current_job_id])
+        path = File.join(DATA_PATH,@command.current_command,@user,session[:current_job_id])
         
         Command.exec_job_command(path,command_list,@command_switches,session[:current_job_id],use_queue_system,submit_command,sudo_command,submit_file_header)
       end
@@ -164,8 +187,8 @@ class JobsController < ApplicationController
   def get_unique_id
     res = ''
     
-    if session[:user_email]
-      res = Job.create_unique_folder(session[:current_command],session[:user_email])
+    if @user
+      res = Job.create_unique_folder(@command.current_command,@user)
     end
     
     return res
@@ -176,7 +199,7 @@ class JobsController < ApplicationController
   # 
   #-----------------------------------------
   def reset_stage
-    @command = Command.new(session[:current_command])
+    @command = Command.new(@command.current_command)
     
     session[:current_stage] = @command.get_stage_names.first
     

@@ -15,7 +15,7 @@ final_results['params'].each do |fr|
   elem['id'] = fr['id']
   elem['type'] = fr['type']
   
-     
+  
   # add files
   if fr['type']=='file'
     # show only fixed files or files with valid size
@@ -142,11 +142,11 @@ final_results['params'].each do |fr|
       options = options.merge!(fr['options'])
     end
     
-    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:dummytag=>session[:current_job_id]),options)
+    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id),options)
     
     if !['linked'].blank?
       
-      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:dummytag=>session[:current_job_id]))
+      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id))
     end
     
     res += '<td>'+img+"</td>"

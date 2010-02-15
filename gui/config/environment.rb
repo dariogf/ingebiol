@@ -11,6 +11,8 @@
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+
+	
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -28,6 +30,7 @@ Rails::Initializer.run do |config|
   
   config.gem "json"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
+  config.gem "kwalify"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -36,7 +39,8 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-  # config.load_paths += %W( #{RAILS_ROOT}/app/models/UI )
+   config.load_paths += %W( #{RAILS_ROOT}/app/models/ui )
+#Dir.glob("#{RAILS_ROOT}/app/models/*[^(.rb|.ignore)]").each{|dir| config.load_paths += dir }
 
   # Force all environments to use the same logger level
   # (by default production uses :info, the others :debug)
