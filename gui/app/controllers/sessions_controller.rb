@@ -13,8 +13,6 @@ class SessionsController < ApplicationController
     
     # set current command
     
-    # puts "params:"+params.to_yaml
-    
     #session[:current_command] = params[:id] ||= DEFAULT_COMMAND
     
     #puts "current_command:" +session[:current_command]
@@ -60,13 +58,11 @@ class SessionsController < ApplicationController
     else
       # if mail is valid, login, if not, advise and retry
       if user.valid_email?
-                                            
          valid = true
       end
       
     end
-    
-      
+          
       # head
       
     if valid == true

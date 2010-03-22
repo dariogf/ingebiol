@@ -1,8 +1,25 @@
-res = '<ul>'
-@programs.each do |p|
-	res += '<li>'+ p +'</li>'
-end
 
-res += '</ul>'
+programs_in_line = 5
+
+res = ''
+# res + = '<ul>'
+res += '<table id ="program_list"><tr>'
+
+count = 0
+@programs.each do |p|
+ 
+#	res += '<ul><li>'+ link_to(p,new_command_job_url(p)) +'</li></ul>'
+	res +='<td>'
+	res += link_to(p['title'],new_command_job_url(p['command_id']),:onmouseover=>"Tip('"+h(p['tooltip'])+"')", :onmouseout=>"UnTip()")
+	res +='&nbsp;|&nbsp; </td>'
+	count += 1 
+	if (count % programs_in_line) == 0
+#		res += '</tr></table><table id ="program_list"><tr>'
+			res += '</tr><tr>'
+	end
+	
+end
+	res +='</tr></table>'
+#res += '</ul>'
 
 page['programs_div'].replace_html(res)

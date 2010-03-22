@@ -4,7 +4,7 @@ class User
   
   def initialize(login_params)
     
-    # puts "parametros:", login_params[:email]
+    puts "parametros:", login_params[:email]
     
     # get params from html form
     @email = login_params[:email]

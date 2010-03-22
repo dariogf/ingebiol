@@ -3,8 +3,13 @@ class JobsController < ApplicationController
  before_filter :get_parent
 
   def get_parent
-    @command = Command.new(params[:command_id])
-    @user = session[:user_email]
+	  begin
+    	@command = Command.new(params[:command_id])
+    	@user = session[:user_email]
+    rescue Exception => e
+    	  flash[:error] = 'No such command: '+params[:command_id]+'<br>'+e.message
+    		redirect_to :controller=>'sessions', :action=>'errors'
+    end
     #@command = params[:command_id]
     #puts "command" + @command.to_json
   end
@@ -22,6 +27,12 @@ class JobsController < ApplicationController
     # Populate joblist
     @joblist = Joblist.new(data_path,script_path,titles_path)
     
+     respond_to do |format|
+      format.html #{ redirect_to(person_list_url) }
+      format.js  { render :json => @joblist.to_json }
+      #format.xml  { render :xml => @joblist }
+     end
+
 	end
   
   #-----------------------------------------
@@ -90,7 +101,9 @@ class JobsController < ApplicationController
     
     # check for errors
     @command.input_params_for_stage(session[:current_stage]).each do |ui_param|
-      ui_param.validate(params,@errors)
+      if ui_param
+	      ui_param.validate(params,@errors)
+      end
     end
      
     # @errors = check_validation_errors(@command.input_params_for_stage(session[:current_stage]))
@@ -174,9 +187,18 @@ class JobsController < ApplicationController
     
     end
     
-    # send response and ajax commands, they are in an external file
-    responds_to_parent do
-      render :action => 'upload_stage.rjs'
+    
+    
+    respond_to do |format|
+      format.html {     # send response and ajax commands, they are in an external file
+				responds_to_parent do
+				  render :action => 'upload_stage.rjs'
+				end
+			 }
+      format.js  { 
+      				render :json => @errors.to_json
+      }
+      #format.xml  { render :xml => @joblist }
     end
 
   end

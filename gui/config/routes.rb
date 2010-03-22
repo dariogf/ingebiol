@@ -49,7 +49,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :commands, :has_many => [:jobs]
   
-  map.upload_stage 'commands/:command_id/jobs/upload_stage', :controller => 'jobs', :action => 'upload_stage'
+  map.upload_stage 'commands/:command_id/jobs/upload_stage.:format', :controller => 'jobs', :action => 'upload_stage'
 
 #  map.job_list 'commands/:command_id/jobs/job_list', :controller => 'jobs', :action => 'index'
 

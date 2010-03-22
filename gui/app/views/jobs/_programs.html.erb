@@ -3,14 +3,14 @@
 	<td> <!-- celda inputfile height="190" -->
 		
 		<div id="<%= row_name %>">
-		
 		<div id="programs_div">
 			LOADING PROGRAM LIST...
 		</div>
 		
 		<%#= render :template => 'commands/index' %>
 		<script>
-		<%= remote_function :url =>commands_url, :method => :get %>;
+		<%= remote_function :url =>{:controller => 'commands', :action => 'index', :selected_cmd =>@command.current_command}, :method => :get %>
+
 		</script>
 		
 		</div>

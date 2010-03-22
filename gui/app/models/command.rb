@@ -53,11 +53,28 @@ class Command < BaseFileModel
     
   end
   
-  def list_programs
+  def self.list_programs
 	  #	return Dir.open(COMMAND_CONFIG).collect.reject{|e| ['.','..'].include?(e)}
+	  res = []
+	  info = {}
+
+#  	Dir.glob(File.join(COMMAND_CONFIG,'*')).map{|d| File.basename(d)}.each do 
+  	  Dir.glob(File.join(COMMAND_CONFIG,'*')).each do |cmd|
+  	 		# load common data
+     		common_data = get_json_data(File.join(cmd,"common.json"))
+     		
+     		info['title']=common_data['title']
+     		info['tooltip']=common_data['long_description']
+     		info['command_id']=File.basename(cmd)
+     		
+     		res.push info
+     		info={}
+     		
+    end
+    
   	
-  	return Dir.glob(File.join(COMMAND_CONFIG,'*')).map{|d| File.basename(d)}
-  
+  	return res
+  	
   end
   
   #-----------------------------------------
