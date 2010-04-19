@@ -29,12 +29,15 @@ if !@joblist.get_titles.empty?
      className='odd' if ((row % 2) != 0)
           
      res += '<tr class="'+className+'" id="'+job['job_id']+'">'
-     
+
      # add jobname with link
-     res +=  '<td width="10%">' + link_to_remote(job['job_name_field'],:url =>command_job_url(@command.current_command, job['job_id']), :method => :get) + '</td>'
+     res +=  '<td width="10%">' + link_to_remote(job['job_name_field'],:url=>command_job_url(:command_id => @command.current_command, :id => job['job_id']), :method => :get) + '</td>'
+     
      
      # add jobsize with link
-     res +=  '<td width="10%">' + link_to(job['job_size'],:controller => 'downloads', :action=>'download_job',:id=>job['job_id'] ,:command_id => @command.current_command, :job_id => job['job_id']) + '</td>'
+     res +=  '<td width="10%">' + link_to(job['job_size'],download_job_url(:command_id => @command.current_command, :job_id => job['job_id'])) + '</td>'
+     
+     #:controller => 'downloads', :action=>'download_job',:id=>job['job_id'] ,:command_id => @command.current_command, :job_id => job['job_id']) + '</td>'
 
      # for each title
      for col in job_titles

@@ -24,7 +24,8 @@ final_results['params'].each do |fr|
       # resFiles += "<td>#{fr['type']}</td>"
       res += "<td>&nbsp;</td>"
   
-      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
+      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] , download_url(:command_id=>@command.current_command,:job_id=>session[:current_job_id], :file_id => "#{fr['file']}"))+'<div id="'+fr['file']+'_div"></div></td>'
+#      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
   
       res += "<td>(#{fr['size']})</td>"
   
@@ -142,11 +143,11 @@ final_results['params'].each do |fr|
       options = options.merge!(fr['options'])
     end
     
-    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id),options)
+    img = image_tag(download_url(:file_id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id, :file_type => fr['type'] ),options)
+#    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :file_id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id),options)
     
-    if !['linked'].blank?
-      
-      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id))
+    if !['linked'].blank?      
+      img = link_to(img,download_url(:file_id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id))
     end
     
     res += '<td>'+img+"</td>"

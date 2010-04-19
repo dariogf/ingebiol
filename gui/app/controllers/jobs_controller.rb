@@ -17,19 +17,20 @@ class JobsController < ApplicationController
   # show a joblist
 	def index
 	  #puts "llegando"
-	    # get paths
+	  # get paths
     data_path = File.join(DATA_PATH,@command.current_command,@user)
     script_path = File.join(USER_SCRIPTS_PATH,GET_JOBINFO_SCRIPT)
     titles_path = File.join(USER_SCRIPTS_PATH,JOBLIST_TITLES_JSON)
     
-    puts "Data PATH:" + data_path
+    #puts "Data PATH:" + data_path
     
     # Populate joblist
     @joblist = Joblist.new(data_path,script_path,titles_path)
     
      respond_to do |format|
-      format.html #{ redirect_to(person_list_url) }
-      format.js  { render :json => @joblist.to_json }
+      format.html #{ render :template => 'index.rjs' }
+      format.js
+      format.json  { render :json => @joblist.to_json }
       #format.xml  { render :xml => @joblist }
      end
 
@@ -56,15 +57,26 @@ class JobsController < ApplicationController
   def show
     @job_id=params[:id]
     #@command = Command.new(session[:current_command])
-        
+
+		data_path = File.join(DATA_PATH,@command.current_command,@user,@job_id)
+		
+		puts data_path+'/*'
+     
     # modify current job id
     session[:current_job_id]=@job_id
+    
+     respond_to do |format|
+      format.html 
+      format.js
+      format.json  { render :json => Dir.glob(data_path+'/*').entries.collect{|e| File.basename(e)}.to_json }
+      #format.xml  { render :xml => @joblist }
+     end
   end
   
   #-----------------------------------------
   # Deletes a job by its id
   #-----------------------------------------
-  def delete
+  def destroy
     @job_id=params[:id]
     
     # Delete job
@@ -73,6 +85,14 @@ class JobsController < ApplicationController
     
     # render :update do |page|
     # end
+    
+    respond_to do |format|
+      format.html 
+      format.js
+      format.json  { render :json => 'DONE'.to_json }
+      #format.xml  { render :xml => @joblist }
+     end
+    
   end
   
   #-----------------------------------------
@@ -195,8 +215,17 @@ class JobsController < ApplicationController
 				  render :action => 'upload_stage.rjs'
 				end
 			 }
-      format.js  { 
+      format.js {     # send response and ajax commands, they are in an external file
+				responds_to_parent do
+				  render :action => 'upload_stage.rjs'
+				end
+			 }			 
+      format.json  {
+      				if @errors.empty?
+      				 render :json => session[:current_job_id].to_json
+      				else
       				render :json => @errors.to_json
+      				end
       }
       #format.xml  { render :xml => @joblist }
     end

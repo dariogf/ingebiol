@@ -1,2 +1,0 @@
-
-page['job_results_div'].replace_html('Deleting: '+@job_id)

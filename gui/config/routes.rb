@@ -60,13 +60,17 @@ ActionController::Routing::Routes.draw do |map|
   
   #map.resource :joblist
   
-  map.resource :download
-  
+  #map.resource :download
+  map.download_job 'downloads/:command_id/:job_id.:format', :controller => 'downloads', :action => 'download'
+  map.download 'downloads/:command_id/:job_id/:file_id.:format', :controller => 'downloads', :action => 'download' , :requirements => { :file_id => /.*/}
+#  map.download_img 'downloads/:command_id/:job_id/:file_id.:format', :controller => 'downloads', :action => 'download_img' , :requirements => { :file_id => /.*/}
+
   #map.resources :commands, :has_many => [ :comments, :sales ], :has_one => :seller
   
    #  map.connect ':command/:work/:controller/:action/:id', :requirements => { :id => /.*/, :command => /.*/, :work => /.*/ }
    # bueno:
-  map.connect ':controller/:action/:id', :requirements => { :id => /.*/}
+   
+  map.connect ':controller/:action/:id'
  #  map.connect ':controller/:action/:id.:format'
   
 end

@@ -135,8 +135,6 @@ module ApplicationHelper
           
           res +='</tr>'      
         end
-
-
         
       end 
       res += add_form_submit_row(using_required_fields,submit_button_title)      

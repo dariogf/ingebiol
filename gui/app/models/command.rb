@@ -62,13 +62,15 @@ class Command < BaseFileModel
   	  Dir.glob(File.join(COMMAND_CONFIG,'*')).each do |cmd|
   	 		# load common data
      		common_data = get_json_data(File.join(cmd,"common.json"))
-     		
-     		info['title']=common_data['title']
-     		info['tooltip']=common_data['long_description']
-     		info['command_id']=File.basename(cmd)
-     		
-     		res.push info
-     		info={}
+     		if common_data['in_dock'] != 'false'
+		   		info['title']=common_data['title']
+		   		info['tooltip']=common_data['long_description']
+		   		info['command_id']=File.basename(cmd)
+		   		
+		   		
+		   		res.push info
+		   		info={}
+     		end
      		
     end
     

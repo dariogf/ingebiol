@@ -48,6 +48,8 @@ version:'v 0.9a1'
 
 # Copyright
 	copyright:"Copyright 2009 - SCBI"
+,
+	in_dock: "false"
 
 }
 
