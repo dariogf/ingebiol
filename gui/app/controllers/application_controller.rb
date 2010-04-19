@@ -25,11 +25,13 @@ class ApplicationController < ActionController::Base
      #puts "params_login:"+ params.to_json
      if !params['api_login_key'].nil?
 	     session[:user_email] = params['api_login_key']
+	     puts "Logging with API_K"
     # puts "Entering login required"
     # puts "login required: " + session[:current_job_id] if session[:current_job_id]
     else
-    
-		  unless session[:user_email]!=''
+ 	     puts "Logging with session"
+ 	     
+		  if (session[:user_email].blank?)
 		    flash[:notice] = 'Please log in'
 		    redirect_to new_session_url
 		    puts "login required"

@@ -11,12 +11,6 @@ class SessionsController < ApplicationController
     # reset current session
     reset_session
     
-    # set current command
-    
-    #session[:current_command] = params[:id] ||= DEFAULT_COMMAND
-    
-    #puts "current_command:" +session[:current_command]
-    
     # load params of command from file
     begin
       flash[:error] = ''
@@ -34,13 +28,8 @@ class SessionsController < ApplicationController
   
   def create
         
-#    if (!session[:current_command]) or (session[:current_command]=='')
-  #    session[:current_command] = params[:id] ||= DEFAULT_COMMAND
-    #end
     
     # load params of command from file
-    #@command = Command.new(session[:current_command])
-                                       
     @command = Command.new(params[:id] ||= DEFAULT_COMMAND)
     
     # create a user with passed params
@@ -67,11 +56,10 @@ class SessionsController < ApplicationController
       
     if valid == true
       
-      # save email in session info      
+      # save email in session info
       session[:user_email]= user.get_email
       session[:current_stage]= @command.get_stage_names.first
-      
-      
+            
       # welcome message
       flash[:notice] = "Welcome " + user.get_email
       
@@ -129,8 +117,6 @@ class SessionsController < ApplicationController
     # redirect_to :controller => :sessions, :action => :successfull_login
     
     render :action => :successfull_login
-    
-    
     
   end
       

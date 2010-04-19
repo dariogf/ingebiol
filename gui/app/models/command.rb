@@ -49,7 +49,7 @@ class Command < BaseFileModel
       
     end
     
-    # puts self.to_yaml
+   #  puts self.to_yaml
     
   end
   

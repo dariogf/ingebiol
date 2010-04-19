@@ -6,6 +6,9 @@ class JobsController < ApplicationController
 	  begin
     	@command = Command.new(params[:command_id])
     	@user = session[:user_email]
+    	if @user.nil?
+    		flash[:error] = 'Not logged in'
+    	end
     rescue Exception => e
     	  flash[:error] = 'No such command: '+params[:command_id]+'<br>'+e.message
     		redirect_to :controller=>'sessions', :action=>'errors'
