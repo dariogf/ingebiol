@@ -19,7 +19,7 @@ title:"CAP3 WEB"
 ,
 
 # And a long one
-	long_description:"<br><p>A longer description for the command. May include html tags </p> <p> like paragraphs to separate lines </p>"
+	long_description:"A web interface for the CAP3 assembly application"
 ,
  
 # Command version

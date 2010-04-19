@@ -58,7 +58,7 @@ class SessionsController < ApplicationController
       
       # save email in session info
       session[:user_email]= user.get_email
-      session[:current_stage]= @command.get_stage_names.first
+      #sesion[:current_stage]= @command.get_stage_names.first
             
       # welcome message
       flash[:notice] = "Welcome " + user.get_email

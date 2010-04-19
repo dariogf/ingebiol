@@ -49,7 +49,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :commands, :has_many => [:jobs]
   
-  map.upload_stage 'commands/:command_id/jobs/upload_stage.:format', :controller => 'jobs', :action => 'upload_stage'
+#  map.upload_stage 'commands/:command_id/jobs/upload_stage.:format', :controller => 'jobs', :action => 'upload_stage'
+
+  map.upload_stage 'commands/:command_id/jobs/:job_id/stage/:stage.:format', :controller => 'jobs', :action => 'create',:conditions => { :method => :post }
+#  map.upload_stage 'commands/:command_id/jobs/new/:stage.:format', :controller => 'jobs', :action => 'create',:conditions => { :method => :post }
+
+  map.connect 'commands/:command_id/jobs/new/:stage.:format', :controller => 'jobs', :action => 'new',:conditions => { :method => :get }
+  map.connect 'commands/:command_id/jobs/:job_id/stage/:stage.:format', :controller => 'jobs', :action => 'new',:conditions => { :method => :get }
+
 
 #  map.job_list 'commands/:command_id/jobs/job_list', :controller => 'jobs', :action => 'index'
 

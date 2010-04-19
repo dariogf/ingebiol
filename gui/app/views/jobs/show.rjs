@@ -6,7 +6,7 @@ res_files = ''
 res_files_values = ''
 res_command = ''
 
-final_results = @command.get_final_results(session[:user_email],session[:current_job_id])
+final_results = @command.get_final_results(session[:user_email],@current_job_id)
 
 # for each param
 final_results['params'].each do |fr|
@@ -24,7 +24,7 @@ final_results['params'].each do |fr|
       # resFiles += "<td>#{fr['type']}</td>"
       res += "<td>&nbsp;</td>"
   
-      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] , download_url(:command_id=>@command.current_command,:job_id=>session[:current_job_id], :file_id => "#{fr['file']}"))+'<div id="'+fr['file']+'_div"></div></td>'
+      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] , download_url(:command_id=>@command.current_command,:job_id=>@current_job_id, :file_id => "#{fr['file']}"))+'<div id="'+fr['file']+'_div"></div></td>'
 #      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
   
       res += "<td>(#{fr['size']})</td>"
