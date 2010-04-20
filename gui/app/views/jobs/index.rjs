@@ -7,8 +7,6 @@ if !@joblist.get_titles.empty?
   res +=  '<td width="10%">Job name</td>'
   res +=  '<td width="10%">Job size</td>'
   
-
-  
   job_titles=@joblist.get_titles.reject{|x| ['job_size','job_name'].include?(x['field'])}
 
  for col in job_titles
@@ -16,7 +14,7 @@ if !@joblist.get_titles.empty?
    res +=  '<td width="'+col['width']+'">'+col['title']+'</td>'
  end
  
- res += '<td>'+ link_to_remote("Refresh", :url => {:controller => 'joblists', :action => 'get_joblist'}) +'</td>'
+ res += '<td>'+ link_to_remote("Refresh", :url => command_jobs_url(@command.current_command), :method => :get) +'</td>'
  
  res += '</thead><tbody>'
  
@@ -31,12 +29,15 @@ if !@joblist.get_titles.empty?
      className='odd' if ((row % 2) != 0)
           
      res += '<tr class="'+className+'" id="'+job['job_id']+'">'
-     
+
      # add jobname with link
-     res +=  '<td width="10%">' + link_to_remote(job['job_name_field'],:url => {:controller => 'jobs', :action=>'show',:id=>job['job_id']} ) + '</td>'
+     res +=  '<td width="10%">' + link_to_remote(job['job_name_field'],:url=>command_job_url(:command_id => @command.current_command, :id => job['job_id']), :method => :get) + '</td>'
+     
      
      # add jobsize with link
-     res +=  '<td width="10%">' + link_to(job['job_size'],:controller => 'downloads', :action=>'download_job',:id=>job['job_id'] ) + '</td>'
+     res +=  '<td width="10%">' + link_to(job['job_size'],download_job_url(:command_id => @command.current_command, :job_id => job['job_id'])) + '</td>'
+     
+     #:controller => 'downloads', :action=>'download_job',:id=>job['job_id'] ,:command_id => @command.current_command, :job_id => job['job_id']) + '</td>'
 
      # for each title
      for col in job_titles
@@ -76,7 +77,7 @@ if !@joblist.get_titles.empty?
        res +=  '<td '+width+'>' + value + '</td>'
      end
      
-     res +=  '<td width="1%">' + link_to_remote(image_tag("borrar.png", {:alt => "Delete file", :border => "0" }),:url => {:controller => 'jobs', :action=>'delete', :id=>job['job_id']}) + '</td>'
+     res +=  '<td width="1%">' + link_to_remote(image_tag("borrar.png", {:alt => "Delete file", :border => "0" }),:url => {:controller => 'jobs', :action=>'destroy', :id=>job['job_id']},:method=>:delete) + '</td>'
 
      res += '</tr>'
 

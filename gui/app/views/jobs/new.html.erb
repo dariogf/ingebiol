@@ -1,21 +1,24 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
-	<tr><td>		
-	<%= render :partial => 'program_title' %>
-	</td></tr>
+			<tr><td>		
+				<%= render :partial => 'program_title' %>
+				</td></tr>
 	
-	<!-- row separador -->
-	<tr class="separadorH"><td></td></tr>
+				<!-- row separador -->
+				<tr class="separadorH"><td></td></tr>
 
 
-<!-- row menu 1 -->
-<tr id="wellcomeTR">
-	<!-- <td class="menuRow"> --> <!-- celda menu1 -->
-	<td>
-    <%= render :partial => 'welcome_bar' %>
-	</td> <!-- fin celda menu1 -->
-</tr> <!-- fin row menu 1 -->
+			<!-- row menu 1 -->
+			<tr id="wellcomeTR">
+				<!-- <td class="menuRow"> --> <!-- celda menu1 -->
+				<td>
+					<%= render :partial => 'welcome_bar' %>
+				</td> <!-- fin celda menu1 -->
+			</tr> <!-- fin row menu 1 -->
+
+  		
+  			<%= add_toggle_row 'PROGRAMS','AVAILABLE PROGRAMS','programs', nil , 'menuRowBlue' %>
 
 
 <!-- ===================== SUBMIT JOB ================== -->

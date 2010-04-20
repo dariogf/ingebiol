@@ -1,0 +1,28 @@
+
+programs_in_line = 10
+
+res = ''
+# res + = '<ul>'
+res += '<table class="program_list"><tr>'
+
+count = 0
+@programs.each do |p|
+ class_name=''
+ if p['command_id']==@selected_cmd
+ 		class_name=' class="selected_cmd" '
+ end
+#	res += '<ul><li>'+ link_to(p,new_command_job_url(p)) +'</li></ul>'
+	res +='<td '+class_name+'>'
+	res += link_to(p['title'],new_command_job_url(p['command_id']),:onmouseover=>"Tip('"+h(p['tooltip'])+"')", :onmouseout=>"UnTip()")
+	res +='</td>'
+	count += 1 
+	if (count % programs_in_line) == 0
+#		res += '</tr></table><table id ="program_list"><tr>'
+			res += '</tr><tr>'
+	end
+	
+end
+	res +='</tr></table>'
+#res += '</ul>'
+
+page['programs_div'].replace_html(res)

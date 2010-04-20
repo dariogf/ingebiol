@@ -110,7 +110,8 @@ class UiObject
   # Validates a text field
   #-----------------------------------------
   def validate(web_params,errors)
-     return true
+
+    return true
   end
   
   def command_switch(field_value)

@@ -1,26 +1,28 @@
+require 'kwalify'
+
 class BaseFileModel
       
   #-----------------------------------------
   # Get json from a file
   #-----------------------------------------
   def get_json_data(file_path)
-    file1 = File.open(file_path)
-    text = file1.read
-    file1.close
-    
-    # wipe text
-    #text=text.grep(/^\s*[^#]/).to_s
-    text=text.gsub(/^\s*#.*$/,'').gsub(/^\n$/,'')
-    
-    data=nil
-    # decode json
-    if !text.blank?
-	    data = ActiveSupport::JSON.decode(text)
-	  end
-    #data = JSON.parse(text)
+   # file1 = File.open(file_path)
+#    text = file1.read
+#    file1.close
+#    
+#    # wipe text
+#    #text=text.grep(/^\s*[^#]/).to_s
+#    text=text.gsub(/^\s*#.*$/,'').gsub(/^\n$/,'')
+#    
+#    data=nil
+#    # decode json
+#    if !text.blank?
+#	    data = ActiveSupport::JSON.decode(text)
+#	  end
+#    #data = JSON.parse(text)
+#    return data
 
-    
-    return data
+    return BaseFileModel.get_json_data(file_path)
   end
   #-----------------------------------------
   # Get json from a file
@@ -39,6 +41,9 @@ class BaseFileModel
     data=nil
     # decode json
     if !text.blank?
+    
+    #schema = Kwalify::Yaml.load_file('schema.yaml')
+    #validator = Kwalify::Validator.new(schema)
 	    data = ActiveSupport::JSON.decode(text)
 	  end
     #data = JSON.parse(text)

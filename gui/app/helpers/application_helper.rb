@@ -135,8 +135,6 @@ module ApplicationHelper
           
           res +='</tr>'      
         end
-
-
         
       end 
       res += add_form_submit_row(using_required_fields,submit_button_title)      
@@ -158,11 +156,13 @@ module ApplicationHelper
   #-----------------------------------------
   # Add a toogle bar with content inside it.
   #-----------------------------------------
-  def add_toggle_row(id, title, content_partial, poller_to_control = nil)
+  def add_toggle_row(id, title, content_partial, poller_to_control = nil,css_class = nil)
     
     content_row_id = 'toggle_row_'+id
     
     toggle_img_id = 'toggle_img_'+id
+    
+    class_name = css_class ||= 'menuRow'
     
     img_text= image_tag "openTriangle.png" , {:id=> toggle_img_id, :alt => "Open triangle", :border => '0'}
     
@@ -174,7 +174,7 @@ module ApplicationHelper
  
 
     # title row
-    title_row_text='<tr id="'+id+'"><td class="menuRow">'+ link_text +'</td></tr>'
+    title_row_text='<tr id="'+id+'"><td class="'+class_name+'">'+ link_text +'</td></tr>'
             
       
       # render content

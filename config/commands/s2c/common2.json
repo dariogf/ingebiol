@@ -1,0 +1,19 @@
+{
+title: "Seq2Contig workflow",
+short_description: "ASSEMBLY AND VALIDATION WORKFLOW",
+long_description: "<br><p>Seq2ContigWF is a workflow that uses <b>AMOS</b> utilities to prepare sequences for the <b>Celera Assember</b> and then validates the resulting contigs with <b>AMOS Validate</b>.The Celera Assember has been chosen by its aggresivity when resolving repetitive sequences.</p>"
+,
+version: 'v 0.9a1'
+,
+contact_url: "http://www.scbi.uma.es"
+,
+corporate_logo: "logogrande.png"
+,
+command_logo: "ingebiolBig.png"
+,
+small_corporate_logo: "logoscbi.png"
+,
+small_command_logo: "ingebiolSmall.png"
+,
+copyright: "Copyright 2009 - SCBI"
+}

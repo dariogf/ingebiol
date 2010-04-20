@@ -73,7 +73,7 @@ class UiInteger < UiEditObject
     
     field_value = web_params[field_name]
     
-    if super
+    if super and field_value
       # check if it is an integer
       if (field_value.match(/^-?\d+$/).to_s=='')
         errors[field_name] = 'Please, provide a valid number'
@@ -97,6 +97,7 @@ class UiInteger < UiEditObject
 
       end
     end
+    
     
   end
   

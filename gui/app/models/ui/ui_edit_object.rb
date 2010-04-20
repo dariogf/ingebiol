@@ -58,16 +58,17 @@ class UiEditObject < UiObject
     #       puts "required value:"+id+'-'+value+'-'
     # end
     
-    if @required and (value == '' or value.nil?)
-
-      if @required_error_msg != ''
-        errors[field_name] = @required_error_msg
-      else
-        errors[field_name] = 'This is a required field'
-      end
-      
-      res = false
-    end
+    if @required 		  
+		  if (value == '' or value.nil?)
+		    if @required_error_msg != ''
+		      errors[field_name] = @required_error_msg
+		    else
+		      errors[field_name] = 'This is a required field'
+		    end
+		    
+		    res = false
+		  end
+   end
     
     return res
   end

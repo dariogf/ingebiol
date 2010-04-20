@@ -10,9 +10,9 @@
 
 			<div align="right">
 			
-			<%= session[:user_email] %>&nbsp; on <%= session[:current_command] %> &nbsp;&nbsp;&nbsp;
+			<%= session[:user_email] %>&nbsp; on <%= @command.current_command %> &nbsp;&nbsp;&nbsp;
 			
-			<%= link_to "Logout", '/ingebiol/session/new/'+session[:current_command] %>
+			<%= link_to "Logout", '/ingebiol/session/new/'+@command.current_command %>
 			
 			<%#= link_to_remote "reset stage", :url=>{:controller => 'jobs', :action => 'reset_stage'} %>
 			

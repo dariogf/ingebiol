@@ -77,6 +77,8 @@ version:'v 0.9a1'
       url:''
     }
   ]
+  ,
+  in_dock:'false'
   
 }
 

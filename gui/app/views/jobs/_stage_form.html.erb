@@ -3,9 +3,10 @@
 <% run_observer_script=''  %>
 
 <%# form_for :upload, :url => {:controller => 'jobs', :action => 'upload_stage'}, :html => {:multipart => true, :target => :upload_target} do |f| %>
-<% form_tag(url_for(:controller => 'jobs', :action => 'upload_stage'), :multipart => true, :target => :upload_target, :id=>'current_form') do %>
+<%# form_tag(url_for(:controller => 'jobs', :action => 'upload_stage',:stage=>@current_stage_pos.to_s), :multipart => true, :target => :upload_target, :id=>'current_form') do %>
+<% form_tag(upload_stage_path(@command.current_command,@current_job_id,@current_stage_pos), :multipart => true, :target => :upload_target, :id=>'current_form') do %>
 <table  border="0" cellspacing="4" cellpadding="0">
-<%= add_fields_for_params(@command.input_params_for_stage(session[:current_stage]),@command.submit_button_title(session[:current_stage])) %>
+<%= add_fields_for_params(@command.input_params_for_stage(@current_stage),@command.submit_button_title(@current_stage)) %>
 
 </table>
 

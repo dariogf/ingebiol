@@ -3,18 +3,18 @@
 
 
 # first remove previous errors, if any
-if !session[:previous_stage].blank?
-  @command.input_params_for_stage(session[:previous_stage]).each do |ui_params|
-    
-    if !ui_params.is_separator
-      
-       #page[ui_params.field_error_name].replace_html('')
-       ### page['upload_'+p['id']+'_field'].removeClassName('fieldWithErrors')
-       
-    end
-    
-  end
-end
+#if !session[:previous_stage].blank?
+#  @command.input_params_for_stage(session[:previous_stage]).each do |ui_params|
+#    
+#    if !ui_params.is_separator
+#      
+#       #page[ui_params.field_error_name].replace_html('')
+#       ### page['upload_'+p['id']+'_field'].removeClassName('fieldWithErrors')
+#       
+#    end
+#    
+#  end
+#end
 
 # if (@previous_errors!=nil) and (!@previous_errors.empty? )
 # 
@@ -34,6 +34,16 @@ end
 
 
  if !@errors.empty?  # there are errors
+ 
+	 @command.input_params_for_stage(@current_stage).each do |ui_params|
+    
+    if !ui_params.is_separator      
+       #page[ui_params.field_error_name].replace_
+       page[ui_params.id+'_field'].removeClassName('fieldWithErrors')
+       page[ui_params.id+'_field_error'].replace_html('')
+    end
+    
+  end
  
       @errors.keys.each do |k|
         page[k+'_error'].replace_html(@errors[k])

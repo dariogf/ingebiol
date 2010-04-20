@@ -12,100 +12,43 @@ end
   # download a file
   #-----------------------------------------
   def download
-    @id = params[:id]
-              
+	   
+#    puts "PARAMS:"+params.to_json
+#    puts session.to_json
+    @command_id = params[:command_id]
+    @file_id = params[:file_id]
+    @job_id = params[:job_id]
+    @file_type = params[:file_type] ||='file'
+     
     # print "descargando @id:" + @id
         
-    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], session[:current_job_id], @id)
-    
-    
+    if @file_id    
+  	    file_to_send = File.join(DATA_PATH, @command_id, session[:user_email], @job_id, @file_id)
+	  else
+	      file_to_send = File.join(DATA_PATH, @command_id, session[:user_email], @job_id)
+		end
+        
     if File.exists?(file_to_send)
     
-      if !File.directory?(file_to_send)
-      # send_file('/Volumes/Documentos/Progs/ruby/gui/public/images/iconAMSin.png')
-	      send_file(file_to_send)
-	    else
-	    		 # comprimir al vuelo y mandar
-					  io = self.class.make_zip_io(file_to_send)
-  					send_data(io.read, :filename => File.basename(file_to_send)+'.zip', :type => 'application/zip')
-	      
-      end
-      #,:filename => 'pepe'
-    else
-      # print "File doesn't exists"
-      #       
-      #       render :update do |page|
-      #          page[@id+'_div'].replace_html('Does not exists')
-      #       end
-      #       
-    end
-    
-    
-    
-    # render :nothing => true
-    
-    
-  end
-  
-  #-----------------------------------------
-  # download a complete job
-  #-----------------------------------------
-  def download_job
-    @job_id = params[:id]
+      if @file_type.upcase == 'IMAGE'
+      
+            send_file file_to_send, :type => 'image/png', :disposition => 'inline'
+      else
+      
+				  if !File.directory?(file_to_send)
+				  # send_file('/Volumes/Documentos/Progs/ruby/gui/public/images/iconAMSin.png')
+					  send_file(file_to_send)
+					else
+							 # comprimir al vuelo y mandar
+								io = self.class.make_zip_io(file_to_send)
+								send_data(io.read, :filename => File.basename(file_to_send)+'.zip', :type => 'application/zip')
+					  
+				  end
+			end
 
-              
-    # print "descargando @id:" + @id
-        
-    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], @job_id)
-        
-    if File.exists?(file_to_send)
-    
-      if !File.directory?(file_to_send)
-      # send_file('/Volumes/Documentos/Progs/ruby/gui/public/images/iconAMSin.png')
-	      send_file(file_to_send)
-	    else
-	    		 # comprimir al vuelo y mandar
-					  io = self.class.make_zip_io(file_to_send)
-  					send_data(io.read, :filename => File.basename(file_to_send)+'.zip', :type => 'application/zip')
-	      
-      end
-      #,:filename => 'pepe'
-    else
-      # print "File doesn't exists"
-      #       
-      #       render :update do |page|
-      #          page[@id+'_div'].replace_html('Does not exists')
-      #       end
-      #       
     end
     
-    
-    
-    # render :nothing => true
-    
-    
   end
-  
- 
- 
-  
-  #-----------------------------------------
-  # download a file
-  #-----------------------------------------
-  def download_img
-    @id = params[:id]
-              
-    # print "descargando @id:" + @id
-        
-    file_to_send = File.join(DATA_PATH, session[:current_command], session[:user_email], session[:current_job_id], @id)
-    
-    
-    if File.exists?(file_to_send)
-      #send_data(file_to_send,{:type=>'img/png'})
-      send_file file_to_send, :type => 'image/png', :disposition => 'inline'
-    else
-      send_data(nil,{:type=>'img/png'})
-    end    
-  end
+
   
 end

@@ -11,11 +11,11 @@
 {
 
 # Write here the desired title for the command
-title:"MIRA2"
+title:"MIRA v3"
 ,
 
 # Provide a short description
-  short_description:"A WEB INTERFACE FOR MIRA2"
+  short_description:"A WEB INTERFACE FOR MIRA v3.0"
 ,
 
 # And a long one

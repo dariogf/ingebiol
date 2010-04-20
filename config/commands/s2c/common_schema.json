@@ -1,0 +1,18 @@
+{ "type": "map",
+  "required": true,
+  "mapping": {
+	"title":   { "type": "str", "required": true },
+	"short_description":  { "type": "str" },
+	"long_description":  { "type": "str" },
+	"version":  { "type": "str" },
+	"contact_url":  { "type": "str" },
+	"corporate_logo":  { "type": "str" },
+	"command_logo":  { "type": "str" },
+	"small_corporate_logo":  { "type": "str" },
+	"small_command_logo":  { "type": "str" },
+	"copyright":  { "type": "str" }
+  }
+}
+
+
+

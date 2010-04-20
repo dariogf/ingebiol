@@ -1,0 +1,128 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key. Be careful
+# with punctuation symbols, since this is a json file and
+# needs to keep its structure.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+# You can add as many stages as you want, they are shown
+# in alphabetical order.
+#
+########################################################
+
+{
+title:'SUBMIT FIlES',
+stage_type:'submit',
+enabled: true,
+
+input_params: [
+ {
+	input_type: 'text',
+	id:'job_name',
+	title:'Job name',
+	default_value: '',
+	required: true,
+	size:'30',
+	tooltip:'The job is assigned a number automatically, but you can provide a custom name for it',
+	validation_regex: '',
+	validation_error_msg: 'Must start with a or A',
+	standard_attribute: true,
+  save_in_presets: true,
+	autocomplete_values:'autocomplete1.json'
+	# autocomplete_values:['uno','dos','tres']
+ }
+,
+ {
+	input_type: 'separator',
+	title:'Input files'
+ }
+,
+ {
+	input_type: 'file',
+	id:'sequence_file',
+	save_as:'seq.fasta',
+	title:'Sequences (fasta)',
+	default_value: '',
+	required: false,
+	tooltip:'Select a sequence file in fasta format'
+ }
+,
+ {
+	input_type: 'separator'
+ }
+ ,
+ {
+	input_type: 'integer',
+	id:'a',
+	command_switch:'-a %s',
+	title:'Band expansion size',
+	required: false,
+	tooltip:'un tooltip',
+	default_value: '20',
+	validation_lower_limit:'11',
+	validation_upper_limit:''
+ }
+# ,
+#  {
+# 	input_type: 'radio',
+# 	id:'radio1',
+# 	title:'Radio 1',
+# 	default_value: 'valor1',
+# 	values: {'texto1':'valor1',
+# 					 'texto2':'valor2',
+# 					 'texto3':'valor3'}
+# 					,
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+# ,
+#  {
+# 	input_type: 'radio',
+# 	id:'radio2',
+# 	title:'Radio 2',
+# 	default_value: 'valor2',
+# 	values: {'texto de un radio':'valor1',
+# 					 'texto del radio 2':'valor2',
+# 					 'texto del radio 3':'valor3'}
+# 					,
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+# ,
+#  {
+# 	input_type: 'popup',
+# 	id:'pop1_popup',
+# 	title:'Popup 1',
+# 	default_value: 'valor3',
+# 	values: {'texto1':'valor1',
+# 					 'texto2':'valor2',
+# 					 'texto3':'valor3'}
+# 					,
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+# ,
+#  {
+# 	input_type: 'popup',
+# 	id:'pop1_popup',
+# 	title:'Popup 1',
+# 	default_value: 'valor3',
+# 	values: 'popup1_values.json',
+# 	required: true,
+# 	tooltip:'Un tip'
+#  }
+],
+command_list:[
+							{
+								required_files:[],
+								command:'ls -l > input_files.txt'
+							}
+						 ]
+,
+
+create_results_dir:['output'],
+use_queue_system:false
+}

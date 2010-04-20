@@ -6,7 +6,7 @@ res_files = ''
 res_files_values = ''
 res_command = ''
 
-final_results = @command.get_final_results(session[:user_email],session[:current_job_id])
+final_results = @command.get_final_results(session[:user_email],@current_job_id)
 
 # for each param
 final_results['params'].each do |fr|
@@ -15,7 +15,7 @@ final_results['params'].each do |fr|
   elem['id'] = fr['id']
   elem['type'] = fr['type']
   
-     
+  
   # add files
   if fr['type']=='file'
     # show only fixed files or files with valid size
@@ -24,7 +24,8 @@ final_results['params'].each do |fr|
       # resFiles += "<td>#{fr['type']}</td>"
       res += "<td>&nbsp;</td>"
   
-      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
+      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] , download_url(:command_id=>@command.current_command,:job_id=>@current_job_id, :file_id => "#{fr['file']}"))+'<div id="'+fr['file']+'_div"></div></td>'
+#      res += "<td>"+ link_to(image_tag("save.gif", {:alt=>'download',:border => '0'})+ fr['title'] ,:controller => 'downloads', :action => 'download', :id => "#{fr['file']}")+'<div id="'+fr['file']+'_div"></div></td>'
   
       res += "<td>(#{fr['size']})</td>"
   
@@ -142,11 +143,11 @@ final_results['params'].each do |fr|
       options = options.merge!(fr['options'])
     end
     
-    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:dummytag=>session[:current_job_id]),options)
+    img = image_tag(download_url(:file_id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id, :file_type => fr['type'] ),options)
+#    img = image_tag(url_for(:controller => :downloads, :action=>:download_img, :file_id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id),options)
     
-    if !['linked'].blank?
-      
-      img = link_to(img,url_for(:controller => :downloads, :action=>:download_img, :id => fr['file_name'],:dummytag=>session[:current_job_id]))
+    if !['linked'].blank?      
+      img = link_to(img,download_url(:file_id => fr['file_name'],:command_id => @command.current_command, :job_id => @job_id))
     end
     
     res += '<td>'+img+"</td>"
