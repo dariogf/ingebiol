@@ -30,7 +30,7 @@ Rails::Initializer.run do |config|
   
   config.gem "json"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
-  config.gem "kwalify"
+  #config.gem "kwalify"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
