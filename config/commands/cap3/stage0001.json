@@ -67,7 +67,7 @@ input_params: [
  {
 	input_type: 'file',
 	id:'quality_file',
-	save_as:'seq.qual',
+	save_as:'seq.fasta.qual',
 	title:'Quality file',
 	default_value: '',
 	required: false,

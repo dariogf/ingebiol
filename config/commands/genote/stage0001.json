@@ -76,11 +76,12 @@ input_params: [
 command_list:[
 							{
 								required_files:[],
-								command:'~wublast/programs/x86_64/blastx ~bioperl/programs/genote/db/sp_db input_file.fasta -sort_by_totalscore -hspmax=0 -E=1e-10  -mformat=3 -cpus 4 -o wublast_results.txt'
+# command:'~wublast/programs/x86_64/blastx ~bioperl/programs/genote/db/sp_db input_file.fasta -sort_by_totalscore -hspmax=0 -E=1e-10  -mformat=3 -cpus 4 -o wublast_results.txt'
+								command:'~blast_plus/programs/x86_64/bin/blastx -query input_file.fasta -db ~bioperl/programs/genote/db/sp_plus_db -outfmt "7 qseqid sseqid evalue score pident qframe qstart qend sstart send" -evalue 1e-10 -num_descriptions 20 -num_alignments 20 -out blast_plus_result.txt -num_threads 4'
 							}
 							,
 							{
-								required_files:['input_file.fasta','wublast_results.txt','~bioperl/programs/genote/db/sp_anotaciones.txt'],
+								required_files:['input_file.fasta','blast_plus_result.txt','~bioperl/programs/genote/db/sp_anotaciones.txt'],
 								command:'~bioperl/programs/genote/genote.rb input_file.fasta $min_ident $min_hit_length'
 							}
          ,

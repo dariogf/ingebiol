@@ -9,7 +9,7 @@
 			
 			</script>
 			
-			<%= periodically_call_remote(:variable=>'joblist_poller', :url => {:controller => 'joblists', :action => 'get_joblist'}) %>
+			<%= periodically_call_remote(:variable=>'joblist_poller', :url => {:controller => 'joblists', :action => 'get_joblist'}, :frequency => '30' ) %>
 			<%#= periodically_call_remote :url => {:controller => 'joblists', :action => 'get_joblist'} %>
 			
 			<%#= link_to_remote "algo", :url => {:controller => 'joblists', :action => 'get_joblist'} %>
