@@ -42,9 +42,12 @@ def job_status(folder,hash)
   #there are sh files
   if !sh_files.empty?
     #is queue job
-    status = 'QUEUED'
+    status = 'UNKNOWN' 
     
-    if File.exists?(File.join(folder,'RUNNING'))
+    if File.exists?(File.join(folder,'QUEUED'))
+      status = 'QUEUED'	
+      
+    elsif File.exists?(File.join(folder,'RUNNING'))
       status = 'RUNNING'
     else
       error_files = []

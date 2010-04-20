@@ -94,6 +94,8 @@ if !@joblist.get_titles.empty?
  # puts "res:",res
 end
 
+res += '</tbody></table>'
+
 page['joblist_div'].replace_html(res)
 
 

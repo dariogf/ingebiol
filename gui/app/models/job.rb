@@ -58,12 +58,14 @@ class Job  < BaseFileModel
     FileUtils.mkdir_p(work_path) unless File.exists?(work_path)
     
     # save standard attributes
-                       
+                           
     std = {}
     std['user_id']=user_id
     std['job_id']=today+id.to_s
     
     self.save_standard_attributes(std,current_command,user_id,today+id.to_s)
+    
+    
     
     # puts "Created path:"+work_path
 
@@ -79,6 +81,10 @@ class Job  < BaseFileModel
     job_path = File.join(DATA_PATH,current_command,user_id,job_id)
 
     if File.exists?(job_path)
+      if File.exist?(File.join(job_path,QUEUED_FILE))
+      	# TODO - send qdel to pbs with job ID
+      	      	
+      end
       #FileUtils.rm_r(job_path,{:secure=>true})
       system('/bin/rm -rf '+job_path)
     end
