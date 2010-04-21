@@ -34,7 +34,9 @@ class JobsController < ApplicationController
      respond_to do |format|
       format.html #{ render :template => 'index.rjs' }
       format.js
-      format.json  { render :json =>job_list_json }
+      format.json  { 
+      puts "job_list_json:"+job_list_json;
+      render :json =>@joblist }
       format.xml  { render :xml => @joblist }
      end
 
