@@ -29,11 +29,13 @@ class JobsController < ApplicationController
     # Populate joblist
     @joblist = Joblist.new(data_path,script_path,titles_path)
     
+     job_list_json=@joblist.to_json
+    
      respond_to do |format|
       format.html #{ render :template => 'index.rjs' }
       format.js
-      format.json  { render :json => @joblist.to_json }
-      #format.xml  { render :xml => @joblist }
+      format.json  { render :json =>job_list_json }
+      format.xml  { render :xml => @joblist }
      end
 
 	end
