@@ -24,7 +24,20 @@ def get_size(folder,hash)
 
   hash['job_size']=job_size
 
+
 end
+
+#-----------------------------------------
+# Get the ctime of a folder
+#-----------------------------------------
+def get_ctime(folder,hash)
+  
+  
+  hash['job_date']=File.ctime(folder).strftime('%d/%m/%y')
+
+
+end
+
 
 #-----------------------------------------
 # Check if job is ok
@@ -95,6 +108,8 @@ res = {}
 
 # define fields in hash
 get_size(job_folder,res)
+
+get_ctime(job_folder,res)
 
 
 job_status(job_folder,res)

@@ -19,8 +19,15 @@ end
     @file_id = params[:file_id]
     @job_id = params[:job_id]
     @file_type = params[:file_type] ||='file'
+    
+ 		@job=Job.get_job_attrs(@command_id,session[:user_email],@job_id)
+ 		
+     
+     job_name = @job['job_name_field'].to_s
+     
      
     # print "descargando @id:" + @id
+    
         
     if @file_id    
   	    file_to_send = File.join(DATA_PATH, @command_id, session[:user_email], @job_id, @file_id)
@@ -35,13 +42,15 @@ end
             send_file file_to_send, :type => 'image/png', :disposition => 'inline'
       else
       
+      		#puts "DOWNLOAD JN:"+job_name + 'fn:'+file_to_send
+      		
 				  if !File.directory?(file_to_send)
 				  # send_file('/Volumes/Documentos/Progs/ruby/gui/public/images/iconAMSin.png')
-					  send_file(file_to_send)
+					  send_file(file_to_send,:filename => job_name+'_'+File.basename(file_to_send))
 					else
 							 # comprimir al vuelo y mandar
 								io = self.class.make_zip_io(file_to_send)
-								send_data(io.read, :filename => File.basename(file_to_send)+'.zip', :type => 'application/zip')
+								send_data(io.read, :filename => job_name+'_'+File.basename(file_to_send)+'.zip', :type => 'application/zip')
 					  
 				  end
 			end

@@ -91,6 +91,18 @@ class Job  < BaseFileModel
     
   end
   
+  def self.get_job_attrs(current_command,user_id,job_id)
+  
+	    job_path = File.join(DATA_PATH,current_command,user_id,job_id,STANDARD_ATTR_JSON)
+        res ={}
+        # read current attribute file
+      if File.exists?(job_path)
+        std_attr=BaseFileModel.get_json_data(job_path)        
+      end
+      
+      return std_attr
+      
+  end
   
   
   

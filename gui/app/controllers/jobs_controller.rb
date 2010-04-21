@@ -79,7 +79,9 @@ class JobsController < ApplicationController
 
 		data_path = File.join(DATA_PATH,@command.current_command,@user,@job_id)
 		
-		puts data_path+'/*'
+		@job=Job.get_job_attrs(@command.current_command,@user,@job_id)
+		
+		#puts data_path+'/*'
      
     # modify current job id
     @current_job_id=@job_id

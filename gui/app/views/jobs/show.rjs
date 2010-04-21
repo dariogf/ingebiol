@@ -6,6 +6,16 @@ res_files = ''
 res_files_values = ''
 res_command = ''
 
+
+job_name = @job['job_name_field'].to_s
+
+if !job_name.blank?
+	job_name = '<b>&nbsp;&nbsp;Job name:  '+job_name+' </b>'
+end
+
+#res_files = job_name
+
+
 final_results = @command.get_final_results(session[:user_email],@current_job_id)
 
 # for each param
@@ -197,5 +207,6 @@ if res_html.blank?
   res_html = '<br>No results available'
 end
 
-page['job_results_div'].replace_html(res_html)
+page['job_results_div'].replace_html(job_name+res_html)
+
 

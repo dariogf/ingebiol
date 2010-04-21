@@ -174,7 +174,7 @@ module ApplicationHelper
  
 
     # title row
-    title_row_text='<tr id="'+id+'"><td class="'+class_name+'">'+ link_text +'</td></tr>'
+    title_row_text='<tr id="'+id+'"><td class="'+class_name+'">'+ link_text +'<span id="result_name">&nbsp</span>'+'</td></tr>'
             
       
       # render content
