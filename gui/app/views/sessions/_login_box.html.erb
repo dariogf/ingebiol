@@ -1,4 +1,4 @@
-<% remote_form_for :sessions, :url => {:controller => 'sessions', :action => 'create'} do |f| %>
+<% remote_form_for :sessions, :url => {:controller => 'sessions', :action => 'create',  :id => @command.current_command} do |f| %>
 
 <% if USE_LDAP_AUTH %>
 <p>

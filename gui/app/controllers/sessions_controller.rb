@@ -10,11 +10,11 @@ class SessionsController < ApplicationController
     
     # reset current session
     reset_session
-    
+    @command_id =(params[:id] ||= DEFAULT_COMMAND) 
     # load params of command from file
     begin
       flash[:error] = ''
-      @command = Command.new(params[:id] ||= DEFAULT_COMMAND)
+      @command = Command.new(@command_id)
     rescue Exception => e  #ActiveSupport::JSON::ParserError
     
       # raise
