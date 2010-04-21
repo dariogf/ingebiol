@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   # this method determines if the user is logged or not
   def login_required
-                               
+     cmd = params[:command_id].to_s
      #puts "params_login:"+ params.to_json
      if !params['api_login_key'].nil?
 	     session[:user_email] = params['api_login_key']
@@ -32,8 +32,11 @@ class ApplicationController < ActionController::Base
  	     
 		  if (session[:user_email].blank?)
 		    flash[:notice] = 'Please log in'
-		    redirect_to new_session_url
-		    puts "login required"
+		    if !cmd.blank?
+		    	redirect_to(new_session_url+'/'+cmd)
+		    else
+		    	redirect_to new_session_url		    
+		    end
 		  end
 		end    
   end  

@@ -12,7 +12,7 @@
 			
 			<%= session[:user_email] %>&nbsp; on <%= @command.current_command %> &nbsp;&nbsp;&nbsp;
 			
-			<%= link_to "Logout", '/ingebiol/session/new/'+@command.current_command %>
+			<%= link_to "Logout", new_session_url+'/'+@command.current_command %>
 			
 			<%#= link_to_remote "reset stage", :url=>{:controller => 'jobs', :action => 'reset_stage'} %>
 			
