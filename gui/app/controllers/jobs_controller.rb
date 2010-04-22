@@ -29,8 +29,9 @@ class JobsController < ApplicationController
     # Populate joblist
     @joblist = Joblist.new(data_path,script_path,titles_path)
     
-     job_json= @joblist.clone.to_json
+     job_json= @joblist.dup.to_json
     
+    puts "RENDER job_json" = job_json
     
      respond_to do |format|
       format.html
