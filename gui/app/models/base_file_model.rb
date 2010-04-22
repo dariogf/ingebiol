@@ -50,6 +50,10 @@ class BaseFileModel
 
     return data
   end
+  
+  def to_json2(id=nil)
+		  return	ActiveSupport::JSON.encode(self)  
+  end
    
   
 end

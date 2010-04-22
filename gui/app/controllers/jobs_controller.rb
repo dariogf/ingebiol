@@ -29,22 +29,22 @@ class JobsController < ApplicationController
     # Populate joblist
     @joblist = Joblist.new(data_path,script_path,titles_path)
     
-     job_json= @joblist.dup.to_json
+#     job_json= @joblist.dup.to_json
     
-    puts "RENDER job_json" = job_json
+#    puts "RENDER job_json" + job_json
     
      respond_to do |format|
       format.html
       format.js
-      format.json { render :text =>job_json }
-      format.xml { render :xml => @joblist }
+      format.json { render :json =>{:data=>@joblist.data,:titles=>@joblist.titles} }
+      format.xml { render :xml => {:data=>@joblist.data,:titles=>@joblist.titles} }
      end
 
 	end
 	
 	def get_current_stage(params)
 	    begin
-	    		puts "GETTING CURRENT_STAGE: "+ params[:stage].to_s+'.'
+	   # 		puts "GETTING CURRENT_STAGE: "+ params[:stage].to_s+'.'
 	    		i=Integer(params[:stage]) # force number or nil
 	    		if params[:stage].blank?
 		    		@current_stage_pos = 1
@@ -59,7 +59,7 @@ class JobsController < ApplicationController
 			@current_stage = @command.get_stage_names.first
   	end
   	
-    puts "CURRENT STAGE:" + @current_stage
+    # puts "CURRENT STAGE:" + @current_stage
 
 	end
   
