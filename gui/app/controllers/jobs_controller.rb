@@ -50,7 +50,7 @@ class JobsController < ApplicationController
 		    		@current_stage_pos = 1
 	    		else
 						@current_stage_pos = params[:stage].to_i
-					end				
+					end
   	  #if @current_stage==nil
   	       @current_stage = @command.get_stage_names[@current_stage_pos-1]
   	  #end
