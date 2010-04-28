@@ -29,81 +29,12 @@ params: [
  }
 ,
  {
-	type: 'file',
-	file:'seq.fasta.cap.ace',
-	title:'ACE file',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.contigs',
-	title:'Contigs',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.contigs.links',
-	title:'Contigs links',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.contigs.qual',
-	title:'Contigs qual',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.info',
-	title:'Info',
-	tooltip:''
- }
-, 
- {
-	type: 'file',
-	file:'seq.fasta.cap.singlets',
-	title:'Singlets',
-	tooltip:''
- }
-# ,
-#  {
-# 	type: 'file_value',
-# 	file:'out.txt',
-# 	regex:'.f(asta)',
-# 	regex_result:'$1',
-# 	title:'codigo1',
-# 	tooltip:''
-#  }
-,
- {
 	type: 'command_output',
-	command:'grep -E "found|done|over" seq.fasta.cap.info',
-	title:'Command result',
+	command:'du -sh *',
+	title:'Generated files',
 	tooltip:''
  }
-# ,
-#  {
-# 	type: 'command_output',
-# 	command:'head -n 20 /Volumes/Documentos/Progs/ruby/gui/README',
-# 	title:'Command result',
-# 	tooltip:''
-#  }
-,
- {
-  id:'image1',
-	type: 'image',
-	file_name:'cabog_plot.png',
-  content_type:'image/png',
-	title:'Image',
-  options:{height:'200',width:'250'},
-  linked:true,
-	tooltip:''
- }
-
 ]
 
 }
+

@@ -23,6 +23,7 @@ input_params: [
 	input_type: 'text',
 	id:'job_name',
 	title:'Job name',
+	command_switch:'%s',
 	default_value: '',
 	required: true,
 	size:'30',
@@ -42,12 +43,25 @@ input_params: [
 ,
  {
 	input_type: 'file',
-	id:'sequence_file',
-	save_as:'seq.fasta',
-	title:'Sequences (fasta)',
+	id:'alignment_file',
+	save_as:'alignment',
+	title:'Alignment file',
 	default_value: '',
-	required: false,
+	required: true,
 	tooltip:'Select a sequence file in fasta format'
+ }
+ ,
+ {
+	input_type: 'popup',
+	id:'kalign',
+	command_switch:'%d',
+	title:'Alignment method:',
+	default_value: 'valor3',
+	values: {'Do not align':0,
+					 'Align with KALIGN2':1}
+					,
+	required: true,
+	tooltip:''
  }
 ,
  {
@@ -55,16 +69,42 @@ input_params: [
  }
  ,
  {
+	input_type: 'text',
+	id:'master',
+	title:'MASTER sequence name',
+	command_switch:'%s',
+	default_value: 'NONE',
+	required: true,
+	size:'30',
+	tooltip:'',
+	validation_regex: '',
+	validation_error_msg: ''
+ }
+ ,
+ {
 	input_type: 'integer',
-	id:'a',
-	command_switch:'-a %s',
-	title:'Band expansion size',
-	required: false,
-	tooltip:'un tooltip',
-	default_value: '20',
-	validation_lower_limit:'11',
+	id:'align_start',
+	command_switch:'%s',
+	title:'Alignment slice start',
+	required: true,
+	tooltip:'',
+	default_value: '0',
+	validation_lower_limit:'0',
 	validation_upper_limit:''
  }
+  ,
+ {
+	input_type: 'integer',
+	id:'align_end',
+	command_switch:'%s',
+	title:'Alignment slice end',
+	required: true,
+	tooltip:'',
+	default_value: '0',
+	validation_lower_limit:'0',
+	validation_upper_limit:''
+ }
+
 # ,
 #  {
 # 	input_type: 'radio',
@@ -118,7 +158,7 @@ input_params: [
 command_list:[
 							{
 								required_files:[],
-								command:'ls -l > input_files.txt'
+								command:'/export/home_users/home/soft/bioperl/alignminer/alignMiner.pl alignment $master $job_name real_name $align_start $align_end $kalign COMPLETE'
 							}
 						 ]
 ,
