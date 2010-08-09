@@ -145,8 +145,8 @@ module ApplicationHelper
 		  
 		  #puts "Observer:"+observer+'FUN:'+fun
 		  res += observer
-		   fun=remote_function(:url => {:action=>'visible_if', :visibility_conditions => visibility_conditions.to_json},:with =>"Form.serialize($('current_form'))")
-		 res += '<script> function run_observer_script(){'+fun+'}</script>'
+		  fun=remote_function(:url => {:action=>'visible_if', :visibility_conditions => visibility_conditions.to_json},:with =>"Form.serialize($('current_form'))")
+		  res += '<script> function run_observer_script(){'+fun+'}</script>'
     end
     
     return res
@@ -166,7 +166,7 @@ module ApplicationHelper
     
     img_text= image_tag "openTriangle.png" , {:id=> toggle_img_id, :alt => "Open triangle", :border => '0'}
     
-    img_text += '&nbsp;&nbsp;'+ title
+    img_text += '  '+ title
     
     poller = poller_to_control ||= 'null'
     

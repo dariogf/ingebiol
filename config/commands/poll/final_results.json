@@ -1,0 +1,40 @@
+########################################################
+# Final results of command
+# ------------------------------------------------------
+# You only can modify the values of each key.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+########################################################
+
+{
+title:'RESULTS', 
+stage_type:'final_results',
+enabled: true,
+
+params: [
+ {
+	type: 'file',
+	file:'output.txt',
+	title:'Cap3 output',
+	tooltip:''
+ }
+,
+ {
+	type: 'file',
+	file:'seq.fasta',
+	title:'Original sequence file',
+	tooltip:''
+ }
+,
+ {
+	type: 'command_output',
+	command:'du -sh *',
+	title:'Generated files',
+	tooltip:''
+ }
+]
+
+}
+

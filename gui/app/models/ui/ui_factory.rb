@@ -30,7 +30,8 @@ class UiFactory
       
     when 'popup'
       return UiPopup.new(command_param)
-      
+    when 'file_popup'
+      return UiFilePopup.new(command_param)
     when 'checkbox'
       return UiCheckbox.new(command_param)
 

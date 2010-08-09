@@ -427,17 +427,13 @@ class Command < BaseFileModel
         
         if !r['json_file'].nil?
           path = File.join(DATA_PATH,@current_command,user_id,job_id,r['json_file'])
-          
+                    
           r['value']=get_json_data(path)
   
           r['exists']=true  
         end
-        
-        
+                
       end
-      
-      
-      
       
     end
     
@@ -446,6 +442,9 @@ class Command < BaseFileModel
     return results
     
   end
+  
+  
+  
   
   def self.replace_switches(cmd,command_switches)
     res = cmd

@@ -1,0 +1,55 @@
+########################################################
+# Common parameters of command
+# ------------------------------------------------------
+# You only can modify the values of each key. Be careful
+# with punctuation symbols, since this is a json file and
+# needs to keep its structure.
+#
+# Comments must be in their own line preceded with a '#' 
+# simbol. 
+#
+# You can add as many stages as you want, they are shown
+# in alphabetical order.
+#
+########################################################
+
+{
+title:'SUBMIT FIlES',
+stage_type:'submit',
+enabled: true,
+
+input_params: [
+ {
+	input_type: 'separator',
+	title:'Selecciona los programas que usas de la plataforma'
+ }
+ ,
+ {
+ 	input_type: 'checkbox',
+ 	id:'spotfire',
+ 	title:'spotfire',
+ 	title_pos:'right',
+ 	default_value: 'false',
+ 	tooltip:''
+  }
+,
+ {
+ 	input_type: 'checkbox',
+ 	id:'ipa',
+ 	title:'ipa',
+ 	title_pos:'right',
+ 	default_value: 'false',
+ 	tooltip:''
+  }
+   
+],
+command_list:[
+							{
+								required_files:[],
+								command:'echo "$COMMAND_SWITCHES" >> /tmp/poll.txt'
+							}
+ ]
+,
+create_results_dir:['output'],
+use_queue_system:false
+}

@@ -40,6 +40,8 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
    config.load_paths += %W( #{RAILS_ROOT}/app/models/ui )
+ #  config.load_paths += %W( #{RAILS_ROOT}/app/helpers/ui)
+   
 #Dir.glob("#{RAILS_ROOT}/app/models/*[^(.rb|.ignore)]").each{|dir| config.load_paths += dir }
 
   # Force all environments to use the same logger level

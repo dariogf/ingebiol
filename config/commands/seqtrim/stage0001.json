@@ -30,20 +30,10 @@ input_params: [
 	validation_regex: '',
 	validation_error_msg: 'Must start with a or A',
 	standard_attribute: true,
-  save_in_presets: true,
+  save_in_presets: true
 	#autocomplete_values:'autocomplete1.json'
   # autocomplete_values:['uno','dos','tres']
- }     
-# ,
-#  {
-# 	input_type: 'checkbox',
-# 	id:'checkbox1',
-# 	title:'etiqueta',
-# 	title_pos:'right',
-# 	default_value: 'true',
-# 	required: true,
-# 	tooltip:'The job is assigned a number automatically, but if you can provide a custom name for it'
-#  }
+ }
 ,
  {
 	input_type: 'separator',
@@ -56,7 +46,7 @@ input_params: [
 	save_as:'seq.fasta',
 	title:'Sequences',
 	default_value: '',
-	required: true,
+	required: false,
 	tooltip:'Select a sequence file in fasta format'
  }
 ,
@@ -141,11 +131,22 @@ input_params: [
 # 	input_type: 'popup',
 # 	id:'pop1_popup',
 # 	title:'Popup 1',
-# 	default_value: 'valor3',
-# 	values: 'popup1_values.json',
+# 	default_value: '',
+# 	values: 'cat #{File.join(PRIVATE_DATA_PATH,"algo.txt")}',
 # 	required: true,
 # 	tooltip:'Un tip'
 #  }
+  ,
+  {
+ 	input_type: 'file_popup',
+ 	id:'filepopup1',
+ 	title:'File selector',
+ 	default_value: '',
+ 	values:'PRIVATE_DATA_PATH',
+ 	required: false,
+	save_as:'copiado.popup',
+ 	tooltip:'Un tip'
+  }
 ],
 command_list:[
        {

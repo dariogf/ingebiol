@@ -1,11 +1,13 @@
 # Path where projects are going to be saved
-DATA_PATH = File.join(BASE_PATH,'../','guidata')
+DATA_PATH = File.expand_path(File.join(BASE_PATH,'../','guidata'))
+
+PRIVATE_DATA_PATH = File.expand_path(File.join(BASE_PATH,'../','guidata','private'))
 
 # Folder containing commands configuration
-COMMAND_CONFIG = File.join(CONFIG_PATH,'commands')
+COMMAND_CONFIG = File.expand_path(File.join(CONFIG_PATH,'commands'))
 
 
-USER_SCRIPTS_PATH = File.join(CONFIG_PATH,'scripts')
+USER_SCRIPTS_PATH = File.expand_path(File.join(CONFIG_PATH,'scripts'))
 STAGES_PATTERN = 'stage*.json'
 
 # Standard attributes are saved in a file with this name

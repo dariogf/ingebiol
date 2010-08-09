@@ -1,7 +1,7 @@
 
 programs_in_line = 10
 
-res = ''
+res = '' + hola_helper
 # res + = '<ul>'
 res += '<table class="program_list"><tr>'
 
